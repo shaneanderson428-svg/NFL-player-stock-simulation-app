@@ -1,0 +1,13 @@
+{
+  "espnId": 4000002,
+  "player": "Josh Allen",
+  "position": "QB",
+  "metrics": {
+    "EPA_per_play": 0.16,
+    "SuccessRate": 0.58,
+    "PassingYards": 4200,
+    "PassingTDs": 34,
+    "INTs": 10,
+    "YardsPerAttempt": 7.9
+  }
+}

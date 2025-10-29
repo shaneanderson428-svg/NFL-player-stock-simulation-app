@@ -1,0 +1,13 @@
+{
+  "espnId": 4700000,
+  "player": "Trevor Lawrence",
+  "position": "QB",
+  "metrics": {
+    "EPA_per_play": 0.12,
+    "SuccessRate": 0.56,
+    "PassingYards": 3800,
+    "PassingTDs": 28,
+    "INTs": 8,
+    "YardsPerAttempt": 7.8
+  }
+}

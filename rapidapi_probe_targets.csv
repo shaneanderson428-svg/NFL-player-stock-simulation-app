@@ -1,0 +1,6 @@
+host,path
+nfl-api-data.p.rapidapi.com,/nfl-ath-stats?id=14876
+nfl-api-data.p.rapidapi.com,/nfl/players/team/CHI
+creativesdev-nfl-api-data.p.rapidapi.com,/nfl/players/team/CHI
+api-nfl-v1.p.rapidapi.com,/players
+api-nfl.p.rapidapi.com,/players/team/CHI

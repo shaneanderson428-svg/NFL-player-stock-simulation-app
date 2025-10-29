@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Player card avatar styles */
+.player-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 9999px;
+  overflow: hidden;
+  display: inline-block;
+  background: linear-gradient(180deg,#08111a,#0f1724);
+  border: 2px solid rgba(255,255,255,0.03);
+}
+.player-avatar img { width: 100%; height: 100%; object-fit: cover; display:block }
+.player-initials { display:flex; align-items:center; justify-content:center; width:100%; height:100%; color:#9aa; font-weight:700 }
+
+.players-header { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px }
+.players-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+
+/* Collapse to a single column on very small screens for readability */
+@media (max-width: 420px) {
+  .players-grid { grid-template-columns: 1fr; gap: 12px; }
+  .player-avatar { width: 56px; height: 56px; }
+  .player-card-clean { padding: 10px; }
+}
+.player-card-clean { background: linear-gradient(180deg,#071022,#091426); border: 1px solid rgba(255,255,255,0.04); padding:12px; border-radius:12px; color:#fff }
+.player-meta { color:#9aa; font-size:12px; margin-top:6px }
+
+@layer utilities {
+  .skeleton-gradient {
+    background: linear-gradient(90deg,#111827,#0b1220,#111827);
+    opacity: 0.6;
+  }
+}

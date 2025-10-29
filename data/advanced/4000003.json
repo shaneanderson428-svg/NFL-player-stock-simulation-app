@@ -1,0 +1,13 @@
+{
+  "espnId": 4000003,
+  "player": "Joe Burrow",
+  "position": "QB",
+  "metrics": {
+    "EPA_per_play": 0.14,
+    "SuccessRate": 0.57,
+    "PassingYards": 4100,
+    "PassingTDs": 30,
+    "INTs": 9,
+    "YardsPerAttempt": 7.6
+  }
+}

@@ -1,0 +1,8 @@
+node_modules/
+.next/
+out/
+data/
+.sanity_check/
+scripts/
+**/*.test.*
+tests/**

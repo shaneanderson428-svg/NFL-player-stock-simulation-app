@@ -1,0 +1,407 @@
+
+> my-app@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.5
+   - Local:        http://localhost:3002
+   - Network:      http://10.7.34.243:3002
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 2.5s
+ ○ Compiling /api/nfl/stocks ...
+ ✓ Compiled /api/nfl/stocks in 1050ms (307 modules)
+ GET /api/nfl/stocks 200 in 1362ms
+ ○ Compiling /players ...
+ ✓ Compiled /players in 2.6s (1930 modules)
+ GET /players 200 in 3482ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 713ms (1935 modules)
+ GET /avatars/4000002.png 404 in 1155ms
+ GET /avatars/4000001.png 404 in 1168ms
+ GET /avatars/4249994.png 404 in 997ms
+ GET /avatars/4249991.png 404 in 1029ms
+ GET /avatars/4000003.png 404 in 1126ms
+ GET /avatars/4249995.png 404 in 515ms
+ GET /avatars/4249990.png 404 in 513ms
+ GET /avatars/4249996.png 404 in 506ms
+ GET /avatars/4249992.png 404 in 510ms
+ GET /avatars/4249997.png 404 in 516ms
+ GET /avatars/4249993.png 404 in 345ms
+ GET /avatars/4249998.png 404 in 313ms
+ GET /api/nfl/stocks 200 in 178ms
+ ○ Compiling /api/espn/history ...
+ ✓ Compiled /api/espn/history in 1800ms (2076 modules)
+ GET /api/nfl/leaderboard 200 in 2175ms
+[history] loaded 88 keys from store
+ GET /api/espn/history?espnId=4000002 200 in 2154ms
+ GET /api/espn/history?espnId=4000003 200 in 37ms
+ GET /api/avatars/fetch?espnId=4240603 200 in 18ms
+ GET /api/avatars/fetch?espnId=4241389 200 in 14ms
+ GET /api/avatars/fetch?espnId=4609048 200 in 67ms
+ GET /api/avatars/fetch?espnId=4700000 200 in 15ms
+ GET /api/avatars/fetch?espnId=4000002 404 in 2751ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 2846ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 2688ms
+ GET /api/avatars/fetch?espnId=4000001 404 in 2852ms
+ GET /api/avatars/fetch?espnId=4000003 404 in 701ms
+ GET /api/avatars/fetch?espnId=4249991 404 in 254ms
+ GET /api/avatars/fetch?espnId=4249990 404 in 777ms
+ GET /api/avatars/fetch?espnId=4249993 404 in 292ms
+ GET /api/avatars/fetch?espnId=4249995 404 in 338ms
+ GET /api/avatars/fetch?espnId=4249992 404 in 387ms
+ GET /api/avatars/fetch?espnId=4249994 404 in 497ms
+ GET /api/avatars/fetch?espnId=4249996 404 in 401ms
+ GET /api/avatars/fetch?espnId=4249998 404 in 377ms
+ GET /api/avatars/fetch?espnId=4249997 404 in 507ms
+[dev-prewarm] warming prices for 12 players from http://localhost:3001/api/espn/players?team=all&limit=50
+[dev-prewarm] done
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 259ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 426ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 670ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 509ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 766ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 838ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 837ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 476ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 222ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 251ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 288ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 261ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 305ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 249ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 194ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 183ms
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 3.4s (2416 modules)
+ GET /api/nfl/stocks 404 in 4230ms
+ GET /players 200 in 1486ms
+ GET /players 200 in 194ms
+ ✓ Compiled in 475ms (1102 modules)
+ ○ Compiling /api/espn/price ...
+ ✓ Compiled /api/espn/price in 1181ms (1253 modules)
+[history] loaded 88 keys from store
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 2337ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 2318ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 2291ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 2614ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 67ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 99ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 119ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 137ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 137ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 98ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 112ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 129ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 137ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 2681ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 142ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 2830ms
+ ○ Compiling /api/nfl/stocks ...
+ ✓ Compiled /api/nfl/stocks in 628ms (1266 modules)
+[history] loaded 88 keys from store
+ GET /api/nfl/stocks 200 in 1058ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 1490ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 1405ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 1338ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 1422ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 1249ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 421ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 113ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 175ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 202ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 227ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 262ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 292ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 251ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 136ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 433ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 437ms
+ ○ Compiling /api/espn/players ...
+ ✓ Compiled /api/espn/players in 994ms (2316 modules)
+ GET /api/espn/players?team=all&limit=50 200 in 1415ms
+[dev-prewarm] warming prices for 12 players from http://localhost:3002/api/espn/players?team=all&limit=50
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 1162ms (2321 modules)
+ GET /api/espn/players?team=all&limit=50 200 in 1527ms
+[dev-prewarm] no local dev server detected on ports 3000, 3001, 3002, 3003
+ GET /api/espn/price?espnId=4685120&currentPrice=100 404 in 2174ms
+ GET /api/espn/price?espnId=4242355&currentPrice=100 404 in 2164ms
+ GET /api/espn/price?espnId=4696203&currentPrice=100 404 in 2167ms
+ GET /api/espn/price?espnId=4685279&currentPrice=100 404 in 2174ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 404 in 2153ms
+ GET /api/espn/price?espnId=4685263&currentPrice=100 404 in 2172ms
+ GET /api/espn/price?espnId=5083754&currentPrice=100 404 in 2164ms
+ GET /api/espn/price?espnId=4241087&currentPrice=100 404 in 2158ms
+ GET /api/espn/price?espnId=4046557&currentPrice=100 404 in 2182ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 404 in 2163ms
+ GET /api/espn/price?espnId=4383396&currentPrice=100 404 in 2151ms
+ GET /api/espn/price?espnId=4360698&currentPrice=100 404 in 2148ms
+[dev-prewarm] done
+[history] loaded 88 keys from store
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 621ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 625ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 620ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 622ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 114ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 751ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 770ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 200ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 245ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 282ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 237ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 250ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 257ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 151ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 173ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 194ms
+ GET /api/nfl/stocks 200 in 245ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 274ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 306ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 256ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 277ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 306ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 199ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 302ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 135ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 165ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 205ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 373ms
+[dev-prewarm] warming prices for 12 players from http://localhost:3001/api/espn/players?team=all&limit=50
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 295ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 287ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 316ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 396ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 433ms
+ GET /players 200 in 705ms
+ ○ Compiling /_error ...
+[dev-prewarm] done
+ ✓ Compiled /_error in 1989ms (2410 modules)
+ GET /avatars/4000003.png 404 in 2581ms
+ GET /avatars/4249991.png 404 in 638ms
+ GET /avatars/4249995.png 404 in 260ms
+ GET /avatars/4249993.png 404 in 263ms
+ GET /avatars/4249997.png 404 in 264ms
+ GET /avatars/4249996.png 404 in 266ms
+ ○ Compiling /api/nfl/leaderboard ...
+ ✓ Compiled /api/nfl/leaderboard in 907ms (2421 modules)
+ GET /api/espn/players?team=all&limit=50 200 in 1395ms
+ GET /avatars/4249998.png 404 in 1212ms
+ GET /favicon.ico 200 in 1318ms
+ GET /api/nfl/leaderboard 200 in 1258ms
+ GET /api/nfl/stocks 200 in 1322ms
+ GET /avatars/4249990.jpg 404 in 1315ms
+ ✓ Compiled /api/espn/history in 255ms (1373 modules)
+ GET /api/avatars/fetch?espnId=4000001 404 in 1691ms
+[history] loaded 88 keys from store
+ GET /api/espn/history?espnId=4000002 200 in 603ms
+ GET /api/espn/history?espnId=4000003 200 in 231ms
+ GET /api/avatars/fetch?espnId=4240603 200 in 64ms
+ GET /api/avatars/fetch?espnId=4241389 200 in 78ms
+ GET /api/avatars/fetch?espnId=4609048 200 in 33ms
+ GET /api/avatars/fetch?espnId=4700000 200 in 36ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 889ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 891ms
+ GET /api/avatars/fetch?espnId=4000003 404 in 893ms
+ GET /api/avatars/fetch?espnId=4000002 404 in 1055ms
+ GET /api/avatars/fetch?espnId=4249990 404 in 381ms
+ GET /api/avatars/fetch?espnId=4249993 404 in 298ms
+ GET /api/avatars/fetch?espnId=4249992 404 in 316ms
+ GET /api/avatars/fetch?espnId=4249991 404 in 484ms
+ GET /api/avatars/fetch?espnId=4249994 404 in 458ms
+ GET /api/avatars/fetch?espnId=4249996 404 in 416ms
+ GET /api/avatars/fetch?espnId=4249995 404 in 462ms
+ GET /avatars/4249992.jpg 404 in 312ms
+ GET /api/avatars/fetch?espnId=4249997 404 in 495ms
+ GET /avatars/4249994.jpg 404 in 327ms
+ GET /avatars/4249995.jpg 404 in 248ms
+ GET /avatars/4249991.jpg 404 in 249ms
+ GET /avatars/4249993.jpg 404 in 231ms
+ GET /api/avatars/fetch?espnId=4249998 404 in 714ms
+ GET /avatars/4249997.jpg 404 in 194ms
+ GET /avatars/4249996.jpg 404 in 191ms
+ GET /avatars/4000002.png 404 in 215ms
+ GET /avatars/4000001.jpg 404 in 159ms
+ GET /avatars/4000003.jpg 404 in 97ms
+ GET /avatars/4249998.jpg 404 in 64ms
+ GET /avatars/4000002.jpg 404 in 48ms
+[dev-prewarm] warming prices for 12 players from http://localhost:3001/api/espn/players?team=all&limit=50
+[dev-prewarm] done
+ ✓ Compiled in 912ms (1102 modules)
+ ✓ Compiled /api/nfl/stocks in 414ms (1133 modules)
+ GET /api/nfl/stocks 200 in 683ms
+ GET /players 200 in 423ms
+ ✓ Compiled in 297ms (1133 modules)
+ GET /players 200 in 244ms
+ ✓ Compiled in 183ms (1133 modules)
+ ✓ Compiled in 1071ms (2148 modules)
+ ✓ Compiled in 299ms (2148 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/shaneanderson/Desktop/my-app/.next/cache/webpack/client-development/9.pack.gz_' -> '/Users/shaneanderson/Desktop/my-app/.next/cache/webpack/client-development/9.pack.gz'
+ ○ Compiling /api/espn/players ...
+ ✓ Compiled /api/espn/players in 1726ms (1264 modules)
+ GET /api/espn/players?team=all&limit=50 200 in 65ms
+ ✓ Compiled /api/espn/price in 325ms (1266 modules)
+[history] loaded 159 keys from store
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ○ Compiling /_error ...
+ GET /api/espn/price?espnId=4685120&currentPrice=100 200 in 2116ms
+ GET /api/espn/price?espnId=4360698&currentPrice=100 200 in 2176ms
+ GET /api/espn/price?espnId=4383396&currentPrice=100 200 in 2249ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 2260ms
+ GET /api/espn/price?espnId=5083754&currentPrice=100 200 in 2271ms
+ GET /api/espn/price?espnId=4696203&currentPrice=100 200 in 2274ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 2284ms
+ GET /api/espn/price?espnId=4242355&currentPrice=100 200 in 2297ms
+ GET /api/espn/price?espnId=4685263&currentPrice=100 200 in 2347ms
+ GET /api/espn/price?espnId=4241087&currentPrice=100 200 in 2353ms
+ GET /api/espn/price?espnId=4046557&currentPrice=100 200 in 2401ms
+ GET /api/espn/price?espnId=4685279&currentPrice=100 200 in 2403ms
+ ✓ Compiled /_error in 1622ms (2405 modules)
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+[dev-prewarm] warming prices for 12 players from http://localhost:3001/api/espn/players?team=all&limit=50
+ GET /players 500 in 6337ms
+[dev-prewarm] done
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 789ms (2410 modules)
+ GET /players 404 in 1537ms
+ ○ Compiling /api/nfl/stocks ...
+ ✓ Compiled /api/nfl/stocks in 584ms (1226 modules)
+ GET /api/nfl/stocks 200 in 772ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ GET /players 500 in 571ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ GET /players 500 in 265ms
+ ✓ Compiled in 2.6s (1102 modules)
+ ✓ Compiled in 5.7s (2148 modules)
+ ✓ Compiled in 2.2s (2148 modules)
+ ✓ Compiled in 407ms (2148 modules)
+ ○ Compiling /api/espn/players ...
+ ✓ Compiled /api/espn/players in 7.9s (1264 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/shaneanderson/Desktop/my-app/.next/cache/webpack/server-development/0.pack.gz_' -> '/Users/shaneanderson/Desktop/my-app/.next/cache/webpack/server-development/0.pack.gz'
+ ○ Compiling /_not-found ...
+ GET /players 404 in 5773ms
+ ✓ Compiled /_not-found in 5.8s (2153 modules)
+ ○ Compiling /api/espn/players ...
+ ✓ Compiled /api/espn/players in 2.1s (1265 modules)
+ GET /api/espn/players?team=all&limit=50 404 in 1554ms
+ GET /api/espn/players?team=all&limit=50 200 in 879ms
+ ○ Compiling /api/espn/price ...
+ ✓ Compiled /api/espn/price in 2.2s (1266 modules)
+ ⨯ TypeError: __webpack_require__.C is not a function
+    at <unknown> (.next/server/app/api/espn/price/route.js:337:21)
+    at Object.<anonymous> (.next/server/app/api/espn/price/route.js:342:3) {
+  page: '/api/espn/price'
+}
+ ⨯ TypeError: __webpack_require__.C is not a function
+    at <unknown> (.next/server/app/api/espn/price/route.js:337:21)
+    at Object.<anonymous> (.next/server/app/api/espn/price/route.js:342:3) {
+  page: '/api/espn/price'
+}
+ ⨯ TypeError: __webpack_require__.C is not a function
+    at <unknown> (.next/server/app/api/espn/price/route.js:337:21)
+    at Object.<anonymous> (.next/server/app/api/espn/price/route.js:342:3) {
+  page: '/api/espn/price'
+}
+ ⨯ TypeError: __webpack_require__.C is not a function
+    at <unknown> (.next/server/app/api/espn/price/route.js:337:21)
+    at Object.<anonymous> (.next/server/app/api/espn/price/route.js:342:3) {
+  page: '/api/espn/price'
+}
+ ⨯ TypeError: __webpack_require__.C is not a function
+    at <unknown> (.next/server/app/api/espn/price/route.js:337:21)
+    at Object.<anonymous> (.next/server/app/api/espn/price/route.js:342:3) {
+  page: '/api/espn/price'
+}
+ ⨯ TypeError: __webpack_require__.C is not a function
+    at <unknown> (.next/server/app/api/espn/price/route.js:337:21)
+    at Object.<anonymous> (.next/server/app/api/espn/price/route.js:342:3) {
+  page: '/api/espn/price'
+}
+ ⨯ TypeError: __webpack_require__.C is not a function
+    at <unknown> (.next/server/app/api/espn/price/route.js:337:21)
+    at Object.<anonymous> (.next/server/app/api/espn/price/route.js:342:3) {
+  page: '/api/espn/price'
+}
+ ⨯ TypeError: __webpack_require__.C is not a function
+    at <unknown> (.next/server/app/api/espn/price/route.js:337:21)
+    at Object.<anonymous> (.next/server/app/api/espn/price/route.js:342:3) {
+  page: '/api/espn/price'
+}
+ ⨯ TypeError: __webpack_require__.C is not a function
+    at <unknown> (.next/server/app/api/espn/price/route.js:337:21)
+    at Object.<anonymous> (.next/server/app/api/espn/price/route.js:342:3) {
+  page: '/api/espn/price'
+}
+ ⨯ TypeError: __webpack_require__.C is not a function
+    at <unknown> (.next/server/app/api/espn/price/route.js:337:21)
+    at Object.<anonymous> (.next/server/app/api/espn/price/route.js:342:3) {
+  page: '/api/espn/price'
+}
+ ⨯ TypeError: __webpack_require__.C is not a function
+    at <unknown> (.next/server/app/api/espn/price/route.js:337:21)
+    at Object.<anonymous> (.next/server/app/api/espn/price/route.js:342:3) {
+  page: '/api/espn/price'
+}
+ ⨯ TypeError: __webpack_require__.C is not a function
+    at <unknown> (.next/server/app/api/espn/price/route.js:337:21)
+    at Object.<anonymous> (.next/server/app/api/espn/price/route.js:342:3) {
+  page: '/api/espn/price'
+}
+ ○ Compiling /_error ...
+ GET /api/espn/price?espnId=4046557&currentPrice=100 500 in 3979ms
+ ✓ Compiled /_error in 1358ms (2405 modules)
+ GET /api/espn/price?espnId=4685120&currentPrice=100 500 in 5422ms
+ GET /api/espn/price?espnId=4685263&currentPrice=100 500 in 5340ms
+ GET /api/espn/price?espnId=4696203&currentPrice=100 500 in 5330ms
+ GET /api/espn/price?espnId=4242355&currentPrice=100 500 in 5309ms
+ GET /api/espn/price?espnId=5083754&currentPrice=100 500 in 5304ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 500 in 5271ms
+ GET /api/espn/price?espnId=4241087&currentPrice=100 500 in 5262ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 500 in 5250ms
+ GET /api/espn/price?espnId=4383396&currentPrice=100 500 in 5230ms
+ GET /api/espn/price?espnId=4685279&currentPrice=100 500 in 5041ms
+ GET /api/espn/price?espnId=4360698&currentPrice=100 500 in 5034ms
+ ✓ Compiled /_not-found in 424ms (2410 modules)
+ GET /api/espn/players?team=all&limit=50 404 in 823ms
+ ✓ Compiled in 3.8s (2148 modules)
+ ✓ Compiled in 730ms (2148 modules)
+ ○ Compiling /api/espn/players ...
+ ✓ Compiled /api/espn/players in 676ms (1264 modules)
+ GET /api/espn/players?team=all&limit=50 200 in 2374ms
+ ✓ Compiled in 6.3s (2148 modules)
+ ○ Compiling /api/espn/players ...
+ ✓ Compiled /api/espn/players in 1272ms (1264 modules)
+ GET /api/espn/players?team=all&limit=50 200 in 2570ms
+ ○ Compiling /_not-found ...
+ GET /api/espn/players?team=all&limit=50 404 in 1524ms
+ ✓ Compiled /_not-found in 1460ms (2315 modules)
+ GET /api/espn/players?team=all&limit=50 404 in 107ms
+ GET /api/espn/players?team=all&limit=50 404 in 123ms
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 2.7s (2408 modules)
+ GET /api/espn/players?team=all&limit=50 404 in 537ms
+ GET /api/espn/players?team=all&limit=50 404 in 104ms
+[?25h

@@ -1,0 +1,23 @@
+{
+  // Reduce noisy diagnostics when node modules or native build toolchain aren't installed locally.
+  "yaml.validate": false,
+  "eslint.enable": false,
+  "python.analysis.diagnosticMode": "openFilesOnly",
+  "python.analysis.reportMissingImports": false,
+  "files.exclude": {
+    "**/.pytest_cache": true,
+    "**/.venv": true,
+    "node_modules": true
+  },
+  "css.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  // Path to R binary on macOS used by the VS Code R extension. If R is not
+  // installed, install it (Homebrew: `brew install --cask r` or from
+  // https://cran.r-project.org/) and update this path to the actual R binary
+  // location on your machine. Common locations:
+  // - /opt/homebrew/bin/R (Apple Silicon Homebrew)
+  // - /usr/local/bin/R (Intel Homebrew)
+  // - /Library/Frameworks/R.framework/Resources/bin/R (CRAN framework installer)
+  "r.rpath.mac": "/usr/local/bin/R"
+}

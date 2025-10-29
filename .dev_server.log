@@ -1,0 +1,2907 @@
+
+> my-app@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.5
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.4.35:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 2.5s
+ ○ Compiling / ...
+ ✓ Compiled /api/nfl/stocks in 4.5s (1869 modules)
+ GET /api/nfl/stocks 200 in 2362ms
+ GET / 200 in 5700ms
+ GET /api/nfl/stocks 200 in 61ms
+ GET / 200 in 74ms
+ GET /api/nfl/stocks 200 in 46ms
+ ✓ Compiled /favicon.ico in 299ms (1006 modules)
+ GET /favicon.ico 200 in 396ms
+ ○ Compiling /teams/[team] ...
+ ✓ Compiled /teams/[team] in 2.3s (2051 modules)
+ GET /teams/SEA 200 in 5867ms
+ GET /api/nfl/stocks 200 in 96ms
+ ○ Compiling /players ...
+ ✓ Compiled /players in 1162ms (2057 modules)
+ GET /players?id=a2a46316-3505-42d3-a802-75a1e5c4583e&vscodeBrowserReqId=1761534831874 200 in 1905ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 1043ms (2062 modules)
+ GET /players 200 in 546ms
+ GET /avatars/4000001.png 404 in 360ms
+ GET /avatars/4000002.png 404 in 417ms
+ GET /avatars/4000003.png 404 in 405ms
+ GET /avatars/4249990.png 404 in 409ms
+ GET /avatars/4249997.png 404 in 428ms
+ GET /avatars/4249995.png 404 in 461ms
+ GET /avatars/4249993.png 404 in 466ms
+ GET /avatars/4249994.png 404 in 469ms
+ GET /avatars/4249991.png 404 in 269ms
+ GET /avatars/4249992.png 404 in 290ms
+ GET /avatars/4249996.png 404 in 279ms
+ GET /avatars/4249998.png 404 in 276ms
+ ✓ Compiled /api/espn/history in 421ms (1184 modules)
+ ✓ Compiled in 590ms (906 modules)
+ GET /api/nfl/leaderboard 200 in 1729ms
+ GET /api/nfl/stocks 200 in 3399ms
+[history] loaded 80 keys from store
+ GET /api/espn/history?espnId=4000002 200 in 3390ms
+ GET /api/espn/history?espnId=4000003 200 in 68ms
+ GET /api/avatars/fetch?espnId=4240603 200 in 17ms
+ GET /api/avatars/fetch?espnId=4241389 200 in 17ms
+ GET /api/avatars/fetch?espnId=4609048 200 in 53ms
+ GET /api/avatars/fetch?espnId=4700000 200 in 15ms
+ GET /api/avatars/fetch?espnId=4000002 404 in 3750ms
+ GET /api/avatars/fetch?espnId=4000003 404 in 370ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 3867ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 484ms
+ GET /api/avatars/fetch?espnId=4000001 404 in 3929ms
+ GET /api/avatars/fetch?espnId=4249990 404 in 355ms
+ GET /api/avatars/fetch?espnId=4249991 404 in 325ms
+ GET /api/avatars/fetch?espnId=4249992 404 in 330ms
+ GET /api/avatars/fetch?espnId=4249994 404 in 313ms
+ GET /api/avatars/fetch?espnId=4249995 404 in 302ms
+ GET /api/avatars/fetch?espnId=4249996 404 in 358ms
+ GET /api/avatars/fetch?espnId=4249993 404 in 450ms
+ GET /api/avatars/fetch?espnId=4249998 404 in 286ms
+ GET /api/avatars/fetch?espnId=4249997 404 in 333ms
+ ○ Compiling /api/espn/players ...
+ ✓ Compiled /api/espn/players in 1329ms (2102 modules)
+ GET /api/espn/players?team=all&limit=50 200 in 1698ms
+[history] loaded 80 keys from store
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 1943ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 1948ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 1951ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 1941ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 122ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 166ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 209ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 273ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 219ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 323ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 342ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 2552ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 392ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 373ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 254ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 2735ms
+ GET /api/espn/players?team=all&limit=50 200 in 59ms
+[dev-prewarm] warming prices for 12 players from http://localhost:3000/api/espn/players?team=all&limit=50
+[dev-prewarm] no local dev server detected on ports 3000, 3001, 3002, 3003
+ GET /api/espn/price?espnId=4046557&currentPrice=100 200 in 327ms
+ GET /api/espn/price?espnId=4685120&currentPrice=100 200 in 371ms
+ GET /api/espn/price?espnId=4685263&currentPrice=100 200 in 396ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 539ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 724ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 707ms
+ GET /api/espn/price?espnId=4685279&currentPrice=100 200 in 906ms
+ GET /api/espn/price?espnId=4242355&currentPrice=100 200 in 930ms
+ GET /api/espn/price?espnId=4696203&currentPrice=100 200 in 1008ms
+ GET /api/espn/price?espnId=4383396&currentPrice=100 200 in 982ms
+ GET /api/espn/price?espnId=4241087&currentPrice=100 200 in 1093ms
+ GET /api/espn/price?espnId=5083754&currentPrice=100 200 in 1138ms
+[dev-prewarm] done
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 1544ms (2442 modules)
+ GET /api/nfl/stocks 404 in 2624ms
+ GET /players 200 in 1969ms
+ GET /players 200 in 289ms
+ GET /teams/SEA 200 in 2459ms
+ GET /teams/SEA 200 in 730ms
+ GET /api/nfl/stocks 200 in 73ms
+[history] loaded 81 keys from store
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 704ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 702ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 702ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 702ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 198ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 241ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 268ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 312ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 229ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 1153ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 266ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 1252ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 272ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 275ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 183ms
+ GET /api/nfl/stocks 200 in 96ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 320ms
+ GET /api/espn/players?team=all&limit=50 200 in 359ms
+[dev-prewarm] warming prices for 12 players from http://localhost:3000/api/espn/players?team=all&limit=50
+ GET /api/espn/price?espnId=4046557&currentPrice=100 200 in 255ms
+ GET /api/espn/price?espnId=4685120&currentPrice=100 200 in 323ms
+ GET /api/espn/price?espnId=4685263&currentPrice=100 200 in 385ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 441ms
+ GET /api/espn/price?espnId=4685279&currentPrice=100 200 in 607ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 624ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 664ms
+ GET /api/espn/price?espnId=4696203&currentPrice=100 200 in 714ms
+ GET /api/espn/price?espnId=5083754&currentPrice=100 200 in 715ms
+ GET /api/espn/price?espnId=4241087&currentPrice=100 200 in 768ms
+ GET /api/espn/price?espnId=4242355&currentPrice=100 200 in 788ms
+ GET /api/espn/price?espnId=4383396&currentPrice=100 200 in 783ms
+[dev-prewarm] done
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 911ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 947ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 962ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 951ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 96ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 146ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 176ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 215ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 200ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 1249ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 1362ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 733ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 775ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 780ms
+ GET /api/nfl/stocks 200 in 540ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 801ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 214ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 238ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 898ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 249ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 255ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 243ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 205ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 186ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 294ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 334ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 245ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 242ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 194ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 425ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 218ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 124ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 532ms
+ ✓ Compiled in 2.3s (2304 modules)
+ ✓ Compiled in 514ms (2304 modules)
+ ✓ Compiled in 2.6s (2302 modules)
+ ✓ Compiled in 539ms (2302 modules)
+ ✓ Compiled in 1563ms (2302 modules)
+ ✓ Compiled in 517ms (2302 modules)
+ ✓ Compiled in 936ms (1250 modules)
+ GET /players 200 in 928ms
+ GET /teams/SEA 200 in 1242ms
+ ✓ Compiled in 301ms (1250 modules)
+ ✓ Compiled in 1125ms (2302 modules)
+ ✓ Compiled in 472ms (2302 modules)
+ ○ Compiling /api/espn/price ...
+ ✓ Compiled /api/espn/price in 1616ms (1269 modules)
+[history] loaded 81 keys from store
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 3050ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 3138ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 3000ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 3042ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 122ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 183ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 236ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 271ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 266ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 3447ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 3431ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 287ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 321ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 355ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 319ms
+ ○ Compiling /api/espn/players ...
+ ✓ Compiled /api/espn/players in 587ms (1280 modules)
+ ✓ Compiled (1282 modules)
+[history] loaded 81 keys from store
+ GET /api/nfl/stocks 404 in 1295ms
+ GET /api/espn/players?team=all&limit=50 200 in 1886ms
+[dev-prewarm] no local dev server detected on ports 3000, 3001, 3002, 3003
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 2112ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 2114ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 2030ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 2342ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 2114ms
+ GET /api/espn/players?team=all&limit=50 200 in 273ms
+[dev-prewarm] warming prices for 12 players from http://localhost:3000/api/espn/players?team=all&limit=50
+ GET /players 200 in 1810ms
+ ○ Compiling /_not-found ...
+ GET /api/espn/price?espnId=4046557&currentPrice=100 200 in 910ms
+ GET /api/espn/price?espnId=4685120&currentPrice=100 200 in 977ms
+ GET /api/espn/price?espnId=4685263&currentPrice=100 200 in 963ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 880ms
+ GET /api/espn/price?espnId=4696203&currentPrice=100 200 in 1493ms
+ GET /api/espn/price?espnId=4685279&currentPrice=100 200 in 1566ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 1495ms
+ GET /api/espn/price?espnId=5083754&currentPrice=100 200 in 1716ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 1745ms
+ GET /api/espn/price?espnId=4241087&currentPrice=100 200 in 1681ms
+ GET /api/espn/price?espnId=4242355&currentPrice=100 200 in 1738ms
+ GET /api/espn/price?espnId=4383396&currentPrice=100 200 in 1662ms
+[dev-prewarm] done
+ ✓ Compiled /_not-found in 2.3s (2339 modules)
+ GET /avatars/4249993.png 404 in 2842ms
+ GET /avatars/4000003.png 404 in 2313ms
+ GET /avatars/4249994.png 404 in 2770ms
+ GET /avatars/4000001.png 404 in 2832ms
+ GET /avatars/4249997.png 404 in 2845ms
+ GET /avatars/4249992.png 404 in 319ms
+ GET /avatars/4249991.png 404 in 301ms
+ GET /avatars/4249990.png 404 in 308ms
+ GET /avatars/4000002.png 404 in 315ms
+ GET /avatars/4249996.png 404 in 315ms
+ GET /avatars/4249995.png 404 in 119ms
+ GET /avatars/4249998.png 404 in 110ms
+ ○ Compiling /api/avatars/fetch ...
+ ✓ Compiled /api/avatars/fetch in 556ms (1285 modules)
+ ✓ Compiled (1290 modules)
+ GET /api/nfl/stocks 404 in 828ms
+ GET /favicon.ico 200 in 948ms
+ GET /api/nfl/leaderboard 200 in 848ms
+[history] loaded 81 keys from store
+ GET /api/avatars/fetch?espnId=4000002 404 in 1290ms
+ ✓ Compiled /api/espn/history in 429ms (1293 modules)
+ GET /api/avatars/fetch?espnId=4000001 404 in 1449ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 1521ms
+ GET /api/avatars/fetch?espnId=4240603 200 in 299ms
+ GET /api/avatars/fetch?espnId=4241389 200 in 210ms
+ GET /api/espn/history?espnId=4000002 200 in 884ms
+ GET /api/espn/history?espnId=4000003 200 in 459ms
+[history] loaded 81 keys from store
+ GET /api/avatars/fetch?espnId=4609048 200 in 35ms
+ GET /api/avatars/fetch?espnId=4700000 200 in 61ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 1196ms
+ GET /api/avatars/fetch?espnId=4000003 404 in 1200ms
+ GET /api/avatars/fetch?espnId=4249991 404 in 513ms
+ GET /api/avatars/fetch?espnId=4249992 404 in 492ms
+ GET /api/avatars/fetch?espnId=4249993 404 in 464ms
+ GET /api/avatars/fetch?espnId=4249990 404 in 565ms
+ GET /api/avatars/fetch?espnId=4249995 404 in 384ms
+ GET /api/avatars/fetch?espnId=4249994 404 in 486ms
+ GET /api/avatars/fetch?espnId=4249996 404 in 315ms
+ GET /api/espn/players?team=all&limit=50 200 in 273ms
+[dev-prewarm] warming prices for 12 players from http://localhost:3000/api/espn/players?team=all&limit=50
+ GET /api/avatars/fetch?espnId=4249998 404 in 346ms
+ GET /api/avatars/fetch?espnId=4249997 404 in 375ms
+ GET /api/espn/price?espnId=4046557&currentPrice=100 200 in 259ms
+ GET /api/espn/price?espnId=4685120&currentPrice=100 200 in 296ms
+ GET /api/espn/price?espnId=4685263&currentPrice=100 200 in 357ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 518ms
+ GET /api/espn/price?espnId=4242355&currentPrice=100 200 in 704ms
+ GET /api/espn/price?espnId=4685279&currentPrice=100 200 in 744ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 760ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 758ms
+ GET /api/espn/price?espnId=5083754&currentPrice=100 200 in 797ms
+ GET /api/espn/price?espnId=4241087&currentPrice=100 200 in 792ms
+ GET /api/espn/price?espnId=4696203&currentPrice=100 200 in 839ms
+ GET /api/espn/players?team=all&limit=50 200 in 241ms
+[dev-prewarm] warming prices for 12 players from http://localhost:3000/api/espn/players?team=all&limit=50
+ GET /api/espn/price?espnId=4383396&currentPrice=100 200 in 862ms
+[dev-prewarm] done
+ GET /api/espn/price?espnId=4046557&currentPrice=100 200 in 185ms
+ GET /api/espn/price?espnId=4685120&currentPrice=100 200 in 238ms
+ GET /api/espn/price?espnId=4685263&currentPrice=100 200 in 330ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 510ms
+ GET /api/espn/price?espnId=4242355&currentPrice=100 200 in 628ms
+ GET /api/espn/price?espnId=4685279&currentPrice=100 200 in 639ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 641ms
+ GET /api/espn/price?espnId=4696203&currentPrice=100 200 in 648ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 652ms
+ GET /api/espn/price?espnId=5083754&currentPrice=100 200 in 656ms
+ GET /api/espn/price?espnId=4383396&currentPrice=100 200 in 660ms
+ GET /api/espn/price?espnId=4241087&currentPrice=100 200 in 687ms
+[dev-prewarm] done
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 117ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 192ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 239ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 263ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 251ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 400ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 400ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 147ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 177ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 204ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 217ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 197ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 265ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 264ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 264ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 293ms
+ GET /api/nfl/stocks 404 in 24ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 822ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 821ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 821ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 820ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 121ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 139ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 162ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 186ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 145ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 145ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 175ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 207ms
+ GET /api/nfl/stocks 404 in 63ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 121ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 141ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 1310ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 1313ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 99ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 139ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 167ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 208ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 191ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 238ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 172ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 227ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 483ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 862ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 603ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 606ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 659ms
+ GET /api/nfl/stocks 404 in 70ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 515ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 696ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 335ms
+ ✓ Compiled in 1665ms (2302 modules)
+ ✓ Compiled in 679ms (2302 modules)
+ ✓ Compiled in 1679ms (2302 modules)
+ ○ Compiling /api/espn/price ...
+ ✓ Compiled /api/espn/price in 2.1s (1269 modules)
+[history] loaded 81 keys from store
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 3449ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 3441ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 3478ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 3328ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 415ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 459ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 3806ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 504ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 4090ms
+ GET /players 200 in 1176ms
+ ○ Compiling /api/espn/players ...
+ ✓ Compiled /api/espn/players in 1526ms (2328 modules)
+[dev-prewarm] no local dev server detected on ports 3000, 3001, 3002, 3003
+ GET /avatars/4249992.png 404 in 2491ms
+ GET /avatars/4249993.png 404 in 2549ms
+ GET /avatars/4000001.png 404 in 2593ms
+ GET /avatars/4249997.png 404 in 2576ms
+ GET /avatars/4249990.png 404 in 2410ms
+ GET /avatars/4249991.png 404 in 340ms
+ GET /avatars/4000003.png 404 in 354ms
+ GET /avatars/4249995.png 404 in 365ms
+ GET /avatars/4249994.png 404 in 337ms
+ GET /avatars/4249996.png 404 in 352ms
+ GET /avatars/4000002.png 404 in 130ms
+ GET /avatars/4249998.png 404 in 127ms
+ ○ Compiling /api/avatars/fetch ...
+ ✓ Compiled /api/avatars/fetch in 590ms (1274 modules)
+ ✓ Compiled (1290 modules)
+ GET /favicon.ico 200 in 924ms
+ GET /api/nfl/stocks 404 in 808ms
+ GET /api/nfl/leaderboard 200 in 821ms
+[history] loaded 81 keys from store
+ GET /api/avatars/fetch?espnId=4000001 404 in 1189ms
+ GET /api/avatars/fetch?espnId=4000002 404 in 1219ms
+ ○ Compiling /api/espn/history ...
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 1411ms
+ ✓ Compiled /api/espn/history in 561ms (1293 modules)
+ GET /api/avatars/fetch?espnId=4240603 200 in 461ms
+ GET /api/avatars/fetch?espnId=4241389 200 in 362ms
+ GET /api/espn/history?espnId=4000002 200 in 948ms
+ GET /api/espn/history?espnId=4000003 200 in 634ms
+[history] loaded 81 keys from store
+ GET /api/avatars/fetch?espnId=4609048 200 in 30ms
+ GET /api/avatars/fetch?espnId=4700000 200 in 49ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 1221ms
+ GET /api/avatars/fetch?espnId=4000003 404 in 1260ms
+ GET /api/avatars/fetch?espnId=4249992 404 in 357ms
+ GET /api/avatars/fetch?espnId=4249991 404 in 404ms
+ GET /api/avatars/fetch?espnId=4249990 404 in 418ms
+ GET /api/avatars/fetch?espnId=4249993 404 in 372ms
+ GET /api/avatars/fetch?espnId=4249995 404 in 259ms
+ GET /api/avatars/fetch?espnId=4249994 404 in 301ms
+ GET /api/avatars/fetch?espnId=4249996 404 in 241ms
+ GET /api/avatars/fetch?espnId=4249997 404 in 258ms
+ GET /api/avatars/fetch?espnId=4249998 404 in 271ms
+ GET /api/espn/players?team=all&limit=50 200 in 201ms
+[dev-prewarm] warming prices for 12 players from http://localhost:3000/api/espn/players?team=all&limit=50
+ GET /api/espn/price?espnId=4046557&currentPrice=100 200 in 319ms
+ GET /api/espn/price?espnId=4685120&currentPrice=100 200 in 363ms
+ GET /api/espn/price?espnId=4685263&currentPrice=100 200 in 380ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 414ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 664ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 622ms
+ GET /api/espn/price?espnId=4685279&currentPrice=100 200 in 749ms
+ GET /api/espn/price?espnId=4696203&currentPrice=100 200 in 754ms
+ GET /api/espn/price?espnId=4241087&currentPrice=100 200 in 700ms
+ GET /api/espn/price?espnId=5083754&currentPrice=100 200 in 737ms
+ GET /api/espn/players?team=all&limit=50 200 in 71ms
+[dev-prewarm] warming prices for 12 players from http://localhost:3000/api/espn/players?team=all&limit=50
+ GET /api/espn/price?espnId=4383396&currentPrice=100 200 in 792ms
+ GET /api/espn/price?espnId=4242355&currentPrice=100 200 in 844ms
+[dev-prewarm] done
+ GET /api/espn/price?espnId=4046557&currentPrice=100 200 in 220ms
+ GET /api/espn/price?espnId=4685120&currentPrice=100 200 in 394ms
+ GET /api/espn/price?espnId=4685263&currentPrice=100 200 in 457ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 508ms
+ GET /api/espn/price?espnId=4696203&currentPrice=100 200 in 620ms
+ GET /api/espn/price?espnId=4383396&currentPrice=100 200 in 628ms
+ GET /api/espn/price?espnId=5083754&currentPrice=100 200 in 641ms
+ GET /api/espn/price?espnId=4241087&currentPrice=100 200 in 644ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 642ms
+ GET /api/espn/price?espnId=4242355&currentPrice=100 200 in 653ms
+ GET /api/espn/price?espnId=4685279&currentPrice=100 200 in 658ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 660ms
+[dev-prewarm] done
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 97ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 154ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 180ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 197ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 207ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 166ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 198ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 207ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 449ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 450ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 253ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 146ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 176ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 204ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 230ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 254ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 639ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 628ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 638ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 639ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 192ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 252ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 278ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 319ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 203ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 1049ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 1055ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 290ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 325ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 344ms
+ GET /api/nfl/stocks 404 in 171ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 310ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 360ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 742ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 738ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 736ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 738ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 72ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 144ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 166ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 191ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 193ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 132ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 1052ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 1055ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 166ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 150ms
+ GET /api/nfl/stocks 404 in 49ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 166ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 98ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 90ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 110ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 132ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 222ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 167ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 155ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 180ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 345ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 348ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 205ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 279ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 211ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 237ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 266ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 295ms
+ GET /api/nfl/stocks 404 in 132ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 236ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 2490ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 2608ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 2830ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 2573ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 607ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 683ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 3248ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 736ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 3610ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 424ms
+ GET /avatars/4249993.png 404 in 394ms
+ GET /avatars/4000001.png 404 in 400ms
+ GET /avatars/4249992.png 404 in 421ms
+ GET /players 200 in 1836ms
+ GET /avatars/4249991.png 404 in 208ms
+ GET /avatars/4249996.png 404 in 490ms
+ GET /avatars/4249990.png 404 in 515ms
+ GET /avatars/4249994.png 404 in 525ms
+ GET /avatars/4249995.png 404 in 311ms
+ GET /avatars/4249997.png 404 in 314ms
+ GET /avatars/4000003.png 404 in 265ms
+ GET /avatars/4249998.png 404 in 261ms
+ GET /avatars/4000002.png 404 in 264ms
+ GET /favicon.ico 200 in 79ms
+ GET /api/nfl/stocks 404 in 102ms
+ GET /api/nfl/leaderboard 200 in 160ms
+ GET /api/espn/history?espnId=4000002 200 in 179ms
+ GET /api/espn/history?espnId=4000003 200 in 93ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 338ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 288ms
+ GET /api/avatars/fetch?espnId=4240603 200 in 127ms
+ GET /api/avatars/fetch?espnId=4241389 200 in 65ms
+ GET /api/avatars/fetch?espnId=4609048 200 in 89ms
+ GET /api/avatars/fetch?espnId=4700000 200 in 73ms
+ GET /api/avatars/fetch?espnId=4000003 404 in 424ms
+ GET /api/avatars/fetch?espnId=4000001 404 in 623ms
+ GET /api/avatars/fetch?espnId=4000002 404 in 682ms
+ GET /api/avatars/fetch?espnId=4249993 404 in 278ms
+ GET /api/avatars/fetch?espnId=4249990 404 in 413ms
+ GET /api/avatars/fetch?espnId=4249991 404 in 407ms
+ GET /api/avatars/fetch?espnId=4249992 404 in 392ms
+ GET /api/avatars/fetch?espnId=4249994 404 in 456ms
+ GET /api/avatars/fetch?espnId=4249995 404 in 443ms
+ GET /api/avatars/fetch?espnId=4249996 404 in 279ms
+ GET /api/avatars/fetch?espnId=4249997 404 in 394ms
+ GET /api/avatars/fetch?espnId=4249998 404 in 525ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 102ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 223ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 173ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 336ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 376ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 220ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 227ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 239ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 213ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 207ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 216ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 739ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 742ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 188ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 154ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 149ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 1016ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 945ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 968ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 982ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 96ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 151ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 220ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 244ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 1222ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 1313ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 232ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 326ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 239ms
+ GET /api/nfl/stocks 404 in 80ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 304ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 345ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 213ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 247ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 254ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 1070ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 1034ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 1050ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 1031ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 1056ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 917ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 217ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 206ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 190ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 186ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 107ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 418ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 129ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 463ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 65ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 102ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 169ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 143ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 224ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 287ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 292ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 196ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 223ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 185ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 208ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 218ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 241ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 249ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 150ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 173ms
+ ✓ Compiled in 3.2s (1250 modules)
+ ○ Compiling /api/espn/price ...
+ ✓ Compiled /api/espn/price in 1016ms (1269 modules)
+[history] loaded 81 keys from store
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 2843ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 2844ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 2849ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 2815ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 606ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 661ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 705ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 3763ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 3760ms
+ GET /players 200 in 1246ms
+ ○ Compiling /_not-found ...
+[dev-prewarm] no local dev server detected on ports 3000, 3001, 3002, 3003
+ ✓ Compiled /_not-found in 1541ms (2328 modules)
+[history] loaded 81 keys from store
+ GET /avatars/4000002.png 404 in 2043ms
+ GET /avatars/4249991.png 404 in 2137ms
+ GET /avatars/4249995.png 404 in 2185ms
+ GET /avatars/4249996.png 404 in 2196ms
+ GET /avatars/4000001.png 404 in 2213ms
+ GET /avatars/4000003.png 404 in 358ms
+ GET /avatars/4249993.png 404 in 360ms
+ GET /avatars/4249997.png 404 in 365ms
+ GET /avatars/4249994.png 404 in 362ms
+ GET /avatars/4249990.png 404 in 385ms
+ GET /avatars/4249998.png 404 in 157ms
+ GET /avatars/4249992.png 404 in 178ms
+ GET /api/espn/players?team=all&limit=50 200 in 60ms
+[dev-prewarm] warming prices for 12 players from http://localhost:3000/api/espn/players?team=all&limit=50
+ GET /api/espn/price?espnId=4046557&currentPrice=100 200 in 332ms
+ GET /api/espn/price?espnId=4685120&currentPrice=100 200 in 370ms
+ GET /api/espn/price?espnId=4685263&currentPrice=100 200 in 385ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 529ms
+ ○ Compiling /api/avatars/fetch ...
+ GET /api/espn/price?espnId=4242355&currentPrice=100 200 in 881ms
+ GET /api/espn/price?espnId=4685279&currentPrice=100 200 in 908ms
+ GET /api/espn/price?espnId=4696203&currentPrice=100 200 in 982ms
+ GET /api/espn/price?espnId=5083754&currentPrice=100 200 in 979ms
+ GET /api/espn/price?espnId=4241087&currentPrice=100 200 in 994ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 1016ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 1096ms
+ GET /api/espn/price?espnId=4383396&currentPrice=100 200 in 1095ms
+[dev-prewarm] done
+ ✓ Compiled /api/avatars/fetch in 1197ms (1274 modules)
+ ✓ Compiled (1290 modules)
+ GET /api/nfl/stocks 404 in 2409ms
+ GET /favicon.ico 200 in 2584ms
+ GET /api/nfl/leaderboard 200 in 2391ms
+[history] loaded 81 keys from store
+ GET /api/avatars/fetch?espnId=4000002 404 in 2825ms
+ GET /api/avatars/fetch?espnId=4000001 404 in 2903ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 3110ms
+ ○ Compiling /api/espn/history ...
+ ✓ Compiled /api/espn/history in 744ms (1293 modules)
+ GET /api/avatars/fetch?espnId=4240603 200 in 737ms
+ GET /api/avatars/fetch?espnId=4241389 200 in 504ms
+ GET /api/espn/history?espnId=4000002 200 in 1230ms
+ GET /api/espn/history?espnId=4000003 200 in 865ms
+[history] loaded 81 keys from store
+ GET /api/avatars/fetch?espnId=4609048 200 in 38ms
+ GET /api/avatars/fetch?espnId=4700000 200 in 67ms
+ GET /api/avatars/fetch?espnId=4000003 404 in 1399ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 1626ms
+ GET /api/avatars/fetch?espnId=4249991 404 in 427ms
+ GET /api/espn/players?team=all&limit=50 200 in 263ms
+ GET /api/avatars/fetch?espnId=4249990 404 in 501ms
+[dev-prewarm] warming prices for 12 players from http://localhost:3000/api/espn/players?team=all&limit=50
+ GET /api/avatars/fetch?espnId=4249992 404 in 513ms
+ GET /api/avatars/fetch?espnId=4249993 404 in 507ms
+ GET /api/avatars/fetch?espnId=4249994 404 in 541ms
+ GET /api/avatars/fetch?espnId=4249996 404 in 349ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 322ms
+ GET /api/avatars/fetch?espnId=4249995 404 in 480ms
+ GET /api/espn/price?espnId=4685120&currentPrice=100 200 in 372ms
+ GET /api/espn/price?espnId=4685263&currentPrice=100 200 in 452ms
+ GET /api/espn/price?espnId=4046557&currentPrice=100 200 in 474ms
+ GET /api/avatars/fetch?espnId=4249998 404 in 542ms
+ GET /api/avatars/fetch?espnId=4249997 404 in 583ms
+ GET /players 200 in 557ms
+ GET /api/espn/price?espnId=4685279&currentPrice=100 200 in 634ms
+ GET /api/espn/price?espnId=4242355&currentPrice=100 200 in 636ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 624ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 678ms
+ GET /api/espn/price?espnId=4241087&currentPrice=100 200 in 678ms
+ GET /api/espn/price?espnId=5083754&currentPrice=100 200 in 717ms
+ GET /api/espn/price?espnId=4696203&currentPrice=100 200 in 823ms
+ GET /api/espn/price?espnId=4383396&currentPrice=100 200 in 849ms
+[dev-prewarm] done
+ GET /api/espn/players?team=all&limit=50 200 in 150ms
+[dev-prewarm] warming prices for 12 players from http://localhost:3000/api/espn/players?team=all&limit=50
+ GET /api/espn/price?espnId=4046557&currentPrice=100 200 in 135ms
+ GET /api/espn/price?espnId=4685120&currentPrice=100 200 in 210ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 238ms
+ GET /api/espn/price?espnId=4685263&currentPrice=100 200 in 268ms
+ GET /api/espn/price?espnId=4685279&currentPrice=100 200 in 510ms
+ GET /api/espn/price?espnId=4696203&currentPrice=100 200 in 515ms
+ GET /api/espn/price?espnId=5083754&currentPrice=100 200 in 518ms
+ GET /api/espn/price?espnId=4242355&currentPrice=100 200 in 527ms
+ GET /api/espn/price?espnId=4383396&currentPrice=100 200 in 541ms
+ GET /api/espn/price?espnId=4241087&currentPrice=100 200 in 564ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 582ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 594ms
+[dev-prewarm] done
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 1489ms (2428 modules)
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ ○ Compiling /api/espn/price ...
+ ✓ Compiled /api/espn/price in 1439ms (2430 modules)
+ GET /api/nfl/stocks 500 in 5153ms
+[history] loaded 81 keys from store
+ ✓ Compiled /api/espn/players in 305ms (1375 modules)
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 4752ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 4802ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 4784ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 2723ms
+[history] loaded 81 keys from store
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 4838ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 895ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 892ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 892ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 894ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 694ms
+ GET /api/espn/players?team=all&limit=50 200 in 1524ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 160ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 326ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 392ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 425ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 6052ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 691ms
+ GET /api/nfl/stocks 500 in 560ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 187ms
+ GET /api/espn/players?team=all&limit=50 200 in 569ms
+[dev-prewarm] warming prices for 12 players from http://localhost:3000/api/espn/players?team=all&limit=50
+[dev-prewarm] no local dev server detected on ports 3000, 3001, 3002, 3003
+ GET /api/espn/price?espnId=4685120&currentPrice=100 404 in 215ms
+ GET /api/espn/price?espnId=4685279&currentPrice=100 404 in 211ms
+ GET /api/espn/price?espnId=4685263&currentPrice=100 404 in 207ms
+ GET /api/espn/price?espnId=4696203&currentPrice=100 404 in 206ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 404 in 203ms
+ GET /api/espn/price?espnId=4242355&currentPrice=100 404 in 182ms
+ GET /api/espn/price?espnId=5083754&currentPrice=100 404 in 178ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 404 in 175ms
+ GET /api/espn/price?espnId=4241087&currentPrice=100 404 in 195ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 404 in 189ms
+ GET /api/espn/price?espnId=4383396&currentPrice=100 404 in 184ms
+ GET /api/espn/price?espnId=4046557&currentPrice=100 200 in 337ms
+[dev-prewarm] done
+ GET /api/nfl/stocks 404 in 44ms
+ GET /api/nfl/stocks 404 in 37ms
+ GET /api/nfl/stocks 404 in 65ms
+ GET /api/nfl/stocks 404 in 20ms
+ GET /api/nfl/stocks 404 in 23ms
+ GET /api/nfl/stocks 404 in 26ms
+ GET /api/nfl/stocks 404 in 23ms
+ GET /api/nfl/stocks 404 in 25ms
+ GET /api/nfl/stocks 404 in 20ms
+ GET /api/nfl/stocks 404 in 21ms
+ GET /api/nfl/stocks 404 in 26ms
+ GET /api/nfl/stocks 404 in 24ms
+ GET /api/nfl/stocks 404 in 32ms
+ GET /api/nfl/stocks 404 in 24ms
+ GET /api/nfl/stocks 404 in 31ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 908ms (1377 modules)
+ GET /favicon.ico 200 in 989ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 123ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 84ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 102ms
+[history] loaded 81 keys from store
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 899ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 871ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 872ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 868ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 106ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 158ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 184ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 217ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 1100ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 216ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 150ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 182ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 213ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 1328ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 261ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 336ms
+ GET /api/nfl/stocks 500 in 226ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 255ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 312ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 383ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 396ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 605ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 574ms
+ GET /players 500 in 436ms
+ GET /api/espn/players?team=all&limit=50 200 in 563ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 403ms
+[dev-prewarm] warming prices for 12 players from http://localhost:3000/api/espn/players?team=all&limit=50
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 185ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 456ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 319ms
+ GET /api/espn/price?espnId=4046557&currentPrice=100 200 in 708ms
+ GET /api/espn/price?espnId=4685263&currentPrice=100 200 in 678ms
+ GET /api/espn/price?espnId=4685120&currentPrice=100 200 in 714ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 796ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 1000ms
+ GET /api/espn/price?espnId=4242355&currentPrice=100 200 in 985ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 963ms
+ GET /api/espn/price?espnId=4685279&currentPrice=100 200 in 1055ms
+ GET /api/espn/price?espnId=4696203&currentPrice=100 200 in 1026ms
+ GET /api/espn/price?espnId=4241087&currentPrice=100 200 in 1006ms
+ GET /api/espn/price?espnId=5083754&currentPrice=100 200 in 1029ms
+ GET /api/espn/price?espnId=4383396&currentPrice=100 200 in 1057ms
+[dev-prewarm] done
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 152ms
+ GET /favicon.ico 200 in 111ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 122ms
+ GET /favicon.ico 200 in 87ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /favicon.ico 200 in 153ms
+ GET /api/nfl/stocks 500 in 208ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 122ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /favicon.ico 200 in 144ms
+ GET /api/nfl/stocks 500 in 193ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 131ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 208ms
+ GET /favicon.ico 200 in 175ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 167ms
+ GET /favicon.ico 200 in 86ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 213ms
+ GET /favicon.ico 200 in 130ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ GET /favicon.ico 200 in 92ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 226ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 183ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /favicon.ico 200 in 164ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 392ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 451ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /favicon.ico 200 in 95ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 145ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 112ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 157ms
+ GET /favicon.ico 200 in 95ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 167ms
+ GET /favicon.ico 200 in 110ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 167ms
+ GET /favicon.ico 200 in 138ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /favicon.ico 200 in 111ms
+ GET /api/nfl/stocks 500 in 190ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 169ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /favicon.ico 200 in 47ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 157ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 208ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 217ms
+ GET /favicon.ico 200 in 140ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /favicon.ico 200 in 35ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 243ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 248ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ GET /favicon.ico 200 in 91ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 260ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 94ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /favicon.ico 200 in 115ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 1066ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 140ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /favicon.ico 200 in 102ms
+ GET /players 500 in 166ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 142ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /favicon.ico 200 in 123ms
+ GET /players 500 in 157ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 155ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /favicon.ico 200 in 47ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 166ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 157ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 148ms
+ GET /favicon.ico 200 in 72ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 185ms
+ GET /favicon.ico 200 in 92ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 170ms
+ GET /favicon.ico 200 in 86ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 198ms
+ GET /favicon.ico 200 in 89ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 247ms
+ GET /favicon.ico 200 in 180ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 175ms
+ GET /favicon.ico 200 in 152ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ GET /favicon.ico 200 in 132ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 259ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 241ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 242ms
+ GET /favicon.ico 200 in 161ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 220ms
+ GET /favicon.ico 200 in 184ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 274ms
+ GET /favicon.ico 200 in 154ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 211ms
+ GET /favicon.ico 200 in 104ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 209ms
+ GET /favicon.ico 200 in 220ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 269ms
+ GET /favicon.ico 200 in 128ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /favicon.ico 200 in 169ms
+ GET /players 500 in 364ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 152ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 392ms
+ GET /favicon.ico 200 in 188ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 275ms
+ GET /favicon.ico 200 in 147ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /favicon.ico 200 in 302ms
+ GET /players 500 in 535ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 119ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /favicon.ico 200 in 68ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 188ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 126ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ GET /favicon.ico 200 in 73ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 192ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 162ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 197ms
+ GET /favicon.ico 200 in 100ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /favicon.ico 200 in 128ms
+ GET /api/nfl/stocks 500 in 237ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 164ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /favicon.ico 200 in 372ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 96ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 210ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /favicon.ico 200 in 168ms
+ GET /api/nfl/stocks 500 in 210ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 216ms
+ GET /favicon.ico 200 in 65ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /favicon.ico 200 in 114ms
+ GET /api/nfl/stocks 500 in 213ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 203ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 193ms
+ GET /favicon.ico 200 in 94ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 293ms
+ GET /favicon.ico 200 in 119ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 187ms
+ GET /favicon.ico 200 in 68ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 217ms
+ GET /favicon.ico 200 in 100ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 265ms
+ GET /favicon.ico 200 in 105ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 334ms
+ GET /favicon.ico 200 in 200ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 232ms
+ GET /favicon.ico 200 in 177ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 241ms
+ GET /favicon.ico 200 in 103ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 445ms
+ GET /favicon.ico 200 in 312ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 315ms
+ GET /favicon.ico 200 in 183ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /favicon.ico 200 in 346ms
+ GET /api/nfl/stocks 500 in 725ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 166ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /favicon.ico 200 in 146ms
+ GET /api/nfl/stocks 500 in 168ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 174ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 241ms
+ GET /favicon.ico 200 in 176ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 224ms
+ GET /favicon.ico 200 in 198ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 137ms
+ GET /favicon.ico 200 in 45ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 167ms
+ GET /favicon.ico 200 in 82ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 160ms
+ GET /favicon.ico 200 in 58ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 234ms
+ GET /favicon.ico 200 in 131ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 212ms
+ GET /favicon.ico 200 in 166ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 223ms
+ GET /favicon.ico 200 in 121ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 247ms
+ GET /favicon.ico 200 in 151ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 238ms
+ GET /favicon.ico 200 in 192ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 342ms
+ GET /favicon.ico 200 in 84ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /favicon.ico 200 in 62ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 227ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 222ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 234ms
+ GET /favicon.ico 200 in 105ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /favicon.ico 200 in 874ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /api/nfl/stocks 500 in 1951ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /players 500 in 133ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+ GET /favicon.ico 200 in 215ms
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/build-manifest.json'
+}
+ GET /api/nfl/stocks 500 in 383ms
+ GET /api/nfl/stocks 500 in 79ms
+ GET /api/nfl/stocks 404 in 486ms
+ GET /api/nfl/stocks 404 in 102ms
+ GET /api/nfl/stocks 404 in 92ms
+ GET /api/nfl/stocks 404 in 54ms
+ GET /api/nfl/stocks 404 in 33ms
+ GET /api/nfl/stocks 404 in 39ms
+ GET /api/nfl/stocks 404 in 199ms
+ GET /api/nfl/stocks 404 in 34ms
+ GET /api/nfl/stocks 404 in 166ms
+ GET /api/nfl/stocks 404 in 135ms
+ GET /favicon.ico 404 in 180ms
+ GET /api/nfl/stocks 404 in 116ms
+ GET /api/nfl/stocks 404 in 47ms
+ GET /api/nfl/stocks 404 in 30ms
+ GET /api/nfl/stocks 404 in 47ms
+ GET /api/nfl/stocks 404 in 61ms
+ GET /api/nfl/stocks 404 in 43ms
+ GET /api/nfl/stocks 404 in 173ms
+ GET /api/nfl/stocks 404 in 97ms
+ GET /api/nfl/stocks 404 in 98ms
+ GET /api/nfl/stocks 404 in 73ms
+ GET /api/nfl/stocks 404 in 70ms
+ GET /api/nfl/stocks 404 in 52ms
+ GET /api/nfl/stocks 404 in 54ms
+ GET /api/nfl/stocks 404 in 47ms
+ GET /api/nfl/stocks 404 in 40ms
+ GET /api/nfl/stocks 404 in 18ms
+ GET /api/nfl/stocks 404 in 47ms
+ GET /api/nfl/stocks 404 in 44ms
+ GET /api/nfl/stocks 404 in 32ms
+ GET /api/nfl/stocks 404 in 29ms
+ GET /api/nfl/stocks 404 in 66ms
+ GET /api/nfl/stocks 404 in 31ms
+ GET /api/nfl/stocks 404 in 111ms
+ GET /api/nfl/stocks 404 in 32ms
+ GET /api/nfl/stocks 404 in 20ms
+ GET /api/nfl/stocks 404 in 67ms
+ GET /api/nfl/stocks 404 in 28ms
+ GET /api/nfl/stocks 404 in 66ms
+ GET /api/nfl/stocks 404 in 27ms
+ GET /api/nfl/stocks 404 in 34ms
+ GET /api/nfl/stocks 404 in 31ms
+ GET /api/nfl/stocks 404 in 24ms
+ GET /api/nfl/stocks 404 in 22ms
+ GET /api/nfl/stocks 404 in 19ms
+ GET /api/nfl/stocks 404 in 19ms
+ GET /api/nfl/stocks 404 in 35ms
+ GET /api/nfl/stocks 404 in 37ms
+ GET /api/nfl/stocks 404 in 38ms
+ GET /api/nfl/stocks 404 in 45ms
+ GET /api/nfl/stocks 404 in 31ms
+ GET /api/nfl/stocks 404 in 205ms
+ GET /api/nfl/stocks 404 in 28ms
+ GET /api/nfl/stocks 404 in 24ms
+ GET /api/nfl/stocks 404 in 152ms
+ GET /api/nfl/stocks 404 in 37ms
+ GET /api/nfl/stocks 404 in 33ms
+ GET /api/nfl/stocks 404 in 21ms
+ GET /api/nfl/stocks 404 in 36ms
+ GET /api/nfl/stocks 404 in 27ms
+ GET /api/nfl/stocks 404 in 33ms
+ GET /api/nfl/stocks 404 in 22ms
+ GET /api/nfl/stocks 404 in 36ms
+ GET /api/nfl/stocks 404 in 25ms
+ GET /api/nfl/stocks 404 in 19ms
+ GET /api/nfl/stocks 404 in 272ms
+ GET /api/nfl/stocks 404 in 29ms
+ GET /api/nfl/stocks 404 in 20ms
+ GET /api/nfl/stocks 404 in 28ms
+ GET /api/nfl/stocks 404 in 21ms
+ GET /api/nfl/stocks 404 in 22ms
+ GET /api/nfl/stocks 404 in 33ms
+ GET /api/nfl/stocks 404 in 34ms
+ GET /api/nfl/stocks 404 in 18ms
+ GET /api/nfl/stocks 404 in 19ms
+ GET /api/nfl/stocks 404 in 25ms
+ GET /api/nfl/stocks 404 in 29ms
+ GET /api/nfl/stocks 404 in 19ms
+ GET /api/nfl/stocks 404 in 29ms
+ GET /api/nfl/stocks 404 in 16ms
+ GET /api/nfl/stocks 404 in 19ms
+ GET /api/nfl/stocks 404 in 28ms
+ GET /api/nfl/stocks 404 in 16ms
+ GET /api/nfl/stocks 404 in 42ms
+ GET /api/nfl/stocks 404 in 20ms
+ GET /api/nfl/stocks 404 in 33ms
+ GET /api/nfl/stocks 404 in 22ms
+ GET /api/nfl/stocks 404 in 22ms
+ GET /api/nfl/stocks 404 in 26ms
+ GET /api/nfl/stocks 404 in 17ms
+ GET /api/nfl/stocks 404 in 16ms
+ GET /api/nfl/stocks 404 in 38ms
+ GET /api/nfl/stocks 404 in 33ms
+ GET /api/nfl/stocks 404 in 25ms
+ GET /api/nfl/stocks 404 in 31ms
+ GET /api/nfl/stocks 404 in 102ms
+ GET /api/nfl/stocks 404 in 23ms
+ GET /api/nfl/stocks 404 in 23ms
+ GET /api/nfl/stocks 404 in 28ms
+ GET /api/nfl/stocks 404 in 45ms
+ GET /api/nfl/stocks 404 in 38ms
+ GET /api/nfl/stocks 404 in 41ms
+ GET /api/nfl/stocks 404 in 27ms
+ GET /api/nfl/stocks 404 in 37ms
+ GET /api/nfl/stocks 404 in 29ms
+ GET /api/nfl/stocks 404 in 54ms
+ GET /api/nfl/stocks 404 in 22ms
+ GET /api/nfl/stocks 404 in 28ms
+ GET /api/nfl/stocks 404 in 41ms
+ GET /api/nfl/stocks 404 in 34ms
+ GET /api/nfl/stocks 404 in 25ms
+ GET /api/nfl/stocks 404 in 23ms
+ GET /api/nfl/stocks 404 in 30ms
+ GET /api/nfl/stocks 404 in 20ms
+ ✓ Compiled in 933ms (1371 modules)
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ GET /api/nfl/stocks 500 in 244ms
+ GET /api/nfl/stocks 500 in 55ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ GET /api/nfl/stocks 500 in 208ms
+ GET /api/nfl/stocks 500 in 75ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ GET /api/nfl/stocks 500 in 157ms
+ GET /api/nfl/stocks 500 in 46ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ GET /api/nfl/stocks 500 in 219ms
+ GET /api/nfl/stocks 500 in 66ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ GET /api/nfl/stocks 500 in 324ms
+ GET /api/nfl/stocks 500 in 120ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ GET /api/nfl/stocks 500 in 221ms
+ GET /api/nfl/stocks 500 in 63ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/api/nfl/stocks/route.js',
+  page: '/api/nfl/stocks'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ GET /api/nfl/stocks 500 in 172ms
+ GET /api/nfl/stocks 500 in 52ms
+ ✓ Compiled in 870ms (1371 modules)
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/app/players/page.js',
+  page: '/players'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/shaneanderson/Desktop/my-app/.next/server/pages/_document.js'
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ GET /players 500 in 239ms
+ GET /players 500 in 70ms
+ GET /api/nfl/stocks 200 in 375ms
+ GET /api/nfl/stocks 200 in 103ms
+ ✓ Compiled in 572ms (1371 modules)
+ ✓ Compiled in 4.1s (1342 modules)
+ ✓ Compiled in 1447ms (2395 modules)
+ ✓ Compiled in 1472ms (2395 modules)
+[?25h

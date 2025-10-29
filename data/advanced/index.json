@@ -1,0 +1,70 @@
+{
+  "lastUpdated": "/Users/shaneanderson/Desktop/my-app",
+  "players": [
+    {
+      "espnId": 4000001,
+      "file": "4000001.json"
+    },
+    {
+      "espnId": 4000002,
+      "file": "4000002.json"
+    },
+    {
+      "espnId": 4000003,
+      "file": "4000003.json"
+    },
+    {
+      "espnId": 4240603,
+      "file": "4240603.json"
+    },
+    {
+      "espnId": 4241389,
+      "file": "4241389.json"
+    },
+    {
+      "espnId": 4609048,
+      "file": "4609048.json"
+    },
+    {
+      "espnId": 4700000,
+      "file": "4700000.json"
+    }
+    ,
+    {
+      "espnId": 4249990,
+      "file": "4249990.json"
+    },
+    {
+      "espnId": 4249991,
+      "file": "4249991.json"
+    },
+    {
+      "espnId": 4249992,
+      "file": "4249992.json"
+    },
+    {
+      "espnId": 4249993,
+      "file": "4249993.json"
+    },
+    {
+      "espnId": 4249994,
+      "file": "4249994.json"
+    },
+    {
+      "espnId": 4249995,
+      "file": "4249995.json"
+    },
+    {
+      "espnId": 4249996,
+      "file": "4249996.json"
+    },
+    {
+      "espnId": 4249997,
+      "file": "4249997.json"
+    },
+    {
+      "espnId": 4249998,
+      "file": "4249998.json"
+    }
+  ]
+}

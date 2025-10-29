@@ -1,0 +1,4 @@
+[flake8]
+max-line-length = 120
+exclude = .venv,venv,build,dist,node_modules,data/external
+extend-ignore = E203, W503

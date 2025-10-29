@@ -1,0 +1,13 @@
+{
+  "espnId": 4241389,
+  "player": "CeeDee Lamb",
+  "position": "WR",
+  "metrics": {
+    "YardsPerRouteRun": 2.45,
+    "CatchRateOverExpected": 0.12,
+    "EPA_per_Target": 0.18,
+    "receivingYards": 1500,
+    "receivingTDs": 12,
+    "receptions": 100
+  }
+}

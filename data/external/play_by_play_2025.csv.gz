@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>PermanentRedirect</Code><Message>The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.</Message><Endpoint>s3.amazonaws.com</Endpoint><Bucket>nflverse-data</Bucket><RequestId>CN5RDG5XT3BE905R</RequestId><HostId>5eZ5d54uyBCvkmXCXq0ndW2Nl717zGdCJ+nfrpo3Qgri5qDguA56yb4XAq3/jlYUDQaCO3scaLM=</HostId></Error>

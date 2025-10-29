@@ -1,0 +1,233 @@
+
+> my-app@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.5
+   - Local:        http://localhost:3001
+   - Network:      http://10.7.34.243:3001
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 2.5s
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ○ Compiling /api/nfl/stocks ...
+ ✓ Compiled /api/nfl/stocks in 2.3s (307 modules)
+ GET /api/nfl/stocks?slug=dak-prescott 404 in 2520ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled /favicon.ico in 278ms (115 modules)
+ GET /favicon.ico 200 in 363ms
+ GET /api/nfl/stocks?slug=dak-prescott 404 in 43ms
+ GET /api/nfl/stocks?slug=dak-prescott 404 in 23ms
+DEV WARNING: data/player_profiles_cleaned.csv not found — nfl/stocks API responses will not be enriched with profile data
+ GET /api/nfl/stocks?slug=dak-prescott 200 in 163ms
+DEV WARNING: data/player_profiles_cleaned.csv not found — nfl/stocks API responses will not be enriched with profile data
+ GET /api/nfl/stocks?slug=dak-prescott 200 in 64ms
+ ○ Compiling / ...
+ ✓ Compiled / in 6.1s (1872 modules)
+ GET / 200 in 7259ms
+ ✓ Compiled /api/nfl/stocks in 458ms (1004 modules)
+DEV WARNING: data/player_profiles_cleaned.csv not found — nfl/stocks API responses will not be enriched with profile data
+ GET /api/nfl/stocks 200 in 678ms
+ GET / 200 in 671ms
+DEV WARNING: data/player_profiles_cleaned.csv not found — nfl/stocks API responses will not be enriched with profile data
+ GET /api/nfl/stocks 200 in 97ms
+DEV WARNING: data/player_profiles_cleaned.csv not found — nfl/stocks API responses will not be enriched with profile data
+ GET /api/nfl/stocks 200 in 48ms
+DEV WARNING: data/player_profiles_cleaned.csv not found — nfl/stocks API responses will not be enriched with profile data
+ GET /api/nfl/stocks 200 in 60ms
+ ○ Compiling /players ...
+ ✓ Compiled /players in 1452ms (1915 modules)
+ GET /players 200 in 2037ms
+ ✓ Compiled /_not-found in 396ms (1920 modules)
+ GET /avatars/4000001.png 404 in 796ms
+ GET /avatars/4249998.png 404 in 765ms
+ GET /avatars/4249996.png 404 in 773ms
+ GET /avatars/4000002.png 404 in 797ms
+ GET /avatars/4000003.png 404 in 798ms
+ GET /avatars/4249994.png 404 in 222ms
+ GET /avatars/4249997.png 404 in 228ms
+ GET /avatars/4249990.png 404 in 224ms
+ GET /avatars/4249991.png 404 in 283ms
+ GET /avatars/4249993.png 404 in 188ms
+ GET /avatars/4249992.png 404 in 132ms
+ GET /avatars/4249995.png 404 in 131ms
+ ✓ Compiled /api/espn/history in 221ms (1045 modules)
+ ✓ Compiled in 349ms (904 modules)
+ GET /api/nfl/leaderboard 200 in 1439ms
+DEV WARNING: data/player_profiles_cleaned.csv not found — nfl/stocks API responses will not be enriched with profile data
+ GET /api/nfl/stocks 200 in 1733ms
+[history] loaded 88 keys from store
+ GET /api/espn/history?espnId=4000002 200 in 1720ms
+ GET /api/espn/history?espnId=4000003 200 in 52ms
+ GET /api/avatars/fetch?espnId=4240603 200 in 18ms
+ GET /api/avatars/fetch?espnId=4241389 200 in 20ms
+ GET /api/avatars/fetch?espnId=4609048 200 in 70ms
+ GET /api/avatars/fetch?espnId=4700000 200 in 15ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 2111ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 387ms
+ GET /api/avatars/fetch?espnId=4000002 404 in 2110ms
+ GET /api/avatars/fetch?espnId=4000001 404 in 2152ms
+ GET /api/avatars/fetch?espnId=4000003 404 in 552ms
+ GET /api/avatars/fetch?espnId=4249990 404 in 405ms
+ GET /api/avatars/fetch?espnId=4249991 404 in 270ms
+ GET /api/avatars/fetch?espnId=4249993 404 in 357ms
+ GET /api/avatars/fetch?espnId=4249992 404 in 441ms
+ GET /api/avatars/fetch?espnId=4249995 404 in 290ms
+ GET /api/avatars/fetch?espnId=4249994 404 in 527ms
+ GET /api/avatars/fetch?espnId=4249996 404 in 383ms
+ GET /api/avatars/fetch?espnId=4249997 404 in 348ms
+ GET /api/avatars/fetch?espnId=4249998 404 in 351ms
+ ○ Compiling /api/espn/players ...
+ ✓ Compiled /api/espn/players in 667ms (2094 modules)
+DEV WARNING: data/player_profiles_cleaned.csv not found — ESPN player responses will not be enriched with local profile data
+ GET /api/espn/players?team=all&limit=50 200 in 967ms
+[dev-prewarm] warming prices for 12 players from http://localhost:3001/api/espn/players?team=all&limit=50
+[history] loaded 88 keys from store
+ GET /api/espn/price?espnId=4046557&currentPrice=100 200 in 621ms
+ GET /api/espn/price?espnId=4685120&currentPrice=100 200 in 620ms
+ GET /api/espn/price?espnId=4685263&currentPrice=100 200 in 615ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 602ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 600ms
+ GET /api/espn/price?espnId=4696203&currentPrice=100 200 in 801ms
+ GET /api/espn/price?espnId=4383396&currentPrice=100 200 in 785ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 811ms
+ GET /api/espn/price?espnId=5083754&currentPrice=100 200 in 810ms
+ GET /api/espn/price?espnId=4241087&currentPrice=100 200 in 821ms
+ GET /api/espn/price?espnId=4242355&currentPrice=100 200 in 859ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 62ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 60ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 60ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 64ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 59ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 62ms
+ GET /api/espn/price?espnId=4685279&currentPrice=100 200 in 978ms
+[dev-prewarm] done
+DEV WARNING: data/player_profiles_cleaned.csv not found — ESPN player responses will not be enriched with local profile data
+ GET /api/espn/players?team=all&limit=50 200 in 43ms
+[dev-prewarm] warming prices for 12 players from http://localhost:3001/api/espn/players?team=all&limit=50
+ GET /api/espn/price?espnId=4046557&currentPrice=100 200 in 95ms
+ GET /api/espn/price?espnId=4685120&currentPrice=100 200 in 152ms
+ GET /api/espn/price?espnId=4685263&currentPrice=100 200 in 168ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 208ms
+ GET /api/espn/price?espnId=4685279&currentPrice=100 200 in 297ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 305ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 308ms
+ GET /api/espn/price?espnId=5083754&currentPrice=100 200 in 318ms
+ GET /api/espn/price?espnId=4241087&currentPrice=100 200 in 327ms
+ GET /api/espn/price?espnId=4383396&currentPrice=100 200 in 341ms
+ GET /api/espn/price?espnId=4242355&currentPrice=100 200 in 358ms
+ GET /api/espn/price?espnId=4696203&currentPrice=100 200 in 376ms
+[dev-prewarm] done
+ GET /players 200 in 673ms
+ GET /avatars/4000001.png 404 in 315ms
+ GET /avatars/4000003.png 404 in 309ms
+ GET /avatars/4000002.png 404 in 315ms
+ GET /avatars/4249990.png 404 in 189ms
+ GET /avatars/4249996.png 404 in 200ms
+ GET /avatars/4249992.png 404 in 211ms
+ GET /avatars/4249994.png 404 in 201ms
+ GET /avatars/4249995.png 404 in 204ms
+ GET /avatars/4249993.png 404 in 339ms
+ GET /avatars/4249991.png 404 in 269ms
+ GET /avatars/4249997.png 404 in 196ms
+ GET /avatars/4249998.png 404 in 167ms
+DEV WARNING: data/player_profiles_cleaned.csv not found — nfl/stocks API responses will not be enriched with profile data
+ GET /api/nfl/stocks 200 in 162ms
+DEV WARNING: data/player_profiles_cleaned.csv not found — nfl/stocks API responses will not be enriched with profile data
+ GET /api/nfl/stocks 200 in 128ms
+ GET /api/nfl/leaderboard 200 in 141ms
+ GET /api/espn/history?espnId=4000002 200 in 161ms
+ GET /api/espn/history?espnId=4000003 200 in 42ms
+ GET /api/avatars/fetch?espnId=4240603 200 in 17ms
+ GET /api/avatars/fetch?espnId=4241389 200 in 13ms
+ GET /api/avatars/fetch?espnId=4609048 200 in 17ms
+ GET /api/avatars/fetch?espnId=4700000 200 in 12ms
+ GET /api/avatars/fetch?espnId=4249990 404 in 1125ms
+ GET /api/avatars/fetch?espnId=4000001 404 in 1413ms
+ GET /api/avatars/fetch?espnId=4000002 404 in 1415ms
+ GET /api/avatars/fetch?espnId=4000003 404 in 1300ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 1461ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 1552ms
+ GET /api/avatars/fetch?espnId=4249993 404 in 255ms
+ GET /api/avatars/fetch?espnId=4249991 404 in 264ms
+ GET /api/avatars/fetch?espnId=4249992 404 in 270ms
+ GET /api/avatars/fetch?espnId=4249994 404 in 5293ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 133ms
+ GET /api/avatars/fetch?espnId=4249995 404 in 5332ms
+ GET /api/avatars/fetch?espnId=4249996 404 in 5337ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 58ms
+ GET /api/avatars/fetch?espnId=4249997 404 in 5276ms
+ GET /api/avatars/fetch?espnId=4249998 404 in 5289ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 95ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 2135ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 164ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 199ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 278ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 149ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 350ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 194ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 143ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 181ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 219ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 193ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 199ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 163ms
+DEV WARNING: data/player_profiles_cleaned.csv not found — nfl/stocks API responses will not be enriched with profile data
+ GET /api/nfl/stocks 200 in 41ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 547ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 559ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 556ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 559ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 96ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 132ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 157ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 175ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 739ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 752ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 168ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 147ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 168ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 193ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 247ms
+DEV WARNING: data/player_profiles_cleaned.csv not found — nfl/stocks API responses will not be enriched with profile data
+ GET /api/nfl/stocks 200 in 286ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 396ms
+ GET /api/espn/price?espnId=4000002&currentPrice=100 200 in 571ms
+ GET /api/espn/price?espnId=4609048&currentPrice=100 200 in 552ms
+ GET /api/espn/price?espnId=4000001&currentPrice=100 200 in 578ms
+ GET /api/espn/price?espnId=4000003&currentPrice=100 200 in 566ms
+ GET /api/espn/price?espnId=4700000&currentPrice=100 200 in 86ms
+ GET /api/espn/price?espnId=4249990&currentPrice=100 200 in 120ms
+ GET /api/espn/price?espnId=4249991&currentPrice=100 200 in 144ms
+ GET /api/espn/price?espnId=4240603&currentPrice=100 200 in 724ms
+ GET /api/espn/price?espnId=4241389&currentPrice=100 200 in 721ms
+ GET /api/espn/price?espnId=4249992&currentPrice=100 200 in 180ms
+ GET /api/espn/price?espnId=4249993&currentPrice=100 200 in 185ms
+ GET /api/espn/price?espnId=4249994&currentPrice=100 200 in 115ms
+ GET /api/espn/price?espnId=4249997&currentPrice=100 200 in 135ms
+ GET /api/espn/price?espnId=4249998&currentPrice=100 200 in 154ms
+ GET /api/espn/price?espnId=4249996&currentPrice=100 200 in 178ms
+ GET /api/espn/price?espnId=4249995&currentPrice=100 200 in 228ms
+DEV WARNING: data/player_profiles_cleaned.csv not found — nfl/stocks API responses will not be enriched with profile data
+ GET /api/nfl/stocks 200 in 178ms
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 3.3s (2260 modules)
+ GET /players 404 in 3817ms
+ ○ Compiling /api/espn/players ...
+ ✓ Compiled /api/espn/players in 1442ms (1366 modules)
+DEV WARNING: data/player_profiles_cleaned.csv not found — ESPN player responses will not be enriched with local profile data
+ GET /api/espn/players?team=all&limit=50 200 in 1753ms
+ GET /players 404 in 46ms
+ GET /players 404 in 52ms
+ GET /players 404 in 18ms
+ GET /players 404 in 23ms
+ GET /players 404 in 29ms
+ GET /players 404 in 27ms
+ GET /players 404 in 28ms
+ GET /players 404 in 27ms
+ GET /players 404 in 167ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 516ms (1368 modules)
+ GET /favicon.ico 200 in 609ms
+ GET /players 200 in 320ms
+[?25h

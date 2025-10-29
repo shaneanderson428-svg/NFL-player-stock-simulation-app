@@ -1,0 +1,13 @@
+{
+  "espnId": 4609048,
+  "player": "Christian McCaffrey",
+  "position": "RB",
+  "metrics": {
+    "RushYardsOverExpected_per_Att": 0.52,
+    "SuccessRate": 0.45,
+    "YAC_per_Att": 2.1,
+    "rushingYards": 1200,
+    "rushingTDs": 10,
+    "receivingYards": 600
+  }
+}
