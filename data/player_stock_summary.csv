@@ -1,69 +1,766 @@
-player,espnId,position,position_inferred,team,avg_epa,avg_cpoe,plays,pass_attempts,passing_yards,passing_tds,interceptions,rushing_yards,rushing_tds,receptions,receiving_yards,receiving_tds,position_profile
-A.Dalton,,UNK,UNK,,,,2,14.0,118.0,1.0,0.0,0.0,0.0,0,0,0,
-A.Richardson,,UNK,UNK,,,,1,2.0,9.0,0.0,0.0,0.0,0.0,0,0,0,
-A.Rodgers,,QB,QB,,,,6,182.0,1270.0,14.0,5.0,0.0,0.0,0,0,0,
-B.Mayfield,,QB,QB,,,,7,262.0,1767.0,13.0,2.0,0.0,0.0,0,0,0,
-B.Nix,,QB,QB,,,,7,267.0,1556.0,11.0,4.0,0.0,0.0,0,0,0,
-B.Purdy,,QB,QB,,,,2,76.0,586.0,4.0,4.0,0.0,0.0,0,0,0,
-B.Rypien,,UNK,UNK,,,,1,1.0,0.0,0.0,0.0,0.0,0.0,0,0,0,
-B.Young,,QB,QB,,,,7,235.0,1288.0,11.0,5.0,0.0,0.0,0,0,0,
-C.Akers,,UNK,UNK,,,,1,1.0,32.0,1.0,0.0,0.0,0.0,0,0,0,
-C.Kupp,,UNK,UNK,,,,1,1.0,0.0,0.0,1.0,0.0,0.0,0,0,0,
-C.Olave,,UNK,UNK,,,,1,1.0,0.0,0.0,1.0,0.0,0.0,0,0,0,
-C.Rush,,QB,QB,,,,3,53.0,303.0,0.0,4.0,0.0,0.0,0,0,0,
-C.Stroud,,QB,QB,,,,6,211.0,1305.0,9.0,4.0,0.0,0.0,0,0,0,
-C.Ward,,QB,QB,,,,7,266.0,1356.0,4.0,5.0,0.0,0.0,0,0,0,
-C.Wentz,,QB,QB,,,,4,157.0,1072.0,5.0,4.0,0.0,0.0,0,0,0,
-C.Williams,,QB,QB,,,,6,198.0,1351.0,9.0,3.0,0.0,0.0,0,0,0,
-D.Gabriel,,QB,QB,,,,5,117.0,546.0,3.0,0.0,0.0,0.0,0,0,0,
-D.Henry,,UNK,UNK,,,,1,1.0,0.0,0.0,0.0,0.0,0.0,0,0,0,
-D.Jones,,QB,QB,,,,7,224.0,1790.0,10.0,3.0,0.0,0.0,0,0,0,
-D.Lock,,UNK,UNK,,,,1,3.0,15.0,0.0,0.0,0.0,0.0,0,0,0,
-D.Maye,,QB,QB,,,,7,224.0,1744.0,12.0,2.0,0.0,0.0,0,0,0,
-D.Mills,,UNK,UNK,,,,1,4.0,23.0,0.0,0.0,0.0,0.0,0,0,0,
-D.Montgomery,,UNK,UNK,,,,1,1.0,3.0,1.0,0.0,0.0,0.0,0,0,0,
-D.Prescott,,QB,QB,,,,7,268.0,1881.0,16.0,3.0,0.0,0.0,0,0,0,
-G.Smith,,QB,QB,,,,7,222.0,1417.0,7.0,10.0,0.0,0.0,0,0,0,
-J.Allen,,QB,QB,,,,6,193.0,1397.0,11.0,4.0,0.0,0.0,0,0,0,
-J.Brissett,,QB,QB,,,,3,89.0,599.0,4.0,1.0,0.0,0.0,0,0,0,
-J.Browning,,QB,QB,,,,4,133.0,757.0,6.0,8.0,0.0,0.0,0,0,0,
-J.Burrow,,QB,QB,,,,2,41.0,189.0,2.0,0.0,0.0,0.0,0,0,0,
-J.Daniels,,QB,QB,,,,5,160.0,1031.0,8.0,1.0,0.0,0.0,0,0,0,
-J.Dart,,QB,QB,,,,4,131.0,791.0,7.0,3.0,0.0,0.0,0,0,0,
-J.Dobbs,,UNK,UNK,,,,2,2.0,12.0,0.0,0.0,0.0,0.0,0,0,0,
-J.Fields,,QB,QB,,,,6,160.0,845.0,4.0,0.0,0.0,0.0,0,0,0,
-J.Flacco,,QB,QB,,,,6,265.0,1376.0,7.0,6.0,0.0,0.0,0,0,0,
-J.Goff,,QB,QB,,,,7,216.0,1631.0,15.0,3.0,0.0,0.0,0,0,0,
-J.Herbert,,QB,QB,,,,7,291.0,1913.0,13.0,6.0,0.0,0.0,0,0,0,
-J.Hurts,,QB,QB,,,,7,217.0,1498.0,11.0,1.0,0.0,0.0,0,0,0,
-J.Karty,,UNK,UNK,,,,1,1.0,0.0,0.0,0.0,0.0,0.0,0,0,0,
-J.Love,,QB,QB,,,,6,186.0,1438.0,10.0,2.0,0.0,0.0,0,0,0,
-J.McCarthy,,QB,QB,,,,2,52.0,301.0,2.0,3.0,0.0,0.0,0,0,0,
-J.Milton,,UNK,UNK,,,,1,5.0,41.0,0.0,1.0,0.0,0.0,0,0,0,
-J.Waddle,,UNK,UNK,,,,1,1.0,8.0,0.0,0.0,0.0,0.0,0,0,0,
-K.Cousins,,UNK,UNK,,,,1,7.0,29.0,0.0,0.0,0.0,0.0,0,0,0,
-K.Murray,,QB,QB,,,,5,177.0,962.0,6.0,3.0,0.0,0.0,0,0,0,
-K.Pickett,,UNK,UNK,,,,1,2.0,8.0,0.0,0.0,0.0,0.0,0,0,0,
-L.Jackson,,QB,QB,,,,4,111.0,869.0,10.0,1.0,0.0,0.0,0,0,0,
-M.Brosmer,,UNK,UNK,,,,1,4.0,29.0,0.0,0.0,0.0,0.0,0,0,0,
-M.Jones,,QB,QB,,,,5,206.0,1404.0,6.0,4.0,0.0,0.0,0,0,0,
-M.Mariota,,QB,QB,,,,3,64.0,426.0,3.0,2.0,0.0,0.0,0,0,0,
-M.Penix,,QB,QB,,,,6,204.0,1409.0,5.0,3.0,0.0,0.0,0,0,0,
-M.Rudolph,,UNK,UNK,,,,1,2.0,12.0,0.0,0.0,0.0,0.0,0,0,0,
-M.Stafford,,QB,QB,,,,7,253.0,1866.0,17.0,2.0,0.0,0.0,0,0,0,
-M.Trubisky,,UNK,UNK,,,,1,2.0,32.0,0.0,0.0,0.0,0.0,0,0,0,
-P.Mahomes,,QB,QB,,,,7,260.0,1800.0,14.0,2.0,0.0,0.0,0,0,0,
-Q.Ewers,,UNK,UNK,,,,1,10.0,53.0,0.0,0.0,0.0,0.0,0,0,0,
-R.Wilson,,QB,QB,,,,5,120.0,786.0,3.0,3.0,0.0,0.0,0,0,0,
-S.Darnold,,QB,QB,,,,7,201.0,1754.0,12.0,4.0,0.0,0.0,0,0,0,
-S.Rattler,,QB,QB,,,,7,250.0,1450.0,8.0,4.0,0.0,0.0,0,0,0,
-T.Bagent,,UNK,UNK,,,,1,3.0,27.0,0.0,0.0,0.0,0.0,0,0,0,
-T.Hill,,UNK,UNK,,,,1,1.0,19.0,0.0,0.0,0.0,0.0,0,0,0,
-T.Huntley,,UNK,UNK,,,,1,19.0,68.0,0.0,0.0,0.0,0.0,0,0,0,
-T.Lance,,UNK,UNK,,,,1,5.0,44.0,0.0,0.0,0.0,0.0,0,0,0,
-T.Lawrence,,QB,QB,,,,7,280.0,1620.0,9.0,5.0,0.0,0.0,0,0,0,
-T.Shough,,UNK,UNK,,,,1,2.0,0.0,0.0,0.0,0.0,0.0,0,0,0,
-T.Tagovailoa,,QB,QB,,,,7,221.0,1313.0,11.0,10.0,0.0,0.0,0,0,0,
-T.Taylor,,QB,QB,,,,3,78.0,379.0,3.0,3.0,0.0,0.0,0,0,0,
-T.Warren,,UNK,UNK,,,,1,1.0,0.0,0.0,0.0,0.0,0.0,0,0,0,
-Z.Wilson,,UNK,UNK,,,,1,8.0,32.0,0.0,0.0,0.0,0.0,0,0,0,
+player,espnId,position,position_inferred,team,avg_epa,avg_cpoe,plays,pass_attempts,passing_yards,passing_tds,interceptions,rushing_yards,rushing_tds,receptions,receiving_yards,receiving_tds,position_profile,position_overwritten_from_profile,currentPrice
+Jacoby Brissett,2578570,QB,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kedon Slovis,4428512,QB,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kyler Murray,3917315,QB,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Bam Knight,4427728,RB,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Emari Demercado,4362478,RB,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+James Conner,3045147,RB,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jermar Jefferson,4374033,RB,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Michael Carter,4240657,RB,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Trey Benson,4429275,RB,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Elijah Higgins,4426844,TE,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Josiah Deguara,3914151,TE,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Pharaoh Brown,2971281,TE,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tip Reiman,4696700,TE,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Travis Vokolek,4259324,TE,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Trey McBride,4361307,TE,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Andre Baccellia,3886809,WR,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Greg Dortch,4037235,WR,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Marvin Harrison Jr.,4432708,WR,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Michael Wilson,4360761,WR,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Simi Fehoko,4360739,WR,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tejhaun Palmer,4875912,WR,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Xavier Weaver,4428811,WR,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Zay Jones,3059722,WR,,Arizona Cardinals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Easton Stick,3120590,QB,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Emory Jones,4360230,QB,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kirk Cousins,14880,QB,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Michael Penix Jr.,4360423,QB,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Bijan Robinson,4430807,RB,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Carlos Washington Jr.,4248425,RB,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Nathan Carter,4605841,RB,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tyler Allgeier,4373626,RB,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Charlie Woerner,4035020,TE,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Feleipe Franks,4034948,TE,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Joshua Simon,4430482,TE,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kyle Pitts Sr.,4360248,TE,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Teagan Quitoriano,4374045,TE,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Casey Washington,4428796,WR,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Chris Blair,4369886,WR,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Darnell Mooney,4040655,WR,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+David Sills V,3871102,WR,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Deven Thompkins,4374187,WR,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Drake London,4426502,WR,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dylan Drummond,4363551,WR,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jamal Agnew,3061612,WR,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+KhaDarel Hodge,3047876,WR,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Nick Nash,4570242,WR,,Atlanta Falcons,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Josh Allen,3918298,QB,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Mitchell Trubisky,3039707,QB,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Shane Buechele,4039034,QB,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Frank Gore Jr.,4429805,RB,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+James Cook III,4379399,RB,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ray Davis,4429501,RB,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ty Johnson,3915411,RB,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dalton Kincaid,4385690,TE,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dawson Knox,3930086,TE,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jackson Hawes,4573699,TE,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Keleki Latu,4688552,TE,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Curtis Samuel,3121427,WR,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Elijah Moore,4372414,WR,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Gabe Davis,4243537,WR,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Joshua Palmer,4242433,WR,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Keon Coleman,4635008,WR,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Khalil Shakir,4373678,WR,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kristian Wilkerson,3910176,WR,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Stephen Gosnell,4432215,WR,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tyrell Shavers,4241476,WR,,Buffalo Bills,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Andy Dalton,14012,QB,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Bryce Young,4685720,QB,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Hendon Hooker,4240858,QB,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Mike White,3051381,QB,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Anthony Tyus III,4709392,RB,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Chuba Hubbard,4241416,RB,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+DeeJay Dallas,4240631,RB,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jonathon Brooks,4678008,RB,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Rico Dowdle,4038815,RB,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Trevor Etienne,4685350,RB,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Bryce Pierre,5082648,TE,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ja'Tavion Sanders,4431588,TE,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+James Mitchell,4361988,TE,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Mitchell Evans,4683243,TE,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tommy Tremble,4372780,TE,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ainias Smith,4428532,WR,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Brycen Tremayne,4360763,WR,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dan Chisena,3929637,WR,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+David Moore,4212909,WR,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Hunter Renfrow,3135321,WR,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ja'seem Reed,4876995,WR,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jalen Coker,4695883,WR,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jimmy Horn Jr.,4708486,WR,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tetairoa McMillan,4685472,WR,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Xavier Legette,4430034,WR,,Carolina Panthers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Caleb Williams,4431611,QB,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Case Keenum,15168,QB,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tyson Bagent,4434153,QB,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Brittain Brown,4036032,RB,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+D'Andre Swift,4259545,RB,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Deion Hankins,4575667,RB,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kyle Monangai,4608686,RB,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Roschon Johnson,4426386,RB,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Travis Homer,4037457,RB,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Cole Kmet,4258595,TE,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Colston Loveland,4723086,TE,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Durham Smythe,3052897,TE,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Nikola Kalinic,4916349,TE,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Stephen Carlson,3948283,TE,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+DJ Moore,3915416,WR,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Devin Duvernay,4039050,WR,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+JP Richardson,4685183,WR,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jahdae Walker,5160110,WR,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Luther Burden III,4685278,WR,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Maurice Alexander,3914307,WR,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Miles Boykin,3932423,WR,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Olamide Zaccheaus,3917914,WR,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Rome Odunze,4431299,WR,,Chicago Bears,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jake Browning,3886812,QB,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Joe Burrow,3915511,QB,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Joe Flacco,11252,QB,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Sean Clifford,4259592,QB,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Chase Brown,4362238,RB,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Gary Brightwell,4245645,RB,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kendall Milton,4429012,RB,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Samaje Perine,3116389,RB,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tahj Brooks,4429299,RB,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Cam Grandy,4700712,TE,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Drew Sample,3127310,TE,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Erick All Jr.,4427834,TE,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Mike Gesicki,3116164,TE,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Noah Fant,4036131,TE,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tanner Hudson,3050481,TE,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Andrei Iosivas,4368003,WR,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Charlie Jones,4257188,WR,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ja'Marr Chase,4362628,WR,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jermaine Burton,4429033,WR,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jordan Moore,4594444,WR,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kendric Pryor,4035776,WR,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Mitchell Tinsley,4690070,WR,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tee Higgins,4239993,WR,,Cincinnati Bengals,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Bailey Zappe,4250360,QB,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Deshaun Watson,3122840,QB,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dillon Gabriel,4427238,QB,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Shedeur Sanders,4432762,QB,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dylan Sampson,5081397,RB,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jerome Ford,4372019,RB,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Quinshon Judkins,4685702,RB,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Raheim Sanders,4601080,RB,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Blake Whiteheart,4362018,TE,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Brenden Bates,4362603,TE,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Caden Prieskorn,4687509,TE,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+David Njoku,3123076,TE,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Harold Fannin Jr.,5083076,TE,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Sal Cannella,4242536,TE,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Cedric Tillman,4369863,WR,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+DeAndre Carter,2580216,WR,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Gage Larvadain,4877203,WR,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Isaiah Bond,4808839,WR,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jamari Thrash,4428678,WR,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jerry Jeudy,4241463,WR,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kaden Davis,5065495,WR,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Luke Floriea,4566157,WR,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Malachi Corley,4613104,WR,,Cleveland Browns,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dak Prescott,2577417,QB,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Joe Milton III,4360698,QB,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Will Grier,3115252,QB,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Hunter Luepke,4383396,RB,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Javonte Williams,4361579,RB,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jaydon Blue,4685279,RB,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Malik Davis,4240603,RB,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Miles Sanders,4045163,RB,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Phil Mafah,4431562,RB,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Brevyn Spann-Ford,4360967,TE,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jake Ferguson,4242355,TE,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+John Stephens Jr.,4362489,TE,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Luke Schoonmaker,4372096,TE,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Princeton Fant,4242442,TE,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Rivaldo Fairweather,4605858,TE,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+CeeDee Lamb,4241389,WR,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+George Pickens,4426354,WR,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jalen Cropper,4426990,WR,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jalen Tolbert,4249417,WR,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jonathan Mingo,4426485,WR,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+KaVontae Turpin,3676833,WR,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Parris Campbell,3121410,WR,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ryan Flournoy,5083754,WR,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Traeshon Holden,4429172,WR,,Dallas Cowboys,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Bo Nix,4426338,QB,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jarrett Stidham,3892775,QB,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Sam Ehlinger,4241820,QB,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Deuce Vaughn,4431453,RB,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+J.K. Dobbins,4241985,RB,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jaleel McLaughlin,4722893,RB,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+RJ Harvey,4568490,RB,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tyler Badie,4362748,RB,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Adam Trautman,3911853,TE,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Caleb Lohner,4432208,TE,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Evan Engram,3051876,TE,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Lucas Krull,4360231,TE,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Marcedes Lewis,9614,TE,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Nate Adkins,4383440,TE,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Patrick Murtagh,5209791,TE,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+A.T. Perry,4362019,WR,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Courtland Sutton,3128429,WR,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kyrese Rowan,4574860,WR,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Marvin Mims Jr.,4686472,WR,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Michael Bandy,4034704,WR,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Pat Bryant,4600981,WR,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Trent Sherfield Sr.,3122168,WR,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Troy Franklin,4431280,WR,,Denver Broncos,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+C.J. Beathard,2979520,QB,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jared Goff,3046779,QB,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kyle Allen,3115293,QB,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Craig Reynolds,4421446,RB,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+David Montgomery,4035538,RB,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jacob Saylors,4383429,RB,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jahmyr Gibbs,4429795,RB,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Justin Jackson,3116136,RB,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kye Robichaux,4880638,RB,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Sione Vaki,4912274,RB,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Brock Wright,4242392,TE,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kenny Yeboah,4044144,TE,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ross Dwelley,3120303,TE,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Sam LaPorta,4430027,TE,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Shane Zylstra,4608362,TE,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Zach Horton,4877824,TE,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Amon-Ra St. Brown,4374302,WR,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dominic Lovett,4596439,WR,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Isaac TeSlaa,5123663,WR,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jackson Meeks,4602788,WR,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jameson Williams,4426388,WR,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kalif Raymond,2973405,WR,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Malik Cunningham,4240069,WR,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tom Kennedy,3126997,WR,,Detroit Lions,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Clayton Tune,4360175,QB,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jordan Love,4036378,QB,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Malik Willis,4242512,QB,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Chris Brooks,3149687,RB,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Emanuel Wilson,4887558,RB,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Josh Jacobs,4047365,RB,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+MarShawn Lloyd,4429023,RB,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Pierre Strong Jr.,4249836,RB,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+John FitzPatrick,4379401,TE,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Josh Whyle,4360086,TE,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Luke Musgrave,4428085,TE,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tucker Kraft,4572680,TE,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Christian Watson,4248528,WR,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dontayvion Wicks,4428850,WR,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Isaiah Neyor,4428116,WR,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jakobie Keeney-James,5178972,WR,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jayden Reed,4362249,WR,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Malik Heath,4689334,WR,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Matthew Golden,4701936,WR,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Romeo Doubs,4361432,WR,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Savion Williams,4431487,WR,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Will Sheppard,4608679,WR,,Green Bay Packers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Anthony Richardson Sr.,4429084,QB,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Brett Rypien,3722362,QB,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Daniel Jones,3917792,QB,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Riley Leonard,4683423,QB,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ameer Abdullah,2576336,RB,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+DJ Giddens,4874509,RB,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jonathan Taylor,4242335,RB,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Salvon Ahmed,4243315,RB,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tyler Goodson,4429676,RB,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ulysses Bentley IV,4426689,RB,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Drew Ogletree,4722908,TE,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Maximilian Mang,4608691,TE,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Mo Alie-Cox,2998565,TE,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Sean McKeon,4036275,TE,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tyler Warren,4431459,TE,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Will Mallory,4362523,TE,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Adonai Mitchell,4597500,WR,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Alec Pierce,4360078,WR,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Anthony Gould,4429684,WR,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ashton Dulin,4061956,WR,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Coleman Owen,4578436,WR,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+D.J. Montgomery,4249030,WR,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Josh Downs,4688813,WR,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Laquon Treadwell,3051889,WR,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Michael Pittman Jr.,4035687,WR,,Indianapolis Colts,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Carter Bradley,4362260,QB,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Nick Mullens,3059989,QB,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Trevor Lawrence,4360310,QB,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Bhayshul Tuten,4882093,RB,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Cody Schrader,4391845,RB,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ja'Quinden Jackson,4690972,RB,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+LeQuint Allen Jr.,4911851,RB,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Travis Etienne Jr.,4239996,RB,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Brenton Strange,4430539,TE,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Hunter Long,4239944,TE,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Johnny Mundt,3052096,TE,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jordan Akins,3128452,TE,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Patrick Herbert,4429811,TE,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Qadir Ismail,4379769,TE,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Quintin Morris,4244049,TE,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Austin Trammell,4244856,WR,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Brian Thomas Jr.,4432773,WR,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Chandler Brayboy,4573243,WR,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dyami Brown,4361577,WR,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Joshua Cephus,4426893,WR,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Parker Washington,4432620,WR,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tim Jones,4245131,WR,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tim Patrick,3134353,WR,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Travis Hunter,4685415,WR,,Jacksonville Jaguars,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Chris Oladokun,4044111,QB,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Gardner Minshew,4038524,QB,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Patrick Mahomes,3139477,QB,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Brashard Smith,4596602,RB,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Clyde Edwards-Helaire,4242214,RB,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Elijah Mitchell,4241555,RB,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Isiah Pacheco,4361529,RB,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kareem Hunt,3059915,RB,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Keaontay Ingram,4362087,RB,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jake Briningstool,4431196,TE,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jared Wiley,4430723,TE,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Noah Gray,4240472,TE,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Robert Tonyan,2975674,TE,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Travis Kelce,15847,TE,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tre Watson,4685784,TE,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Hollywood Brown,4241372,WR,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jalen Royals,5082630,WR,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jason Brownlee,4689988,WR,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jimmy Holiday,4431142,WR,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+JuJu Smith-Schuster,3120348,WR,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Nikko Remigio,4372716,WR,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Rashee Rice,4428331,WR,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tyquan Thornton,4362921,WR,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Xavier Worthy,4683062,WR,,Kansas City Chiefs,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Aidan O'Connell,4260394,QB,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Cam Miller,4693331,QB,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Geno Smith,15864,QB,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kenny Pickett,4240703,QB,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ashton Jeanty,4890973,RB,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Chris Collier,4698191,RB,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dylan Laube,4366963,RB,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Raheem Mostert,2576414,RB,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Zamir White,4361777,RB,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Albert Okwuegbunam Jr.,4035115,TE,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Brock Bowers,4432665,TE,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Carter Runyon,5155825,TE,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ian Thomas,4045305,TE,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Michael Mayer,4429086,TE,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Alex Bachman,3919510,WR,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+DJ Turner,4036211,WR,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dont'e Thornton Jr.,4432775,WR,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jack Bech,4603186,WR,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jakobi Meyers,3916433,WR,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Justin Shorter,4361426,WR,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Phillip Dorsett II,2579604,WR,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Shedrick Jackson,4361332,WR,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tre Tucker,4428718,WR,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tyler Lockett,2577327,WR,,Las Vegas Raiders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+DJ Uiagalelei,4429020,QB,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Justin Herbert,4038941,QB,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Trey Lance,4383351,QB,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Amar Johnson,4878878,RB,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Hassan Haskins,4372071,RB,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jaret Patterson,4362452,RB,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kimani Vidal,4430968,RB,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Najee Harris,4241457,RB,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Omarion Hampton,4685382,RB,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Trayveon Williams,4035222,RB,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Oronde Gadsden II,4595342,TE,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Thomas Yassmin,4361027,TE,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tucker Fisk,4242558,TE,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tyler Conklin,3915486,TE,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Will Dissly,3127292,TE,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dalevon Campbell,4569372,WR,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Derius Davis,4362477,WR,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+JaQuae Jackson,5160748,WR,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+KeAndre Lambert-Smith,4430870,WR,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Keenan Allen,15818,WR,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ladd McConkey,4612826,WR,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Quentin Johnston,4429025,WR,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tre' Harris,4686612,WR,,Los Angeles Chargers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jimmy Garoppolo,16760,QB,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Matthew Stafford,12483,QB,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Stetson Bennett IV,4259553,QB,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Blake Corum,4429096,RB,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jarquez Hunter,4710341,RB,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kyren Williams,4430737,RB,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ronnie Rivers,4243003,RB,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Colby Parkinson,4242557,TE,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Davis Allen,4426553,TE,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Terrance Ferguson,4570037,TE,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tyler Higbee,2573401,TE,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Brennan Presley,4431342,WR,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Davante Adams,16800,WR,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jordan Whittington,4569382,WR,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Konata Mumpfield,4710855,WR,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Puka Nacua,4426515,WR,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tru Edwards,4875786,WR,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tutu Atwell,4360797,WR,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tyler Scott,4565908,WR,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Xavier Smith,4386544,WR,,Los Angeles Rams,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Quinn Ewers,4889929,QB,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tua Tagovailoa,4241479,QB,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Zach Wilson,4361259,QB,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Alexander Mattison,4048244,RB,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+De'Von Achane,4429160,RB,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+JaMycal Hasty,3928925,RB,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jaylen Wright,4682745,RB,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jeff Wilson Jr.,3122976,RB,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ollie Gordon II,4711533,RB,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Chris Myarick,3138744,TE,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Darren Waller,2576925,TE,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Greg Dulcich,4367209,TE,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Hayden Rucci,4428396,TE,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jalin Conyers,4431044,TE,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Julian Hill,4365395,TE,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tanner Conner,4047422,TE,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+AJ Henning,4429053,WR,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Cedrick Wilson Jr.,4036335,WR,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dee Eskridge,4043016,WR,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jaylen Waddle,4372016,WR,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Malik Washington,4569603,WR,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Nick Westbrook-Ikhine,3929785,WR,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tahj Washington,4567506,WR,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Theo Wease Jr.,4426535,WR,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tyreek Hill,3116406,WR,,Miami Dolphins,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Carson Wentz,2573079,QB,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+J.J. McCarthy,4433970,QB,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+John Wolford,3124092,QB,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Max Brosmer,4573398,QB,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Aaron Jones Sr.,3042519,RB,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Cam Akers,4240021,RB,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Corey Kiner,4431431,RB,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jordan Mason,4360569,RB,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ty Chandler,4242431,RB,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Zavier Scott,4257364,RB,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ben Sims,4373030,TE,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ben Yurosek,4433959,TE,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Bryson Nesbit,4602969,TE,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Gavin Bartholomew,4708049,TE,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Josh Oliver,3921690,TE,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Nick Vannett,2576399,TE,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+T.J. Hockenson,4036133,TE,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Adam Thielen,16460,WR,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dontae Fleming,4565297,WR,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jalen Nailor,4382466,WR,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jeshaun Jones,4360637,WR,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jordan Addison,4429205,WR,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Justin Jefferson,4262921,WR,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Myles Price,4430656,WR,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Rondale Moore,4372485,WR,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tai Felton,4565185,WR,,Minnesota Vikings,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Drake Maye,4431452,QB,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Joshua Dobbs,3044720,QB,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tommy DeVito,4240391,QB,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Antonio Gibson,4360294,RB,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+D'Ernest Johnson,3139602,RB,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Deneric Prince,4372526,RB,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jashaun Corbin,4372519,RB,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jonathan Ward,4039274,RB,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Lan Larison,4698253,RB,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Rhamondre Stevenson,4569173,RB,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Rushawn Baker,4876613,RB,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Terrell Jennings,4427600,RB,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+TreVeyon Henderson,4432710,RB,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Austin Hooper,3043275,TE,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+CJ Dippre,4596545,TE,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Hunter Henry,3046439,TE,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jack Westover,4361100,TE,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Thomas Odukoya,4363554,TE,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+DeMario Douglas,4427095,WR,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Efton Chism III,4695193,WR,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jalen Hurd,3115328,WR,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jeremiah Webb,4572655,WR,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+John Jiles,4887705,WR,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kayshon Boutte,4429022,WR,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kyle Williams,4613202,WR,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Mack Hollins,2991662,WR,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Stefon Diggs,2976212,WR,,New England Patriots,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Hunter Dekkers,4565358,QB,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jake Haener,4243322,QB,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Spencer Rattler,4426339,QB,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Taysom Hill,2468609,QB,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tyler Shough,4360689,QB,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Alvin Kamara,3054850,RB,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Audric Estime,4569682,RB,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Devin Neal,4682652,RB,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Evan Hull,4569609,RB,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kendre Miller,4599739,RB,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Foster Moreau,3843945,TE,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jack Stoll,4034862,TE,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Juwan Johnson,3929645,TE,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Mason Pline,4911517,TE,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Moliki Matavao,4432731,TE,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Treyton Welch,4430684,TE,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Zaire Mitchell-Paden,4876006,TE,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Brandin Cooks,16731,WR,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Bub Means,4427985,WR,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Chris Olave,4361370,WR,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dante Pettis,3127306,WR,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Devaughn Vele,4569559,WR,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ja'Lynn Polk,4430637,WR,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kevin Austin Jr.,4372758,WR,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Mason Tipton,4573697,WR,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Rashid Shaheed,4032473,WR,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ronnie Bell,4372063,WR,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Trey Palmer,4426407,WR,,New Orleans Saints,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jameis Winston,2969939,QB,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jaxson Dart,4689114,QB,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Russell Wilson,14881,QB,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Cam Skattebo,4696981,RB,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dante Miller,4367510,RB,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Devin Singletary,4040761,RB,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Eric Gray,4570561,RB,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tyrone Tracy Jr.,4360516,RB,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Chris Manhertz,2531358,TE,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Daniel Bellinger,4361516,TE,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Theo Johnson,4429148,TE,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Thomas Fidone II,4590292,TE,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Beaux Collins,4431210,WR,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Bryce Ford-Wheaton,4362227,WR,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Da'Quan Felton,4575348,WR,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dalen Cambre,4570296,WR,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Darius Slayton,3916945,WR,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Gunner Olszewski,4424106,WR,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ihmir Smith-Marsette,4240573,WR,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jalin Hyatt,4692590,WR,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Lil'Jordan Humphrey,4039057,WR,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Malik Nabers,4595348,WR,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ray-Ray McCloud III,3728262,WR,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Wan'Dale Robinson,4569587,WR,,New York Giants,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Brady Cook,4429435,QB,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Justin Fields,4362887,QB,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tyrod Taylor,14163,QB,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Braelon Allen,4685247,RB,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Breece Hall,4427366,RB,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Isaiah Davis,4695404,RB,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Keilan Robinson,4567095,RB,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kene Nwangwu,4035537,RB,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Khalil Herbert,4035886,RB,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jelani Woods,4241410,TE,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jeremy Ruckert,4361372,TE,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Mason Taylor,4808766,TE,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Stone Smartt,4250764,TE,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Allen Lazard,3128390,WR,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Arian Smith,4429105,WR,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Garrett Wilson,4569618,WR,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Irvin Charles,3929636,WR,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Isaiah Williams,4569371,WR,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jamaal Pritchett,4892576,WR,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+John Metchie III,4567096,WR,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Josh Reynolds,3115306,WR,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Quentin Skinner,4613050,WR,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Trenton Irwin,3931391,WR,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tyler Johnson,2310331,WR,,New York Jets,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jalen Hurts,4040715,QB,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kyle McCord,4433971,QB,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Sam Howell,4426875,QB,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tanner McKee,4685201,QB,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+AJ Dillon,4239934,RB,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Saquon Barkley,3929630,RB,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tank Bigsby,4429013,RB,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Will Shipley,4431545,RB,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Cameron Latu,4372026,TE,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dallas Goedert,3121023,TE,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+E.J. Jenkins,4248557,TE,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Grant Calcaterra,4241374,TE,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kylen Granson,4039160,TE,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+A.J. Brown,4047646,WR,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Britain Covey,3926231,WR,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Darius Cooper,4715355,WR,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+DeVonta Smith,4241478,WR,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jahan Dotson,4361409,WR,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Johnny Wilson,4686104,WR,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Quez Watkins,4050373,WR,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Terrace Marshall Jr.,4362630,WR,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Xavier Gipson,4427278,WR,,Philadelphia Eagles,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Aaron Rodgers,8439,QB,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+John Rhys Plumlee,4426494,QB,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Mason Rudolph,3116407,QB,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Skylar Thompson,4036419,QB,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Will Howard,4429955,QB,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jaylen Warren,4569987,RB,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kaleb Johnson,4819231,RB,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kenneth Gainwell,4371733,RB,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Lew Nichols,4428119,RB,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Max Hurleman,4694237,RB,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Trey Sermon,4241401,RB,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Connor Heyward,4241961,TE,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Darnell Washington,4430802,TE,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Donald Parham Jr.,3912092,TE,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jonnu Smith,3054212,TE,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Matt Sokol,3121378,TE,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Pat Freiermuth,4361411,TE,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ben Skowronek,4035656,WR,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Calvin Austin III,4243389,WR,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+DK Metcalf,4047650,WR,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Isaiah Hodgins,4242540,WR,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ke'Shawn Williams,4570738,WR,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Roman Wilson,4431492,WR,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Scotty Miller,3914397,WR,,Pittsburgh Steelers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Adrian Martinez,4361182,QB,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Brock Purdy,4361741,QB,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kurtis Rourke,4430431,QB,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Mac Jones,4241464,QB,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Brian Robinson Jr.,4241474,RB,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Christian McCaffrey,3117251,RB,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Isaac Guerendo,4372561,RB,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jordan James,4685397,RB,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Patrick Taylor Jr.,4039358,RB,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Sincere McCormick,4430104,RB,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Brayden Willis,4360290,TE,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+George Kittle,3040151,TE,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jake Tonges,4259147,TE,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Luke Farrell,4040612,TE,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Brandon Aiyuk,4360438,WR,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Demarcus Robinson,3043116,WR,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jacob Cowing,4575665,WR,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jauan Jennings,3886598,WR,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jordan Watkins,4431466,WR,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Junior Bergen,4887918,WR,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kendrick Bourne,3045523,WR,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Malik Turner,3115928,WR,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ricky Pearsall,4428209,WR,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Russell Gage Jr.,3115378,WR,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Skyy Moore,4430191,WR,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Trent Taylor,3040569,WR,,San Francisco 49ers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Drew Lock,3924327,QB,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jalen Milroe,4432734,QB,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Sam Darnold,3912547,QB,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+George Holani,4429835,RB,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jacardia Wright,4428943,RB,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kenneth Walker III,4567048,RB,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kenny McIntosh,4427391,RB,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Velus Jones Jr.,4035693,RB,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Zach Charbonnet,4426385,RB,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+AJ Barner,4576297,TE,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Elijah Arroyo,4678006,TE,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Eric Saubert,2975863,TE,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Nick Kallerup,4569547,TE,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Cody White,4241983,WR,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Cooper Kupp,2977187,WR,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Courtney Jackson,4565172,WR,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dareke Young,4401805,WR,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jake Bobo,4360405,WR,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jaxon Smith-Njigba,4430878,WR,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ricky White III,4431479,WR,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tory Horton,4597703,WR,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tyrone Broden,4429313,WR,,Seattle Seahawks,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Baker Mayfield,3052587,QB,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Connor Bazelak,4426444,QB,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Teddy Bridgewater,16728,QB,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Bucky Irving,4596448,RB,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Josh Williams,4568024,RB,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Michael Wiley,4569156,RB,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Owen Wright,4249616,RB,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Rachaad White,4697815,RB,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Sean Tucker,4430871,RB,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Cade Otton,4243331,TE,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Devin Culp,4361112,TE,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ko Kieft,4034779,TE,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Payne Durham,4372505,TE,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tanner Taula,4248052,TE,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Brandon Johnson,4035198,WR,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Chris Godwin Jr.,3116165,WR,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Dennis Houston,4572786,WR,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Emeka Egbuka,4567750,WR,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Garrett Greene,4429847,WR,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jaden Smith,4581750,WR,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jalen McMillan,4430834,WR,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kameron Johnson,5097554,WR,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Mike Evans,16737,WR,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ryan Miller,4369466,WR,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Sterling Shepard,2976592,WR,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tez Johnson,4608810,WR,,Tampa Bay Buccaneers,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Brandon Allen,2574511,QB,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Cam Ward,4688380,QB,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Trevor Siemian,2511109,QB,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Will Levis,4361418,QB,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Blake Watson,4361604,RB,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jordan Mims,4243004,RB,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Julius Chestnut,4367567,RB,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Kalel Mullings,4429121,RB,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tony Pollard,3916148,RB,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tyjae Spears,4428557,RB,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Chig Okonkwo,4360635,TE,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+David Martin-Robinson,4360978,TE,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Gunnar Helm,4686728,TE,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Joel Wilson,4362570,TE,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Bryce Oliver,4362617,WR,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Calvin Ridley,3925357,WR,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Chimere Dike,4431268,WR,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Elic Ayomanor,4883647,WR,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Hal Presley,4879189,WR,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+James Proche II,3916204,WR,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Lance McCutcheon,4247812,WR,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Mason Kinsey,4057082,WR,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Van Jefferson,3930066,WR,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Xavier Restrepo,4431353,WR,,Tennessee Titans,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jayden Daniels,4426348,QB,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Josh Johnson,11394,QB,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Marcus Mariota,2576980,QB,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Sam Hartman,4361994,QB,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Austin Ekeler,3068267,RB,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Chase Edmonds,3119195,RB,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Chris Rodriguez Jr.,4362619,RB,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Donovan Edwards,4431536,RB,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jacory Croskey-Merritt,4575131,RB,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jeremy McNichols,3127586,RB,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ben Sinnott,4690923,TE,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Colson Yankoff,4361088,TE,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+John Bates,4048228,TE,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Tyree Jackson,3916564,TE,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Zach Ertz,15835,TE,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Chris Moore,2576581,WR,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Deebo Samuel,3126486,WR,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Ja'Corey Brooks,4431506,WR,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jacoby Jones,5083297,WR,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Jaylin Lane,4602667,WR,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Lawrence Cager,3917849,WR,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Luke McCaffrey,4426948,WR,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Noah Brown,3121409,WR,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Robbie Chosen,2574808,WR,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Terry McLaurin,3121422,WR,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+Treylon Burks,4567156,WR,,Washington Commanders,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,,False,100.0
+J.Karty,nan,K,UNK,,,,1,1.0,0.0,0.0,0.0,0.0,0.0,0,0,0,K,True,100.0
+A.Rodgers,nan,QB,QB,,,,6,182.0,1270.0,14.0,5.0,0.0,0.0,0,0,0,,False,100.0
+B.Mayfield,nan,QB,QB,,,,7,262.0,1767.0,13.0,2.0,0.0,0.0,0,0,0,,False,100.0
+B.Nix,nan,QB,QB,,,,7,267.0,1556.0,11.0,4.0,0.0,0.0,0,0,0,,False,100.0
+B.Purdy,nan,QB,QB,,,,2,76.0,586.0,4.0,4.0,0.0,0.0,0,0,0,,False,100.0
+B.Young,nan,QB,QB,,,,7,235.0,1288.0,11.0,5.0,0.0,0.0,0,0,0,,False,100.0
+C.Rush,nan,QB,QB,,,,3,53.0,303.0,0.0,4.0,0.0,0.0,0,0,0,,False,100.0
+C.Stroud,nan,QB,QB,,,,6,211.0,1305.0,9.0,4.0,0.0,0.0,0,0,0,,False,100.0
+C.Ward,nan,QB,QB,,,,7,266.0,1356.0,4.0,5.0,0.0,0.0,0,0,0,,False,100.0
+C.Wentz,nan,QB,QB,,,,4,157.0,1072.0,5.0,4.0,0.0,0.0,0,0,0,,False,100.0
+C.Williams,nan,QB,QB,,,,6,198.0,1351.0,9.0,3.0,0.0,0.0,0,0,0,,False,100.0
+D.Gabriel,nan,QB,QB,,,,5,117.0,546.0,3.0,0.0,0.0,0.0,0,0,0,,False,100.0
+D.Jones,nan,QB,QB,,,,7,224.0,1790.0,10.0,3.0,0.0,0.0,0,0,0,,False,100.0
+D.Maye,nan,QB,QB,,,,7,224.0,1744.0,12.0,2.0,0.0,0.0,0,0,0,,False,100.0
+D.Prescott,nan,QB,QB,,,,7,268.0,1881.0,16.0,3.0,0.0,0.0,0,0,0,,False,100.0
+G.Smith,nan,QB,QB,,,,7,222.0,1417.0,7.0,10.0,0.0,0.0,0,0,0,,False,100.0
+J.Allen,nan,QB,QB,,,,6,193.0,1397.0,11.0,4.0,0.0,0.0,0,0,0,,False,100.0
+J.Brissett,nan,QB,QB,,,,3,89.0,599.0,4.0,1.0,0.0,0.0,0,0,0,,False,100.0
+J.Browning,nan,QB,QB,,,,4,133.0,757.0,6.0,8.0,0.0,0.0,0,0,0,,False,100.0
+J.Burrow,nan,QB,QB,,,,2,41.0,189.0,2.0,0.0,0.0,0.0,0,0,0,,False,100.0
+J.Daniels,nan,QB,QB,,,,5,160.0,1031.0,8.0,1.0,0.0,0.0,0,0,0,,False,100.0
+J.Dart,nan,QB,QB,,,,4,131.0,791.0,7.0,3.0,0.0,0.0,0,0,0,,False,100.0
+J.Fields,nan,QB,QB,,,,6,160.0,845.0,4.0,0.0,0.0,0.0,0,0,0,,False,100.0
+J.Flacco,nan,QB,QB,,,,6,265.0,1376.0,7.0,6.0,0.0,0.0,0,0,0,,False,100.0
+J.Goff,nan,QB,QB,,,,7,216.0,1631.0,15.0,3.0,0.0,0.0,0,0,0,,False,100.0
+J.Herbert,nan,QB,QB,,,,7,291.0,1913.0,13.0,6.0,0.0,0.0,0,0,0,,False,100.0
+J.Hurts,nan,QB,QB,,,,7,217.0,1498.0,11.0,1.0,0.0,0.0,0,0,0,,False,100.0
+J.Love,nan,QB,QB,,,,6,186.0,1438.0,10.0,2.0,0.0,0.0,0,0,0,,False,100.0
+J.McCarthy,nan,QB,QB,,,,2,52.0,301.0,2.0,3.0,0.0,0.0,0,0,0,,False,100.0
+K.Murray,nan,QB,QB,,,,5,177.0,962.0,6.0,3.0,0.0,0.0,0,0,0,,False,100.0
+L.Jackson,nan,QB,QB,,,,4,111.0,869.0,10.0,1.0,0.0,0.0,0,0,0,,False,100.0
+M.Jones,nan,QB,QB,,,,5,206.0,1404.0,6.0,4.0,0.0,0.0,0,0,0,,False,100.0
+M.Mariota,nan,QB,QB,,,,3,64.0,426.0,3.0,2.0,0.0,0.0,0,0,0,,False,100.0
+M.Penix,nan,QB,QB,,,,6,204.0,1409.0,5.0,3.0,0.0,0.0,0,0,0,,False,100.0
+M.Stafford,nan,QB,QB,,,,7,253.0,1866.0,17.0,2.0,0.0,0.0,0,0,0,,False,100.0
+P.Mahomes,nan,QB,QB,,,,7,260.0,1800.0,14.0,2.0,0.0,0.0,0,0,0,,False,100.0
+R.Wilson,nan,QB,QB,,,,5,120.0,786.0,3.0,3.0,0.0,0.0,0,0,0,,False,100.0
+S.Darnold,nan,QB,QB,,,,7,201.0,1754.0,12.0,4.0,0.0,0.0,0,0,0,,False,100.0
+S.Rattler,nan,QB,QB,,,,7,250.0,1450.0,8.0,4.0,0.0,0.0,0,0,0,,False,100.0
+T.Lawrence,nan,QB,QB,,,,7,280.0,1620.0,9.0,5.0,0.0,0.0,0,0,0,,False,100.0
+T.Tagovailoa,nan,QB,QB,,,,7,221.0,1313.0,11.0,10.0,0.0,0.0,0,0,0,,False,100.0
+T.Taylor,nan,QB,QB,,,,3,78.0,379.0,3.0,3.0,0.0,0.0,0,0,0,,False,100.0
+C.Akers,nan,RB,UNK,,,,1,1.0,32.0,1.0,0.0,0.0,0.0,0,0,0,RB,True,100.0
+D.Henry,nan,RB,UNK,,,,1,1.0,0.0,0.0,0.0,0.0,0.0,0,0,0,RB,True,100.0
+D.Montgomery,nan,RB,UNK,,,,1,1.0,3.0,1.0,0.0,0.0,0.0,0,0,0,RB,True,100.0
+T.Warren,nan,TE,UNK,,,,1,1.0,0.0,0.0,0.0,0.0,0.0,0,0,0,TE,True,100.0
+C.Kupp,nan,WR,UNK,,,,1,1.0,0.0,0.0,1.0,0.0,0.0,0,0,0,WR,True,100.0
+C.Olave,nan,WR,UNK,,,,1,1.0,0.0,0.0,1.0,0.0,0.0,0,0,0,WR,True,100.0

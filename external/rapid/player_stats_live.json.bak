@@ -1,0 +1,26 @@
+{
+  "fetched_at": 1763677435.105334,
+  "players": [],
+  "errors": [
+    {
+      "id": 3045146,
+      "error": "Giving up after 5 attempts"
+    },
+    {
+      "id": 4240603,
+      "error": "Giving up after 5 attempts"
+    },
+    {
+      "id": 4249997,
+      "error": "Giving up after 5 attempts"
+    },
+    {
+      "id": 4431728,
+      "error": "Giving up after 5 attempts"
+    },
+    {
+      "id": 4700000,
+      "error": "Giving up after 5 attempts"
+    }
+  ]
+}

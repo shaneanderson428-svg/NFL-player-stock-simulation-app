@@ -96,7 +96,21 @@ export default function PlayerCard({ player }: Props) {
 
   const stockRow = useMemo(() => {
     try {
-      const rows = stocksData?.rows || [];
+      // Allow passing a precomputed stock object directly on the player prop.
+      // This is used when the page fetches /api/nfl/stocks?all=1 and wants to
+      // provide the computed stock/history inline to avoid extra client API
+      // lookups. If present, prefer this value.
+      if (player && (player._stockRow || (typeof player.stock !== 'undefined'))) {
+        if (player._stockRow) return player._stockRow;
+        // synthesize a small stockRow shape from stock/confidence/history fields
+        const synth: any = { stock: player.stock, confidence: player.confidence };
+        if (Array.isArray(player.history) && player.history.length) synth.history = player.history;
+        if (Array.isArray(player.priceHistory) && player.priceHistory.length) synth.history = player.priceHistory;
+        return synth;
+      }
+      // API may return an object { ok, players, teams } — prefer `players`.
+      // Fall back to legacy `rows` or raw data when present.
+      const rows = stocksData?.players || stocksData?.rows || stocksData?.data || [];
       if (!Array.isArray(rows) || !rows.length) return null;
       const nameNorm = (name || '').toLowerCase();
       const espnIdStr = String(espnId || '').toLowerCase();

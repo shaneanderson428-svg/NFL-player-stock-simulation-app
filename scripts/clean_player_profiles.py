@@ -1,388 +1,411 @@
-"""Clean and normalize player profile CSVs.
+#!/usr/bin/env python3
+"""Clean player profiles — single canonical implementation.
 
-Reads an input CSV (default: data/player_profiles.csv). If that file does not exist,
-it will attempt to construct profiles from `data/player_game_stats.csv` by extracting
-unique player names and any id/team/position columns available.
-
-Output: data/player_profiles_cleaned.csv with columns: espnId,player,team,position
-
-Duplicate rows are removed (prefer espnId when present), player names are title-cased,
-and missing espnId/team/position are filled with sensible defaults (espnId: slug).
+This script fetches a roster CSV (from known nflfastR raw URLs), normalizes
+it to columns (espnId, player, position, team) and writes/updates
+`data/player_stock_summary.csv`. Helpers are defined once (no duplicates),
+and we only call Series methods on actual Series objects to avoid editor
+diagnostics like "Cannot access attribute 'astype' for class 'str'".
 """
 
 from pathlib import Path
-from typing import Optional
-import argparse
-import pandas as pd
-import re
 import json
-from collections import Counter
+from typing import Optional, List, Tuple
+import argparse
+import io
+import sys
+
+import pandas as pd
+import requests
 
 
-def slugify(name: str) -> str:
-    s = name or ""
-    s = re.sub(r"[^0-9a-zA-Z]+", "-", s).strip("-").lower()
-    if not s:
-        return "unknown"
-    return s
+SUMMARY_PATH = Path("data/player_stock_summary.csv")
+DEFAULT_PRICE = 100.0
+ROSTER_URLS: List[str] = [
+    # New canonical players list (nflfastR-data)
+    "https://raw.githubusercontent.com/nflverse/nflfastR-data/master/data/players.csv",
+]
 
 
-def title_case(name: str) -> str:
-    if not isinstance(name, str):
-        return ""
-    # Basic title casing
-    return name.title().strip()
-
-
-def detect_input_file() -> Optional[Path]:
-    # Prefer an explicit `data/player_profiles.csv` file if present.
-    p = Path("data/player_profiles.csv")
-    if p.exists():
-        return p
-    # historic fallback: some projects used `data/players.csv`; prefer it only
-    # if the explicit `player_profiles.csv` is not present.
-    p2 = Path("data/players.csv")
-    if p2.exists():
-        return p2
-    # fall back to None; caller will handle (and may synthesize from game stats)
-    return None
-
-
-def normalize_profiles(df: pd.DataFrame) -> pd.DataFrame:
-    # Normalize common profile column names
-    col_map = {c: c for c in df.columns}
-    lower = {c.lower(): c for c in df.columns}
-    # espn id
-    for cand in ["espnid", "player_id", "playerid", "id", "espn_id"]:
-        if cand in lower:
-            col_map[lower[cand]] = "espnId"
-            break
-    # player name
-    for cand in ["player_name", "player", "name", "playerfull", "player_full_name"]:
-        if cand in lower:
-            col_map[lower[cand]] = "player"
-            break
-    # team
-    for cand in ["team", "team_name", "team_abbr", "team_abbreviation"]:
-        if cand in lower:
-            col_map[lower[cand]] = "team"
-            break
-    # position
-    for cand in ["position", "pos", "position_name"]:
-        if cand in lower:
-            col_map[lower[cand]] = "position"
-            break
-
-    df = df.rename(columns=col_map)
-
-    # Ensure required columns exist
-    if "player" not in df.columns:
-        df["player"] = df.index.map(lambda i: f"player_{i}")
-    if "espnId" not in df.columns:
-        # try to use a player-based slug
-        df["espnId"] = df["player"].fillna("").apply(lambda s: slugify(s))
-    if "team" not in df.columns:
-        df["team"] = ""
-    if "position" not in df.columns:
-        df["position"] = ""
-
-    # Clean values
-    df["player"] = df["player"].astype(str).map(title_case)
-    df["team"] = (
-        df["team"].astype(str).str.upper().map(lambda s: s if s != "NAN" else "")
-    )
-    df["position"] = (
-        df["position"].astype(str).str.upper().map(lambda s: s if s != "NAN" else "")
-    )
-    df["espnId"] = df["espnId"].astype(str).map(lambda s: s.strip())
-
-    # If espnId looks numeric but with .0 (from CSV floats), normalize
-    df["espnId"] = df["espnId"].str.replace(r"\.0+$", "", regex=True)
-
-    # Remove exact duplicates by espnId (keeping first), then by player name
-    df = df.drop_duplicates(subset=["espnId"], keep="first")
-    df = df.drop_duplicates(subset=["player"], keep="first")
-
-    # Reorder columns
-    out_cols = ["espnId", "player", "team", "position"]
-    for c in out_cols:
-        if c not in df.columns:
-            df[c] = ""
-    return df[out_cols]
+def fetch_roster(urls: Optional[List[str]] = None, timeout: int = 10) -> pd.DataFrame:
+    urls = urls or ROSTER_URLS
+    last_exc: Optional[Exception] = None
+    for u in urls:
+        try:
+            resp = requests.get(u, timeout=timeout)
+            resp.raise_for_status()
+            return pd.read_csv(io.StringIO(resp.text), dtype=str)
+        except Exception as exc:
+            last_exc = exc
+    # Remote fetch failed — try a local backup file if present
+    backup = Path("data/roster_backup.csv")
+    if backup.exists():
+        try:
+            return pd.read_csv(backup, dtype=str)
+        except Exception as exc:
+            raise RuntimeError(f"Failed to read local roster backup '{backup}': {exc}")
+    raise RuntimeError(f"Unable to fetch roster from known URLs: {last_exc}")
 
 
 def build_from_game_stats() -> pd.DataFrame:
-    # Try to synthesize profiles from data/player_game_stats.csv
     p = Path("data/player_game_stats.csv")
     if not p.exists():
-        return pd.DataFrame(columns=["espnId", "player", "team", "position"])
-    df = pd.read_csv(p)
-    # try to find espn id column
+        return pd.DataFrame(columns=["espnId", "player", "position", "team"])
+    df = pd.read_csv(p, dtype=str)
     lower = {c.lower(): c for c in df.columns}
-    espn_col = None
-    for cand in ["espnid", "player_id", "playerid", "id", "espn_id"]:
-        if cand in lower:
-            espn_col = lower[cand]
-            break
-    player_col = None
-    for cand in ["player", "name", "player_name"]:
-        if cand in lower:
-            player_col = lower[cand]
-            break
-    team_col = None
-    for cand in ["team", "team_name"]:
-        if cand in lower:
-            team_col = lower[cand]
-            break
-    pos_col = None
-    for cand in ["position", "pos"]:
-        if cand in lower:
-            pos_col = lower[cand]
-            break
+
+    def pick(*cands: str) -> Optional[str]:
+        for c in cands:
+            if c in lower:
+                return lower[c]
+        return None
+
+    espn_col = pick("espnid", "player_id", "playerid", "id", "espn_id")
+    player_col = pick("player", "name", "player_name")
+    team_col = pick("team", "team_name")
+    pos_col = pick("position", "pos")
 
     out = pd.DataFrame()
-    if player_col:
-        out["player"] = df[player_col].astype(str)
-    else:
-        out["player"] = (
-            df["player"].astype(str)
-            if "player" in df.columns
-            else df.index.map(lambda i: f"player_{i}")
-        )
-    if espn_col:
-        out["espnId"] = df[espn_col].astype(str)
-    else:
-        out["espnId"] = out["player"].map(lambda s: slugify(s))
-    if team_col:
-        out["team"] = df[team_col].astype(str)
-    else:
-        out["team"] = ""
-    if pos_col:
-        out["position"] = df[pos_col].astype(str)
-    else:
-        out["position"] = ""
+    out["player"] = df[player_col].astype(str) if player_col else df.index.map(lambda i: f"player_{i}")
+    out["espnId"] = df[espn_col].astype(str) if espn_col else out["player"].map(lambda s: s.replace(" ", "-").lower())
+    out["team"] = df[team_col].astype(str) if team_col else ""
+    out["position"] = df[pos_col].astype(str) if pos_col else ""
 
-    # Deduplicate
     out = out.drop_duplicates(subset=["espnId"], keep="first")
     out = out.drop_duplicates(subset=["player"], keep="first")
-    out = normalize_profiles(out)
-    return out
+    for c in ("espnId", "player", "position", "team"):
+        if c not in out.columns:
+            out[c] = ""
+    return out[["espnId", "player", "position", "team"]]
 
 
-def enrich_profiles(df: pd.DataFrame) -> pd.DataFrame:
-    """Attempt to fill missing position and team values.
+def enrich_profiles(df: pd.DataFrame, add_missing: bool = True) -> pd.DataFrame:
+    """Attempt to fill missing position and team values and optionally add missing players.
 
-    Sources (in order):
-    - local `data/advanced/*.json` files (index.json -> individual player files)
-    - `data/player_game_stats.csv` (most common team for a player)
-    - optional ESPN fetch (only if requests and bs4 are available)
+    - If add_missing is True, synthesize profiles from `build_from_game_stats()` and
+      append any players not already present in `df` (by espnId or player name).
+    - For any row missing `position` (or `team`), attempt to read
+      `data/advanced/<espnId>.json` and use its `position`/`team` fields when available.
 
-    Do not overwrite existing non-empty values. Empty is treated as '' or NaN.
+    Returns a normalized DataFrame with columns: espnId, player, position, team.
     """
-    # Prepare maps
-    pos_by_espn = {}
-    pos_by_player = {}
-    # Load advanced index if available
-    adv_index = Path("data/advanced/index.json")
-    if adv_index.exists():
+    df = df.copy()
+    # Ensure required columns
+    for c in ("espnId", "player", "position", "team"):
+        if c not in df.columns:
+            df[c] = ""
+
+    # Optionally append missing players from game stats
+    if add_missing:
         try:
-            idx = json.loads(adv_index.read_text())
-            players = idx.get("players") or []
-            for p in players:
-                espn = str(p.get("espnId"))
-                f = p.get("file")
-                if not f:
-                    continue
-                pfile = adv_index.parent / f
-                if not pfile.exists():
-                    continue
+            synth = build_from_game_stats()
+        except Exception:
+            synth = pd.DataFrame(columns=["espnId", "player", "position", "team"])
+
+        existing_ids = set(df["espnId"].astype(str).str.strip())
+        existing_players = set(df["player"].astype(str).str.strip())
+
+        new_rows: list[dict] = []
+        for _, r in synth.iterrows():
+            eid = str(r.get("espnId", "")).strip()
+            pname = str(r.get("player", "")).strip()
+            if (eid and eid not in existing_ids) and (pname and pname not in existing_players):
+                new_rows.append({"espnId": eid, "player": pname, "position": r.get("position", ""), "team": r.get("team", "")})
+
+        if new_rows:
+            df = pd.concat([df, pd.DataFrame(new_rows)], ignore_index=True)
+
+    # Fill from advanced JSON when available
+    adv_dir = Path("data/advanced")
+    for idx in df.index:
+        row = df.loc[idx]
+        pos = str(row.get("position", "") or "").strip()
+        team = str(row.get("team", "") or "").strip()
+        eid = str(row.get("espnId", "") or "").strip()
+        if (not pos or pos == "") and eid:
+            adv_path = adv_dir / f"{eid}.json"
+            if adv_path.exists():
                 try:
-                    rec = json.loads(pfile.read_text())
+                    data = json.loads(adv_path.read_text())
+                    adv_pos = str(data.get("position", "") or "").strip()
+                    adv_team = str(data.get("team", "") or "").strip()
+                    if adv_pos:
+                        df.loc[idx, "position"] = adv_pos
+                    if adv_team and not team:
+                        df.loc[idx, "team"] = adv_team
                 except Exception:
-                    continue
-                # position can be present
-                pos = rec.get("position") or rec.get("pos")
-                name = rec.get("player")
-                if pos:
-                    pos_by_espn[espn] = str(pos).upper()
-                if name:
-                    pos_by_player[title_case(name)] = str(pos).upper() if pos else ""
-        except Exception:
-            # ignore parse errors in advanced index
-            pass
+                    # ignore malformed advanced files
+                    pass
 
-    # Build team map from player_game_stats.csv (most common team per player)
-    team_by_player = {}
-    pstats = Path("data/player_game_stats.csv")
-    if pstats.exists():
-        try:
-            gdf = pd.read_csv(pstats)
-            # find possible player and team columns
-            cols = {c.lower(): c for c in gdf.columns}
-            player_col = None
-            team_col = None
-            for cand in ["player", "player_name", "name"]:
-                if cand in cols:
-                    player_col = cols[cand]
-                    break
-            for cand in ["team", "team_name", "team_abbr"]:
-                if cand in cols:
-                    team_col = cols[cand]
-                    break
-            # espn id detection is unnecessary for building team map; ignore
-            if player_col and team_col:
-                # normalize player names
-                gdf[player_col] = gdf[player_col].astype(str).map(title_case)
-                # build most common team per player
-                for name, grp in gdf.groupby(player_col):
-                    teams = grp[team_col].astype(str).str.upper().replace("NAN", "")
-                    most = Counter(teams[teams != ""]).most_common(1)
-                    if most:
-                        team_by_player[name] = most[0][0]
-        except Exception:
-            # don't fail enrichment on parse errors
-            pass
+    # Deduplicate and normalize formatting
+    # prefer espnId uniqueness then player
+    df["espnId"] = df["espnId"].astype(str).map(lambda s: s.strip())
+    df["player"] = df["player"].astype(str).map(lambda s: s.title().strip())
+    df = df.drop_duplicates(subset=["espnId"], keep="first")
+    df = df.drop_duplicates(subset=["player"], keep="first")
 
-    # Optional ESPN fetch helpers (only if packages available)
-    def fetch_from_espn(espn_id: str, player_name: str) -> dict[str, str]:
-        out: dict[str, str] = {}
-        try:
-            import requests
-            from bs4 import BeautifulSoup
-        except Exception:
-            return out
-        # Try by ESPN numeric id if it looks numeric
-        url = None
-        if espn_id and espn_id.isdigit():
-            url = f"https://www.espn.com/nfl/player/_/id/{espn_id}"
+    # Ensure columns order
+    for c in ("espnId", "player", "position", "team"):
+        if c not in df.columns:
+            df[c] = ""
+
+    return df[["espnId", "player", "position", "team"]]
+
+
+def clean_roster(df: pd.DataFrame) -> pd.DataFrame:
+    # Prefer the canonical nflfastR roster columns: gsis_id, full_name, position, team
+    want = ["gsis_id", "full_name", "position", "team"]
+    present = [c for c in want if c in df.columns]
+    if len(present) == len(want):
+        roster = df.loc[:, want].copy()
+        # rename to our schema: full_name -> player, gsis_id -> espnId
+        roster = roster.rename(columns={"full_name": "player", "gsis_id": "espnId"})
+    else:
+        # Fallback: try to pick best matching columns from what was provided
+        name_cols = ["full_name", "player", "displayName", "name"]
+        id_cols = ["gsis_id", "gsis", "player_id", "espnId", "id"]
+        pos_cols = ["position", "pos"]
+        team_cols = ["team", "team_abbr", "team_name"]
+
+        def choose(cands: List[str]) -> Optional[str]:
+            for c in cands:
+                if c in df.columns:
+                    return c
+            return None
+
+        name_col = choose(name_cols)
+        id_col = choose(id_cols)
+        pos_col = choose(pos_cols)
+        team_col = choose(team_cols)
+
+        cols = [c for c in (name_col, pos_col, team_col, id_col) if c]
+        if not name_col or not pos_col or not team_col:
+            # If essential columns are missing, try to build minimal roster from available fields
+            # and ultimately fall back to an empty DataFrame handled upstream.
+            roster = pd.DataFrame(columns=["espnId", "player", "position", "team"])
         else:
-            # fallback: search by name
-            q = player_name.replace(" ", "%20")
-            url = f"https://www.espn.com/search/results?q={q}"
-        try:
-            r = requests.get(url, timeout=5)
-            if r.status_code != 200:
-                return out
-            soup = BeautifulSoup(r.text, "html.parser")
-            # Try to find position/team in meta or specific selectors
-            # ESPN player pages often have a data-overview with position/team
-            # This is best-effort; avoid brittle scraping.
-            # Look for spans with class 'pos-col' or similar
-            text = soup.get_text(separator="|")
-            # crude extraction: look for patterns like 'Position: WR' or 'WR •'
-            m = re.search(r"Position[:\s]+([A-Z]{1,3})", text)
-            if m:
-                out["position"] = m.group(1)
-            # team: look for 2-4 letter uppercase near team name
-            m2 = re.search(r"([A-Z]{2,4})\s+•", text)
-            if m2:
-                out["team"] = m2.group(1)
-        except Exception:
-            return {}
-        return out
+            roster = df.loc[:, cols].copy()
+            roster = roster.rename(columns={name_col: "player", pos_col: "position", team_col: "team"})
+            if id_col and id_col in roster.columns:
+                roster = roster.rename(columns={id_col: "espnId"})
+            else:
+                roster["espnId"] = ""
 
-    # Now fill missing values without overwriting existing non-empty ones
-    def is_empty_val(v):
-        return (v is None) or (str(v).strip() == "")
+    # Normalize string columns and ensure final schema
+    for c in ("player", "position", "team", "espnId"):
+        if c in roster.columns:
+            roster[c] = roster[c].astype(str).str.strip().replace({"nan": ""}).fillna("")
+        else:
+            roster[c] = ""
+    # Ensure every row has a normalized offensive position when possible.
+    # We'll try to fill missing/blank positions from any ESPN-like position
+    # columns present in the source `df` (e.g., 'position', 'pos', 'espn_position', etc.)
+    offensive = {"QB", "RB", "WR", "TE"}
 
-    for idx, row in df.iterrows():
-        player = row.get("player")
-        espn = str(row.get("espnId") or "")
-        # position
-        if is_empty_val(row.get("position")):
-            filled = None
-            # try espn map
-            if espn and espn in pos_by_espn:
-                filled = pos_by_espn[espn]
-            # try player name map
-            if not filled and player and player in pos_by_player:
-                filled = pos_by_player[player]
-            # try optional espn fetch
-            if not filled:
-                info = fetch_from_espn(espn, player or "")
-                filled = info.get("position")
-            if filled:
-                mask = df.index == idx
-                df.loc[mask, "position"] = filled
+    def _normalize_pos(p: str) -> str:
+        if not p:
+            return ""
+        s = str(p).upper().strip()
+        # direct match
+        if s in offensive:
+            return s
+        # token match (e.g., 'RB-S', 'WR/TE', 'Running Back')
+        for code in offensive:
+            if code in s:
+                return code
+        return ""
 
-        # team
-        if is_empty_val(row.get("team")):
-            filled = None
-            if player and player in team_by_player:
-                filled = team_by_player[player]
-            # try espn fetch if still empty
-            if not filled:
-                info = fetch_from_espn(espn, player or "")
-                if info:
-                    filled = info.get("team")
-            if filled:
-                mask = df.index == idx
-                df.loc[mask, "team"] = filled
+    # Build candidate position columns from the original roster input `df`.
+    pos_candidates = [c for c in df.columns if "position" in c.lower() or c.lower() == "pos" or c.lower().startswith("pos")]
 
-    # Final normalize (upper-case team/position)
-    df["team"] = (
-        df["team"].astype(str).str.upper().map(lambda s: s if s != "NAN" else "")
-    )
-    df["position"] = (
-        df["position"].astype(str).str.upper().map(lambda s: s if s != "NAN" else "")
-    )
+    # Build lookup maps by espn id and by player name from the original df
+    espn_pos_map: dict[str, str] = {}
+    name_pos_map: dict[str, str] = {}
+    for _, r in df.iterrows():
+        # try common id/name fields
+        # coerce to string when using as keys (don't annotate; use str() at use-sites)
+        eid_raw = r.get("gsis_id") or r.get("espnId") or r.get("player_id") or r.get("id") or ""
+        eid = str(eid_raw).strip()
+        pname = str(r.get("full_name") or r.get("player") or r.get("name") or "").strip().lower()
+        for pc in pos_candidates:
+            try:
+                val = str(r.get(pc, "") or "").strip()
+            except Exception:
+                val = ""
+            if not val:
+                continue
+            norm = _normalize_pos(val)
+            if not norm:
+                continue
+            if eid:
+                espn_pos_map[eid] = norm
+            if pname:
+                name_pos_map[pname] = norm
+            break
+
+    # Fill missing roster positions using maps (prefer espnId, fallback to name)
+    for idx in roster.index:
+        cur = roster.at[idx, "position"] if "position" in roster.columns else ""
+        if cur:
+            # normalize existing value to canonical short code when possible
+            n = _normalize_pos(str(cur))
+            roster.at[idx, "position"] = n
+            continue
+        # try to fill
+        eid_raw = roster.at[idx, "espnId"] if "espnId" in roster.columns else ""
+        eid = str(eid_raw).strip()
+        pname = str(roster.at[idx, "player"]).strip().lower() if "player" in roster.columns else ""
+        filled = ""
+        if eid and eid in espn_pos_map:
+            filled = espn_pos_map[eid]
+        elif pname and pname in name_pos_map:
+            filled = name_pos_map[pname]
+        roster.at[idx, "position"] = filled
+
+    # Finally, filter to offensive positions only (QB, RB, WR, TE)
+    if "position" in roster.columns:
+        roster = roster[roster["position"].isin(offensive)].copy()
+
+    # Exclude inactive/retired/practice/suspended players when 'status' is present in the source
+    exclude_status = {"Reserve/Injured", "Retired", "Practice Squad", "Suspended"}
+    # if original df had a 'status' column, it would have been preserved only in fallback cases
+    if "status" in df.columns and "status" in roster.columns:
+        roster = roster[~roster["status"].isin(exclude_status)].copy()
+
+    return roster[["espnId", "player", "position", "team"]]
+
+
+def build_from_roster(roster: pd.DataFrame) -> pd.DataFrame:
+    rows: List[dict] = []
+    for _, r in roster.iterrows():
+        rows.append({
+            "player": r.get("player", ""),
+            "espnId": r.get("espnId", ""),
+            "position": r.get("position", ""),
+            "team": r.get("team", ""),
+            "currentPrice": DEFAULT_PRICE,
+        })
+    df = pd.DataFrame(rows, columns=["player", "espnId", "position", "team", "currentPrice"]) if rows else pd.DataFrame(columns=["player", "espnId", "position", "team", "currentPrice"]) 
+    sort_cols = [c for c in ("team", "position", "player") if c in df.columns]
+    if sort_cols:
+        df = df.sort_values(sort_cols, ignore_index=True)
     return df
 
 
-def main(argv=None):
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--input",
-        "-i",
-        type=str,
-        default=None,
-        help="Input CSV path (player profiles).",
-    )
-    parser.add_argument(
-        "--output",
-        "-o",
-        type=str,
-        default="data/player_profiles_cleaned.csv",
-        help="Output CSV path",
-    )
+def build_default_row(template: pd.DataFrame, player_row: pd.Series) -> dict:
+    row: dict = {}
+    for col in template.columns:
+        if col in ("player", "espnId", "position", "team"):
+            row[col] = player_row.get(col, "")
+        elif "price" in col.lower() or col.lower() == "currentprice":
+            row[col] = float(DEFAULT_PRICE)
+        else:
+            dtype = template[col].dtype
+            if pd.api.types.is_integer_dtype(dtype) or pd.api.types.is_float_dtype(dtype):
+                row[col] = 0
+            elif pd.api.types.is_bool_dtype(dtype):
+                row[col] = False
+            else:
+                row[col] = ""
+    return row
+
+
+def merge_rosters(existing: Optional[pd.DataFrame], roster: pd.DataFrame) -> Tuple[pd.DataFrame, int]:
+    # If no existing summary, build fresh from roster
+    if existing is None or existing.empty:
+        out = build_from_roster(roster)
+        return out, len(out)
+
+    # Normalize existing identifiers and players
+    # at this point existing is guaranteed not None
+    assert existing is not None
+    # Narrow type for static checkers
+    from typing import cast
+
+    existing_df: pd.DataFrame = cast(pd.DataFrame, existing.copy())
+    if "espnId" in existing_df.columns:
+        existing_df["espnId"] = existing_df["espnId"].astype(str).str.strip()
+    else:
+        existing_df["espnId"] = ""
+    if "player" in existing_df.columns:
+        existing_df["player"] = existing_df["player"].astype(str).str.strip()
+    else:
+        existing_df["player"] = ""
+
+    existing_ids = set([s for s in existing_df["espnId"] if s])
+    existing_players = set([s for s in existing_df["player"] if s])
+
+    new_rows: List[dict] = []
+    for _, r in roster.iterrows():
+        name = str(r.get("player", "")).strip()
+        eid = str(r.get("espnId", "")).strip()
+
+        # Use gsis_id (espnId) primarily as unique identifier. If absent, fall back to full_name.
+        already_present = False
+        if eid and eid in existing_ids:
+            already_present = True
+        elif (not eid) and name and name in existing_players:
+            already_present = True
+
+        if already_present:
+            continue
+
+        # Build a new row compatible with the existing summary columns
+        new_rows.append(build_default_row(existing, r))
+
+    if not new_rows:
+        return existing_df, 0
+
+    new_df = pd.DataFrame(new_rows, columns=existing_df.columns)
+    merged = pd.concat([existing_df, new_df], ignore_index=True)
+    sort_cols = [c for c in ["team", "position", "player"] if c in merged.columns]
+    if sort_cols:
+        merged = merged.sort_values(sort_cols, ignore_index=True)
+    return merged, len(new_rows)
+
+
+def save_summary(df: pd.DataFrame, path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(path, index=False)
+
+
+def main(argv: Optional[List[str]] = None) -> None:
+    parser = argparse.ArgumentParser(description="Clean and append player profiles from roster")
+    parser.add_argument("--reset", action="store_true", help="Rebuild summary from roster (drop existing)")
+    parser.add_argument("--local", type=str, help="Optional local roster CSV to use if remote fetch fails")
     args = parser.parse_args(argv)
 
-    # Determine input: explicit --input overrides, otherwise prefer
-    # data/player_profiles.csv if present. If neither exist we synthesize
-    # from data/player_game_stats.csv with a clear, single-line message.
-    if args.input:
-        input_path = Path(args.input)
-        if not input_path.exists():
-            print(
-                f"Provided input '{input_path}' not found; synthesizing from data/player_game_stats.csv instead"
-            )
-            df = build_from_game_stats()
-        else:
-            df = pd.read_csv(input_path)
-            df = normalize_profiles(df)
-    else:
-        detected = detect_input_file()
-        if detected and detected.exists():
-            # Found an explicit profiles CSV (prefer data/player_profiles.csv)
-            print(f"Loading player profiles from {detected}")
-            df = pd.read_csv(detected)
-            df = normalize_profiles(df)
-        else:
-            # Clean, user-facing message when we must synthesize
-            print(
-                "data/player_profiles.csv not found — synthesizing profiles from data/player_game_stats.csv"
-            )
-            df = build_from_game_stats()
-    # Enrich missing team/position values where possible
     try:
-        df = enrich_profiles(df)
-    except Exception:
-        # Keep original behaviour on any enrichment error
-        pass
-    outp = Path(args.output)
-    outp.parent.mkdir(parents=True, exist_ok=True)
-    df.to_csv(outp, index=False)
-    print(f"Wrote {len(df)} cleaned player profiles to {outp}")
+        raw = fetch_roster()
+        roster_df = clean_roster(raw)
+    except Exception as exc:
+        # If fetching the remote roster fails, prefer a local CSV if provided.
+        if args.local:
+            try:
+                raw_local = pd.read_csv(args.local, dtype=str)
+                roster_df = clean_roster(raw_local)
+            except Exception:
+                raise RuntimeError(f"Failed to load local roster '{args.local}': {exc}")
+        else:
+            # Do not silently fall back to game-stats-only roster — the user requested
+            # the canonical nflfastR roster. Surface the error so the caller can provide
+            # a local file or fix network access.
+            raise RuntimeError(f"Unable to fetch nflfastR roster: {exc}. Provide --local <file> to use a local roster CSV.")
+
+    existing: Optional[pd.DataFrame] = None
+    if SUMMARY_PATH.exists():
+        existing = pd.read_csv(SUMMARY_PATH)
+
+    if args.reset or existing is None:
+        out = build_from_roster(roster_df)
+        added = len(out)
+    else:
+        out, added = merge_rosters(existing, roster_df)
+        if "currentPrice" not in out.columns:
+            out["currentPrice"] = DEFAULT_PRICE
+
+    save_summary(out, SUMMARY_PATH)
+    print(f"✅ Added {added} new players, total {len(out):,} offensive players")
 
 
 if __name__ == "__main__":

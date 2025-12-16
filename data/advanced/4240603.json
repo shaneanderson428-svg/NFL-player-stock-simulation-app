@@ -2,12 +2,9 @@
   "espnId": 4240603,
   "player": "Justin Jefferson",
   "position": "WR",
+  "team": "Minnesota Vikings",
+  "updatedAt": "2025-10-31T04:57:34.196Z",
   "metrics": {
-    "YardsPerRouteRun": 2.8,
-    "CatchRateOverExpected": 0.15,
-    "EPA_per_Target": 0.22,
-    "receivingYards": 1400,
-    "receivingTDs": 10,
-    "receptions": 95
+    "sample": true
   }
 }

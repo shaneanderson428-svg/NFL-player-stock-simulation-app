@@ -1,0 +1,213 @@
+{
+  "season": 2025,
+  "week": 13,
+  "timestamp": 1765783855,
+  "files": [
+    {
+      "path": "external/tank01/player_stats_week_13.csv",
+      "size": 130775,
+      "mtime": 1764888040
+    },
+    {
+      "path": "external/advanced/advanced_metrics_week_13.csv",
+      "size": 41133,
+      "mtime": 1765783812
+    },
+    {
+      "path": "external/history/player_prices.json",
+      "size": 111277,
+      "mtime": 1765783837
+    }
+  ]
+}{
+  "season": 2025,
+  "week": 13,
+  "timestamp": 1765835261,
+  "files": [
+    {
+      "path": "external/tank01/player_stats_week_13.csv",
+      "size": 130775,
+      "mtime": 1764888040
+    },
+    {
+      "path": "external/advanced/advanced_metrics_week_13.csv",
+      "size": 41133,
+      "mtime": 1765783812
+    },
+    {
+      "path": "data/player_stock_summary.csv",
+      "size": 241,
+      "mtime": 1765835261
+    },
+    {
+      "path": "data/player_stock_history.csv",
+      "size": 230,
+      "mtime": 1765835261
+    },
+    {
+      "path": "external/history/player_prices.json",
+      "size": 111277,
+      "mtime": 1765783837
+    }
+  ]
+}
+{
+  "season": 2025,
+  "week": 13,
+  "timestamp": 1765835505,
+  "files": [
+    {
+      "path": "external/tank01/player_stats_week_13.csv",
+      "size": 130775,
+      "mtime": 1764888040
+    },
+    {
+      "path": "external/advanced/advanced_metrics_week_13.csv",
+      "size": 41133,
+      "mtime": 1765783812
+    },
+    {
+      "path": "data/player_stock_summary.csv",
+      "size": 241,
+      "mtime": 1765835505
+    },
+    {
+      "path": "data/player_stock_history.csv",
+      "size": 230,
+      "mtime": 1765835505
+    },
+    {
+      "path": "external/history/player_prices.json",
+      "size": 111277,
+      "mtime": 1765783837
+    }
+  ]
+}
+{
+  "season": 2025,
+  "week": 13,
+  "timestamp": 1765835607,
+  "files": [
+    {
+      "path": "external/tank01/player_stats_week_13.csv",
+      "size": 130775,
+      "mtime": 1764888040
+    },
+    {
+      "path": "external/advanced/advanced_metrics_week_13.csv",
+      "size": 41133,
+      "mtime": 1765783812
+    },
+    {
+      "path": "data/player_stock_summary.csv",
+      "size": 241,
+      "mtime": 1765835607
+    },
+    {
+      "path": "data/player_stock_history.csv",
+      "size": 230,
+      "mtime": 1765835607
+    },
+    {
+      "path": "external/history/player_prices.json",
+      "size": 111277,
+      "mtime": 1765783837
+    }
+  ]
+}
+{
+  "season": 2025,
+  "week": 13,
+  "timestamp": 1765836192,
+  "files": [
+    {
+      "path": "external/tank01/player_stats_week_13.csv",
+      "size": 130775,
+      "mtime": 1764888040
+    },
+    {
+      "path": "external/advanced/advanced_metrics_week_13.csv",
+      "size": 41133,
+      "mtime": 1765783812
+    },
+    {
+      "path": "data/player_stock_summary.csv",
+      "size": 241,
+      "mtime": 1765836191
+    },
+    {
+      "path": "data/player_stock_history.csv",
+      "size": 230,
+      "mtime": 1765836191
+    },
+    {
+      "path": "external/history/player_prices.json",
+      "size": 111277,
+      "mtime": 1765783837
+    }
+  ]
+}
+{
+  "season": 2025,
+  "week": 13,
+  "timestamp": 1765836219,
+  "files": [
+    {
+      "path": "external/tank01/player_stats_week_13.csv",
+      "size": 130775,
+      "mtime": 1764888040
+    },
+    {
+      "path": "external/advanced/advanced_metrics_week_13.csv",
+      "size": 41133,
+      "mtime": 1765783812
+    },
+    {
+      "path": "data/player_stock_summary.csv",
+      "size": 241,
+      "mtime": 1765836219
+    },
+    {
+      "path": "data/player_stock_history.csv",
+      "size": 230,
+      "mtime": 1765836219
+    },
+    {
+      "path": "external/history/player_prices.json",
+      "size": 111277,
+      "mtime": 1765783837
+    }
+  ]
+}
+{
+  "season": 2025,
+  "week": 13,
+  "timestamp": 1765837691,
+  "files": [
+    {
+      "path": "external/tank01/player_stats_week_13.csv",
+      "size": 130775,
+      "mtime": 1764888040
+    },
+    {
+      "path": "external/advanced/advanced_metrics_week_13.csv",
+      "size": 41133,
+      "mtime": 1765783812
+    },
+    {
+      "path": "data/player_stock_summary.csv",
+      "size": 3244,
+      "mtime": 1765837688
+    },
+    {
+      "path": "data/player_stock_history.csv",
+      "size": 129883,
+      "mtime": 1765837689
+    },
+    {
+      "path": "external/history/player_prices.json",
+      "size": 111277,
+      "mtime": 1765837691
+    }
+  ]
+}

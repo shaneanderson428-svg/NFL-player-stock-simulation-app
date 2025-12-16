@@ -48,7 +48,8 @@ body {
   .player-card-clean { padding: 10px; }
 }
 .player-card-clean { background: linear-gradient(180deg,#071022,#091426); border: 1px solid rgba(255,255,255,0.04); padding:12px; border-radius:12px; color:#fff }
-.player-meta { color:#9aa; font-size:12px; margin-top:6px }
+.player-meta { color:#9aa; font-size:12px; margin-top:6px; cursor: pointer }
+.player-meta.active { color: #fff; font-weight: 700; text-decoration: underline; }
 
 @layer utilities {
   .skeleton-gradient {

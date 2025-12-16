@@ -64,6 +64,70 @@ async function initBackends() {
   using = 'file';
 }
 
+// Ensure we hydrate persistent backends from the canonical JSON file once per process.
+let _hydrated = false;
+async function hydrateFromFileOnce() {
+  if (_hydrated) return;
+  _hydrated = true;
+  try {
+    // Only hydrate if the canonical file exists
+    let raw: string | null = null;
+    try {
+      raw = await fs.readFile(FILE_PATH, 'utf8');
+    } catch (e) {
+      // nothing to hydrate
+      return;
+    }
+    if (!raw) return;
+    const obj = JSON.parse(raw || '{}');
+    const entries = Object.entries(obj || {});
+    if (entries.length === 0) return;
+
+    // ensure backends are initialized so we can write into them
+    await initBackends();
+
+    let players = 0;
+    let points = 0;
+
+    if (using === 'redis' && redisClient) {
+      const pipeline = redisClient.pipeline();
+      for (const [k, arr] of entries) {
+        const key = String(k);
+        pipeline.set(`hist:${key}`, JSON.stringify(arr));
+        players += 1;
+        points += Array.isArray(arr) ? arr.length : 0;
+      }
+      await pipeline.exec();
+    } else if (using === 'sqlite' && sqliteDb) {
+      const insert = sqliteDb.prepare('INSERT OR REPLACE INTO history (key, json) VALUES (?, ?)');
+      const txn = sqliteDb.transaction((pairs: Array<[string, any]>) => {
+        for (const [k, v] of pairs) insert.run(k, JSON.stringify(v));
+      });
+      txn(entries.map(([k, v]) => [String(k), v]));
+      for (const [, arr] of entries) {
+        players += 1;
+        points += Array.isArray(arr) ? arr.length : 0;
+      }
+    } else {
+      // file backend: nothing to do because FILE_PATH is already the canonical source
+      for (const [, arr] of entries) {
+        players += 1;
+        points += Array.isArray(arr) ? arr.length : 0;
+      }
+    }
+
+    // Log hydration summary so developers know persisted history was loaded
+    try {
+      // eslint-disable-next-line no-console
+      console.log('[history] hydrated', players, 'players with', points, 'points from', FILE_PATH);
+    } catch (e) {
+      // ignore logging errors
+    }
+  } catch (e) {
+    // ignore hydrate errors
+  }
+}
+
 // Debounced write queue for SQLite/file backends
 const pendingWrites = new Map<string, PricePoint[]>();
 let flushTimer: NodeJS.Timeout | null = null;
@@ -109,6 +173,13 @@ function scheduleFlush() {
 
 export async function loadMap(): Promise<Map<string, PricePoint[]>> {
   await initBackends();
+  // Hydrate persistent backend from canonical JSON once per process so
+  // servers that use Redis/SQLite will see the file-backed history.
+  try {
+    await hydrateFromFileOnce();
+  } catch (e) {
+    // ignore
+  }
   const m = new Map<string, PricePoint[]>();
   try {
     if (using === 'redis' && redisClient) {

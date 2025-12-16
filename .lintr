@@ -1,0 +1,11 @@
+
+linters: "NULL"
+
+linters: NULL
+linters: with_defaults()
+exclusions: list('^scripts/.*', '^data/.*', '^public/.*')
+linters: linters_with_defaults()
+exclusions: list("^scripts/.*", "^data/.*", "^public/.*")
+
+linters: linters_with_defaults()
+exclusions: list("^scripts/.*", "^data/.*", "^public/.*")

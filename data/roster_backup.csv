@@ -1,0 +1,718 @@
+espnId,player,position,team,currentPrice
+3061612,Jamal Agnew,WR,Atlanta Falcons,100.0
+4373626,Tyler Allgeier,RB,Atlanta Falcons,100.0
+4605841,Nathan Carter,RB,Atlanta Falcons,100.0
+14880,Kirk Cousins,QB,Atlanta Falcons,100.0
+4034948,Feleipe Franks,TE,Atlanta Falcons,100.0
+3047876,KhaDarel Hodge,WR,Atlanta Falcons,100.0
+4426502,Drake London,WR,Atlanta Falcons,100.0
+4040655,Darnell Mooney,WR,Atlanta Falcons,100.0
+4360423,Michael Penix Jr.,QB,Atlanta Falcons,100.0
+4360248,Kyle Pitts Sr.,TE,Atlanta Falcons,100.0
+4374045,Teagan Quitoriano,TE,Atlanta Falcons,100.0
+4430807,Bijan Robinson,RB,Atlanta Falcons,100.0
+3871102,David Sills V,WR,Atlanta Falcons,100.0
+4428796,Casey Washington,WR,Atlanta Falcons,100.0
+4035020,Charlie Woerner,TE,Atlanta Falcons,100.0
+4360230,Emory Jones,QB,Atlanta Falcons,100.0
+4369886,Chris Blair,WR,Atlanta Falcons,100.0
+4363551,Dylan Drummond,WR,Atlanta Falcons,100.0
+4570242,Nick Nash,WR,Atlanta Falcons,100.0
+4430482,Joshua Simon,TE,Atlanta Falcons,100.0
+3120590,Easton Stick,QB,Atlanta Falcons,100.0
+4374187,Deven Thompkins,WR,Atlanta Falcons,100.0
+4248425,Carlos Washington Jr.,RB,Atlanta Falcons,100.0
+3918298,Josh Allen,QB,Buffalo Bills,100.0
+4635008,Keon Coleman,WR,Buffalo Bills,100.0
+4379399,James Cook III,RB,Buffalo Bills,100.0
+4429501,Ray Davis,RB,Buffalo Bills,100.0
+4573699,Jackson Hawes,TE,Buffalo Bills,100.0
+3915411,Ty Johnson,RB,Buffalo Bills,100.0
+4385690,Dalton Kincaid,TE,Buffalo Bills,100.0
+3930086,Dawson Knox,TE,Buffalo Bills,100.0
+4372414,Elijah Moore,WR,Buffalo Bills,100.0
+4242433,Joshua Palmer,WR,Buffalo Bills,100.0
+3121427,Curtis Samuel,WR,Buffalo Bills,100.0
+4373678,Khalil Shakir,WR,Buffalo Bills,100.0
+4241476,Tyrell Shavers,WR,Buffalo Bills,100.0
+3039707,Mitchell Trubisky,QB,Buffalo Bills,100.0
+4039034,Shane Buechele,QB,Buffalo Bills,100.0
+4243537,Gabe Davis,WR,Buffalo Bills,100.0
+4429805,Frank Gore Jr.,RB,Buffalo Bills,100.0
+4432215,Stephen Gosnell,WR,Buffalo Bills,100.0
+4688552,Keleki Latu,TE,Buffalo Bills,100.0
+3910176,Kristian Wilkerson,WR,Buffalo Bills,100.0
+4434153,Tyson Bagent,QB,Chicago Bears,100.0
+4685278,Luther Burden III,WR,Chicago Bears,100.0
+4039050,Devin Duvernay,WR,Chicago Bears,100.0
+4037457,Travis Homer,RB,Chicago Bears,100.0
+4426386,Roschon Johnson,RB,Chicago Bears,100.0
+15168,Case Keenum,QB,Chicago Bears,100.0
+4258595,Cole Kmet,TE,Chicago Bears,100.0
+4723086,Colston Loveland,TE,Chicago Bears,100.0
+4608686,Kyle Monangai,RB,Chicago Bears,100.0
+3915416,DJ Moore,WR,Chicago Bears,100.0
+4431299,Rome Odunze,WR,Chicago Bears,100.0
+3052897,Durham Smythe,TE,Chicago Bears,100.0
+4259545,D'Andre Swift,RB,Chicago Bears,100.0
+5160110,Jahdae Walker,WR,Chicago Bears,100.0
+4431611,Caleb Williams,QB,Chicago Bears,100.0
+3917914,Olamide Zaccheaus,WR,Chicago Bears,100.0
+4575667,Deion Hankins,RB,Chicago Bears,100.0
+3914307,Maurice Alexander,WR,Chicago Bears,100.0
+3932423,Miles Boykin,WR,Chicago Bears,100.0
+4036032,Brittain Brown,RB,Chicago Bears,100.0
+3948283,Stephen Carlson,TE,Chicago Bears,100.0
+4916349,Nikola Kalinic,TE,Chicago Bears,100.0
+4685183,JP Richardson,WR,Chicago Bears,100.0
+4429299,Tahj Brooks,RB,Cincinnati Bengals,100.0
+4362238,Chase Brown,RB,Cincinnati Bengals,100.0
+3886812,Jake Browning,QB,Cincinnati Bengals,100.0
+4429033,Jermaine Burton,WR,Cincinnati Bengals,100.0
+4362628,Ja'Marr Chase,WR,Cincinnati Bengals,100.0
+4036131,Noah Fant,TE,Cincinnati Bengals,100.0
+11252,Joe Flacco,QB,Cincinnati Bengals,100.0
+4700712,Cam Grandy,TE,Cincinnati Bengals,100.0
+4239993,Tee Higgins,WR,Cincinnati Bengals,100.0
+3050481,Tanner Hudson,TE,Cincinnati Bengals,100.0
+4368003,Andrei Iosivas,WR,Cincinnati Bengals,100.0
+4257188,Charlie Jones,WR,Cincinnati Bengals,100.0
+3116389,Samaje Perine,RB,Cincinnati Bengals,100.0
+3127310,Drew Sample,TE,Cincinnati Bengals,100.0
+4690070,Mitchell Tinsley,WR,Cincinnati Bengals,100.0
+4427834,Erick All Jr.,TE,Cincinnati Bengals,100.0
+3915511,Joe Burrow,QB,Cincinnati Bengals,100.0
+3116164,Mike Gesicki,TE,Cincinnati Bengals,100.0
+4245645,Gary Brightwell,RB,Cincinnati Bengals,100.0
+4259592,Sean Clifford,QB,Cincinnati Bengals,100.0
+4429012,Kendall Milton,RB,Cincinnati Bengals,100.0
+4594444,Jordan Moore,WR,Cincinnati Bengals,100.0
+4035776,Kendric Pryor,WR,Cincinnati Bengals,100.0
+4362603,Brenden Bates,TE,Cleveland Browns,100.0
+4808839,Isaiah Bond,WR,Cleveland Browns,100.0
+4613104,Malachi Corley,WR,Cleveland Browns,100.0
+5083076,Harold Fannin Jr.,TE,Cleveland Browns,100.0
+4372019,Jerome Ford,RB,Cleveland Browns,100.0
+4427238,Dillon Gabriel,QB,Cleveland Browns,100.0
+4241463,Jerry Jeudy,WR,Cleveland Browns,100.0
+4685702,Quinshon Judkins,RB,Cleveland Browns,100.0
+4877203,Gage Larvadain,WR,Cleveland Browns,100.0
+3123076,David Njoku,TE,Cleveland Browns,100.0
+5081397,Dylan Sampson,RB,Cleveland Browns,100.0
+4601080,Raheim Sanders,RB,Cleveland Browns,100.0
+4432762,Shedeur Sanders,QB,Cleveland Browns,100.0
+4428678,Jamari Thrash,WR,Cleveland Browns,100.0
+4362018,Blake Whiteheart,TE,Cleveland Browns,100.0
+2580216,DeAndre Carter,WR,Cleveland Browns,100.0
+4369863,Cedric Tillman,WR,Cleveland Browns,100.0
+3122840,Deshaun Watson,QB,Cleveland Browns,100.0
+4242536,Sal Cannella,TE,Cleveland Browns,100.0
+5065495,Kaden Davis,WR,Cleveland Browns,100.0
+4566157,Luke Floriea,WR,Cleveland Browns,100.0
+4687509,Caden Prieskorn,TE,Cleveland Browns,100.0
+4250360,Bailey Zappe,QB,Cleveland Browns,100.0
+4685279,Jaydon Blue,RB,Dallas Cowboys,100.0
+4242355,Jake Ferguson,TE,Dallas Cowboys,100.0
+5083754,Ryan Flournoy,WR,Dallas Cowboys,100.0
+4241389,CeeDee Lamb,WR,Dallas Cowboys,100.0
+4383396,Hunter Luepke,RB,Dallas Cowboys,100.0
+4360698,Joe Milton III,QB,Dallas Cowboys,100.0
+4426485,Jonathan Mingo,WR,Dallas Cowboys,100.0
+4426354,George Pickens,WR,Dallas Cowboys,100.0
+2577417,Dak Prescott,QB,Dallas Cowboys,100.0
+4372096,Luke Schoonmaker,TE,Dallas Cowboys,100.0
+4360967,Brevyn Spann-Ford,TE,Dallas Cowboys,100.0
+4249417,Jalen Tolbert,WR,Dallas Cowboys,100.0
+3676833,KaVontae Turpin,WR,Dallas Cowboys,100.0
+4361579,Javonte Williams,RB,Dallas Cowboys,100.0
+4431562,Phil Mafah,RB,Dallas Cowboys,100.0
+4045163,Miles Sanders,RB,Dallas Cowboys,100.0
+4362489,John Stephens Jr.,TE,Dallas Cowboys,100.0
+3121410,Parris Campbell,WR,Dallas Cowboys,100.0
+4426990,Jalen Cropper,WR,Dallas Cowboys,100.0
+4240603,Malik Davis,RB,Dallas Cowboys,100.0
+4605858,Rivaldo Fairweather,TE,Dallas Cowboys,100.0
+4242442,Princeton Fant,TE,Dallas Cowboys,100.0
+3115252,Will Grier,QB,Dallas Cowboys,100.0
+4429172,Traeshon Holden,WR,Dallas Cowboys,100.0
+4383440,Nate Adkins,TE,Denver Broncos,100.0
+4362748,Tyler Badie,RB,Denver Broncos,100.0
+4600981,Pat Bryant,WR,Denver Broncos,100.0
+4241985,J.K. Dobbins,RB,Denver Broncos,100.0
+3051876,Evan Engram,TE,Denver Broncos,100.0
+4431280,Troy Franklin,WR,Denver Broncos,100.0
+4568490,RJ Harvey,RB,Denver Broncos,100.0
+4722893,Jaleel McLaughlin,RB,Denver Broncos,100.0
+4686472,Marvin Mims Jr.,WR,Denver Broncos,100.0
+4426338,Bo Nix,QB,Denver Broncos,100.0
+3122168,Trent Sherfield Sr.,WR,Denver Broncos,100.0
+3892775,Jarrett Stidham,QB,Denver Broncos,100.0
+3128429,Courtland Sutton,WR,Denver Broncos,100.0
+3911853,Adam Trautman,TE,Denver Broncos,100.0
+4360231,Lucas Krull,TE,Denver Broncos,100.0
+4034704,Michael Bandy,WR,Denver Broncos,100.0
+4241820,Sam Ehlinger,QB,Denver Broncos,100.0
+9614,Marcedes Lewis,TE,Denver Broncos,100.0
+4432208,Caleb Lohner,TE,Denver Broncos,100.0
+5209791,Patrick Murtagh,TE,Denver Broncos,100.0
+4362019,A.T. Perry,WR,Denver Broncos,100.0
+4574860,Kyrese Rowan,WR,Denver Broncos,100.0
+4431453,Deuce Vaughn,RB,Denver Broncos,100.0
+3115293,Kyle Allen,QB,Detroit Lions,100.0
+3120303,Ross Dwelley,TE,Detroit Lions,100.0
+4429795,Jahmyr Gibbs,RB,Detroit Lions,100.0
+3046779,Jared Goff,QB,Detroit Lions,100.0
+3116136,Justin Jackson,RB,Detroit Lions,100.0
+4430027,Sam LaPorta,TE,Detroit Lions,100.0
+4596439,Dominic Lovett,WR,Detroit Lions,100.0
+4035538,David Montgomery,RB,Detroit Lions,100.0
+2973405,Kalif Raymond,WR,Detroit Lions,100.0
+4421446,Craig Reynolds,RB,Detroit Lions,100.0
+4383429,Jacob Saylors,RB,Detroit Lions,100.0
+4374302,Amon-Ra St. Brown,WR,Detroit Lions,100.0
+5123663,Isaac TeSlaa,WR,Detroit Lions,100.0
+4912274,Sione Vaki,RB,Detroit Lions,100.0
+4426388,Jameson Williams,WR,Detroit Lions,100.0
+4242392,Brock Wright,TE,Detroit Lions,100.0
+4880638,Kye Robichaux,RB,Detroit Lions,100.0
+4044144,Kenny Yeboah,TE,Detroit Lions,100.0
+4608362,Shane Zylstra,TE,Detroit Lions,100.0
+2979520,C.J. Beathard,QB,Detroit Lions,100.0
+4240069,Malik Cunningham,WR,Detroit Lions,100.0
+4877824,Zach Horton,TE,Detroit Lions,100.0
+3126997,Tom Kennedy,WR,Detroit Lions,100.0
+4602788,Jackson Meeks,WR,Detroit Lions,100.0
+3149687,Chris Brooks,RB,Green Bay Packers,100.0
+4361432,Romeo Doubs,WR,Green Bay Packers,100.0
+4379401,John FitzPatrick,TE,Green Bay Packers,100.0
+4701936,Matthew Golden,WR,Green Bay Packers,100.0
+4689334,Malik Heath,WR,Green Bay Packers,100.0
+4047365,Josh Jacobs,RB,Green Bay Packers,100.0
+4572680,Tucker Kraft,TE,Green Bay Packers,100.0
+4036378,Jordan Love,QB,Green Bay Packers,100.0
+4428085,Luke Musgrave,TE,Green Bay Packers,100.0
+4248528,Christian Watson,WR,Green Bay Packers,100.0
+4428850,Dontayvion Wicks,WR,Green Bay Packers,100.0
+4431487,Savion Williams,WR,Green Bay Packers,100.0
+4242512,Malik Willis,QB,Green Bay Packers,100.0
+4887558,Emanuel Wilson,RB,Green Bay Packers,100.0
+4429023,MarShawn Lloyd,RB,Green Bay Packers,100.0
+4362249,Jayden Reed,WR,Green Bay Packers,100.0
+5178972,Jakobie Keeney-James,WR,Green Bay Packers,100.0
+4428116,Isaiah Neyor,WR,Green Bay Packers,100.0
+4608679,Will Sheppard,WR,Green Bay Packers,100.0
+4249836,Pierre Strong Jr.,RB,Green Bay Packers,100.0
+4360175,Clayton Tune,QB,Green Bay Packers,100.0
+4360086,Josh Whyle,TE,Green Bay Packers,100.0
+2574511,Brandon Allen,QB,Tennessee Titans,100.0
+4883647,Elic Ayomanor,WR,Tennessee Titans,100.0
+4367567,Julius Chestnut,RB,Tennessee Titans,100.0
+4431268,Chimere Dike,WR,Tennessee Titans,100.0
+4686728,Gunnar Helm,TE,Tennessee Titans,100.0
+3930066,Van Jefferson,WR,Tennessee Titans,100.0
+4057082,Mason Kinsey,WR,Tennessee Titans,100.0
+4360978,David Martin-Robinson,TE,Tennessee Titans,100.0
+4360635,Chig Okonkwo,TE,Tennessee Titans,100.0
+4362617,Bryce Oliver,WR,Tennessee Titans,100.0
+3916148,Tony Pollard,RB,Tennessee Titans,100.0
+3925357,Calvin Ridley,WR,Tennessee Titans,100.0
+4428557,Tyjae Spears,RB,Tennessee Titans,100.0
+4688380,Cam Ward,QB,Tennessee Titans,100.0
+4361418,Will Levis,QB,Tennessee Titans,100.0
+4429121,Kalel Mullings,RB,Tennessee Titans,100.0
+4247812,Lance McCutcheon,WR,Tennessee Titans,100.0
+4243004,Jordan Mims,RB,Tennessee Titans,100.0
+4879189,Hal Presley,WR,Tennessee Titans,100.0
+3916204,James Proche II,WR,Tennessee Titans,100.0
+4431353,Xavier Restrepo,WR,Tennessee Titans,100.0
+2511109,Trevor Siemian,QB,Tennessee Titans,100.0
+4361604,Blake Watson,RB,Tennessee Titans,100.0
+4362570,Joel Wilson,TE,Tennessee Titans,100.0
+2576336,Ameer Abdullah,RB,Indianapolis Colts,100.0
+2998565,Mo Alie-Cox,TE,Indianapolis Colts,100.0
+4688813,Josh Downs,WR,Indianapolis Colts,100.0
+4061956,Ashton Dulin,WR,Indianapolis Colts,100.0
+4874509,DJ Giddens,RB,Indianapolis Colts,100.0
+4429676,Tyler Goodson,RB,Indianapolis Colts,100.0
+4429684,Anthony Gould,WR,Indianapolis Colts,100.0
+3917792,Daniel Jones,QB,Indianapolis Colts,100.0
+4683423,Riley Leonard,QB,Indianapolis Colts,100.0
+4362523,Will Mallory,TE,Indianapolis Colts,100.0
+4597500,Adonai Mitchell,WR,Indianapolis Colts,100.0
+4722908,Drew Ogletree,TE,Indianapolis Colts,100.0
+4360078,Alec Pierce,WR,Indianapolis Colts,100.0
+4035687,Michael Pittman Jr.,WR,Indianapolis Colts,100.0
+4242335,Jonathan Taylor,RB,Indianapolis Colts,100.0
+4431459,Tyler Warren,TE,Indianapolis Colts,100.0
+4243315,Salvon Ahmed,RB,Indianapolis Colts,100.0
+4249030,D.J. Montgomery,WR,Indianapolis Colts,100.0
+4429084,Anthony Richardson Sr.,QB,Indianapolis Colts,100.0
+4426689,Ulysses Bentley IV,RB,Indianapolis Colts,100.0
+4608691,Maximilian Mang,TE,Indianapolis Colts,100.0
+4036275,Sean McKeon,TE,Indianapolis Colts,100.0
+4578436,Coleman Owen,WR,Indianapolis Colts,100.0
+3722362,Brett Rypien,QB,Indianapolis Colts,100.0
+3051889,Laquon Treadwell,WR,Indianapolis Colts,100.0
+4241372,Hollywood Brown,WR,Kansas City Chiefs,100.0
+4240472,Noah Gray,TE,Kansas City Chiefs,100.0
+3059915,Kareem Hunt,RB,Kansas City Chiefs,100.0
+15847,Travis Kelce,TE,Kansas City Chiefs,100.0
+3139477,Patrick Mahomes,QB,Kansas City Chiefs,100.0
+4038524,Gardner Minshew,QB,Kansas City Chiefs,100.0
+4241555,Elijah Mitchell,RB,Kansas City Chiefs,100.0
+4361529,Isiah Pacheco,RB,Kansas City Chiefs,100.0
+4372716,Nikko Remigio,WR,Kansas City Chiefs,100.0
+4428331,Rashee Rice,WR,Kansas City Chiefs,100.0
+5082630,Jalen Royals,WR,Kansas City Chiefs,100.0
+4596602,Brashard Smith,RB,Kansas City Chiefs,100.0
+3120348,JuJu Smith-Schuster,WR,Kansas City Chiefs,100.0
+4362921,Tyquan Thornton,WR,Kansas City Chiefs,100.0
+2975674,Robert Tonyan,TE,Kansas City Chiefs,100.0
+4430723,Jared Wiley,TE,Kansas City Chiefs,100.0
+4683062,Xavier Worthy,WR,Kansas City Chiefs,100.0
+4431196,Jake Briningstool,TE,Kansas City Chiefs,100.0
+4362087,Keaontay Ingram,RB,Kansas City Chiefs,100.0
+4689988,Jason Brownlee,WR,Kansas City Chiefs,100.0
+4242214,Clyde Edwards-Helaire,RB,Kansas City Chiefs,100.0
+4431142,Jimmy Holiday,WR,Kansas City Chiefs,100.0
+4044111,Chris Oladokun,QB,Kansas City Chiefs,100.0
+4685784,Tre Watson,TE,Kansas City Chiefs,100.0
+3919510,Alex Bachman,WR,Las Vegas Raiders,100.0
+4603186,Jack Bech,WR,Las Vegas Raiders,100.0
+4432665,Brock Bowers,TE,Las Vegas Raiders,100.0
+4890973,Ashton Jeanty,RB,Las Vegas Raiders,100.0
+4366963,Dylan Laube,RB,Las Vegas Raiders,100.0
+2577327,Tyler Lockett,WR,Las Vegas Raiders,100.0
+4429086,Michael Mayer,TE,Las Vegas Raiders,100.0
+3916433,Jakobi Meyers,WR,Las Vegas Raiders,100.0
+2576414,Raheem Mostert,RB,Las Vegas Raiders,100.0
+4240703,Kenny Pickett,QB,Las Vegas Raiders,100.0
+5155825,Carter Runyon,TE,Las Vegas Raiders,100.0
+15864,Geno Smith,QB,Las Vegas Raiders,100.0
+4045305,Ian Thomas,TE,Las Vegas Raiders,100.0
+4432775,Dont'e Thornton Jr.,WR,Las Vegas Raiders,100.0
+4428718,Tre Tucker,WR,Las Vegas Raiders,100.0
+4361777,Zamir White,RB,Las Vegas Raiders,100.0
+4260394,Aidan O'Connell,QB,Las Vegas Raiders,100.0
+4698191,Chris Collier,RB,Las Vegas Raiders,100.0
+2579604,Phillip Dorsett II,WR,Las Vegas Raiders,100.0
+4361332,Shedrick Jackson,WR,Las Vegas Raiders,100.0
+4693331,Cam Miller,QB,Las Vegas Raiders,100.0
+4035115,Albert Okwuegbunam Jr.,TE,Las Vegas Raiders,100.0
+4361426,Justin Shorter,WR,Las Vegas Raiders,100.0
+4036211,DJ Turner,WR,Las Vegas Raiders,100.0
+16800,Davante Adams,WR,Los Angeles Rams,100.0
+4426553,Davis Allen,TE,Los Angeles Rams,100.0
+4259553,Stetson Bennett IV,QB,Los Angeles Rams,100.0
+4429096,Blake Corum,RB,Los Angeles Rams,100.0
+4570037,Terrance Ferguson,TE,Los Angeles Rams,100.0
+16760,Jimmy Garoppolo,QB,Los Angeles Rams,100.0
+2573401,Tyler Higbee,TE,Los Angeles Rams,100.0
+4710341,Jarquez Hunter,RB,Los Angeles Rams,100.0
+4710855,Konata Mumpfield,WR,Los Angeles Rams,100.0
+4426515,Puka Nacua,WR,Los Angeles Rams,100.0
+4242557,Colby Parkinson,TE,Los Angeles Rams,100.0
+4386544,Xavier Smith,WR,Los Angeles Rams,100.0
+12483,Matthew Stafford,QB,Los Angeles Rams,100.0
+4569382,Jordan Whittington,WR,Los Angeles Rams,100.0
+4430737,Kyren Williams,RB,Los Angeles Rams,100.0
+4360797,Tutu Atwell,WR,Los Angeles Rams,100.0
+4875786,Tru Edwards,WR,Los Angeles Rams,100.0
+4431342,Brennan Presley,WR,Los Angeles Rams,100.0
+4243003,Ronnie Rivers,RB,Los Angeles Rams,100.0
+4565908,Tyler Scott,WR,Los Angeles Rams,100.0
+4429160,De'Von Achane,RB,Miami Dolphins,100.0
+4047422,Tanner Conner,TE,Miami Dolphins,100.0
+4367209,Greg Dulcich,TE,Miami Dolphins,100.0
+4043016,Dee Eskridge,WR,Miami Dolphins,100.0
+4889929,Quinn Ewers,QB,Miami Dolphins,100.0
+4711533,Ollie Gordon II,RB,Miami Dolphins,100.0
+4365395,Julian Hill,TE,Miami Dolphins,100.0
+4241479,Tua Tagovailoa,QB,Miami Dolphins,100.0
+4372016,Jaylen Waddle,WR,Miami Dolphins,100.0
+4569603,Malik Washington,WR,Miami Dolphins,100.0
+4567506,Tahj Washington,WR,Miami Dolphins,100.0
+3929785,Nick Westbrook-Ikhine,WR,Miami Dolphins,100.0
+4361259,Zach Wilson,QB,Miami Dolphins,100.0
+4036335,Cedrick Wilson Jr.,WR,Miami Dolphins,100.0
+4682745,Jaylen Wright,RB,Miami Dolphins,100.0
+4431044,Jalin Conyers,TE,Miami Dolphins,100.0
+3116406,Tyreek Hill,WR,Miami Dolphins,100.0
+4048244,Alexander Mattison,RB,Miami Dolphins,100.0
+2576925,Darren Waller,TE,Miami Dolphins,100.0
+3928925,JaMycal Hasty,RB,Miami Dolphins,100.0
+4429053,AJ Henning,WR,Miami Dolphins,100.0
+3138744,Chris Myarick,TE,Miami Dolphins,100.0
+4428396,Hayden Rucci,TE,Miami Dolphins,100.0
+4426535,Theo Wease Jr.,WR,Miami Dolphins,100.0
+3122976,Jeff Wilson Jr.,RB,Miami Dolphins,100.0
+4429205,Jordan Addison,WR,Minnesota Vikings,100.0
+4573398,Max Brosmer,QB,Minnesota Vikings,100.0
+4565185,Tai Felton,WR,Minnesota Vikings,100.0
+4036133,T.J. Hockenson,TE,Minnesota Vikings,100.0
+4262921,Justin Jefferson,WR,Minnesota Vikings,100.0
+3042519,Aaron Jones Sr.,RB,Minnesota Vikings,100.0
+4360569,Jordan Mason,RB,Minnesota Vikings,100.0
+4433970,J.J. McCarthy,QB,Minnesota Vikings,100.0
+4382466,Jalen Nailor,WR,Minnesota Vikings,100.0
+3921690,Josh Oliver,TE,Minnesota Vikings,100.0
+4430656,Myles Price,WR,Minnesota Vikings,100.0
+4257364,Zavier Scott,RB,Minnesota Vikings,100.0
+4373030,Ben Sims,TE,Minnesota Vikings,100.0
+16460,Adam Thielen,WR,Minnesota Vikings,100.0
+4433959,Ben Yurosek,TE,Minnesota Vikings,100.0
+4708049,Gavin Bartholomew,TE,Minnesota Vikings,100.0
+4242431,Ty Chandler,RB,Minnesota Vikings,100.0
+4372485,Rondale Moore,WR,Minnesota Vikings,100.0
+2573079,Carson Wentz,QB,Minnesota Vikings,100.0
+4240021,Cam Akers,RB,Minnesota Vikings,100.0
+4565297,Dontae Fleming,WR,Minnesota Vikings,100.0
+4360637,Jeshaun Jones,WR,Minnesota Vikings,100.0
+4431431,Corey Kiner,RB,Minnesota Vikings,100.0
+4602969,Bryson Nesbit,TE,Minnesota Vikings,100.0
+2576399,Nick Vannett,TE,Minnesota Vikings,100.0
+3124092,John Wolford,QB,Minnesota Vikings,100.0
+4429022,Kayshon Boutte,WR,New England Patriots,100.0
+4695193,Efton Chism III,WR,New England Patriots,100.0
+4240391,Tommy DeVito,QB,New England Patriots,100.0
+2976212,Stefon Diggs,WR,New England Patriots,100.0
+3044720,Joshua Dobbs,QB,New England Patriots,100.0
+4427095,DeMario Douglas,WR,New England Patriots,100.0
+4432710,TreVeyon Henderson,RB,New England Patriots,100.0
+3046439,Hunter Henry,TE,New England Patriots,100.0
+2991662,Mack Hollins,WR,New England Patriots,100.0
+3043275,Austin Hooper,TE,New England Patriots,100.0
+3115328,Jalen Hurd,WR,New England Patriots,100.0
+4427600,Terrell Jennings,RB,New England Patriots,100.0
+4431452,Drake Maye,QB,New England Patriots,100.0
+4569173,Rhamondre Stevenson,RB,New England Patriots,100.0
+4361100,Jack Westover,TE,New England Patriots,100.0
+4613202,Kyle Williams,WR,New England Patriots,100.0
+4360294,Antonio Gibson,RB,New England Patriots,100.0
+4698253,Lan Larison,RB,New England Patriots,100.0
+4372526,Deneric Prince,RB,New England Patriots,100.0
+4876613,Rushawn Baker,RB,New England Patriots,100.0
+4372519,Jashaun Corbin,RB,New England Patriots,100.0
+4596545,CJ Dippre,TE,New England Patriots,100.0
+4887705,John Jiles,WR,New England Patriots,100.0
+3139602,D'Ernest Johnson,RB,New England Patriots,100.0
+4363554,Thomas Odukoya,TE,New England Patriots,100.0
+4039274,Jonathan Ward,RB,New England Patriots,100.0
+4572655,Jeremiah Webb,WR,New England Patriots,100.0
+16731,Brandin Cooks,WR,New Orleans Saints,100.0
+2468609,Taysom Hill,QB,New Orleans Saints,100.0
+3929645,Juwan Johnson,TE,New Orleans Saints,100.0
+3054850,Alvin Kamara,RB,New Orleans Saints,100.0
+4876006,Zaire Mitchell-Paden,TE,New Orleans Saints,100.0
+3843945,Foster Moreau,TE,New Orleans Saints,100.0
+4682652,Devin Neal,RB,New Orleans Saints,100.0
+4361370,Chris Olave,WR,New Orleans Saints,100.0
+4426339,Spencer Rattler,QB,New Orleans Saints,100.0
+4032473,Rashid Shaheed,WR,New Orleans Saints,100.0
+4360689,Tyler Shough,QB,New Orleans Saints,100.0
+4034862,Jack Stoll,TE,New Orleans Saints,100.0
+4573697,Mason Tipton,WR,New Orleans Saints,100.0
+4569559,Devaughn Vele,WR,New Orleans Saints,100.0
+4427985,Bub Means,WR,New Orleans Saints,100.0
+4599739,Kendre Miller,RB,New Orleans Saints,100.0
+4426407,Trey Palmer,WR,New Orleans Saints,100.0
+4911517,Mason Pline,TE,New Orleans Saints,100.0
+4430637,Ja'Lynn Polk,WR,New Orleans Saints,100.0
+4372758,Kevin Austin Jr.,WR,New Orleans Saints,100.0
+4372063,Ronnie Bell,WR,New Orleans Saints,100.0
+4565358,Hunter Dekkers,QB,New Orleans Saints,100.0
+4569682,Audric Estime,RB,New Orleans Saints,100.0
+4243322,Jake Haener,QB,New Orleans Saints,100.0
+4569609,Evan Hull,RB,New Orleans Saints,100.0
+4432731,Moliki Matavao,TE,New Orleans Saints,100.0
+3127306,Dante Pettis,WR,New Orleans Saints,100.0
+4430684,Treyton Welch,TE,New Orleans Saints,100.0
+4361516,Daniel Bellinger,TE,New York Giants,100.0
+4431210,Beaux Collins,WR,New York Giants,100.0
+4689114,Jaxson Dart,QB,New York Giants,100.0
+4590292,Thomas Fidone II,TE,New York Giants,100.0
+4692590,Jalin Hyatt,WR,New York Giants,100.0
+4429148,Theo Johnson,TE,New York Giants,100.0
+2531358,Chris Manhertz,TE,New York Giants,100.0
+4424106,Gunner Olszewski,WR,New York Giants,100.0
+4569587,Wan'Dale Robinson,WR,New York Giants,100.0
+4040761,Devin Singletary,RB,New York Giants,100.0
+3916945,Darius Slayton,WR,New York Giants,100.0
+4360516,Tyrone Tracy Jr.,RB,New York Giants,100.0
+14881,Russell Wilson,QB,New York Giants,100.0
+2969939,Jameis Winston,QB,New York Giants,100.0
+4575348,Da'Quan Felton,WR,New York Giants,100.0
+4362227,Bryce Ford-Wheaton,WR,New York Giants,100.0
+4570561,Eric Gray,RB,New York Giants,100.0
+4595348,Malik Nabers,WR,New York Giants,100.0
+4696981,Cam Skattebo,RB,New York Giants,100.0
+4570296,Dalen Cambre,WR,New York Giants,100.0
+4039057,Lil'Jordan Humphrey,WR,New York Giants,100.0
+3728262,Ray-Ray McCloud III,WR,New York Giants,100.0
+4367510,Dante Miller,RB,New York Giants,100.0
+4240573,Ihmir Smith-Marsette,WR,New York Giants,100.0
+4695404,Isaiah Davis,RB,New York Jets,100.0
+4362887,Justin Fields,QB,New York Jets,100.0
+4427366,Breece Hall,RB,New York Jets,100.0
+4035886,Khalil Herbert,RB,New York Jets,100.0
+2310331,Tyler Johnson,WR,New York Jets,100.0
+3128390,Allen Lazard,WR,New York Jets,100.0
+4567096,John Metchie III,WR,New York Jets,100.0
+4035537,Kene Nwangwu,RB,New York Jets,100.0
+4361372,Jeremy Ruckert,TE,New York Jets,100.0
+4250764,Stone Smartt,TE,New York Jets,100.0
+4429105,Arian Smith,WR,New York Jets,100.0
+4808766,Mason Taylor,TE,New York Jets,100.0
+14163,Tyrod Taylor,QB,New York Jets,100.0
+4569371,Isaiah Williams,WR,New York Jets,100.0
+4569618,Garrett Wilson,WR,New York Jets,100.0
+4241410,Jelani Woods,TE,New York Jets,100.0
+4685247,Braelon Allen,RB,New York Jets,100.0
+3929636,Irvin Charles,WR,New York Jets,100.0
+3115306,Josh Reynolds,WR,New York Jets,100.0
+4429435,Brady Cook,QB,New York Jets,100.0
+3931391,Trenton Irwin,WR,New York Jets,100.0
+4892576,Jamaal Pritchett,WR,New York Jets,100.0
+4567095,Keilan Robinson,RB,New York Jets,100.0
+4613050,Quentin Skinner,WR,New York Jets,100.0
+3929630,Saquon Barkley,RB,Philadelphia Eagles,100.0
+4429013,Tank Bigsby,RB,Philadelphia Eagles,100.0
+4047646,A.J. Brown,WR,Philadelphia Eagles,100.0
+4241374,Grant Calcaterra,TE,Philadelphia Eagles,100.0
+4715355,Darius Cooper,WR,Philadelphia Eagles,100.0
+4239934,AJ Dillon,RB,Philadelphia Eagles,100.0
+4361409,Jahan Dotson,WR,Philadelphia Eagles,100.0
+4427278,Xavier Gipson,WR,Philadelphia Eagles,100.0
+3121023,Dallas Goedert,TE,Philadelphia Eagles,100.0
+4039160,Kylen Granson,TE,Philadelphia Eagles,100.0
+4426875,Sam Howell,QB,Philadelphia Eagles,100.0
+4040715,Jalen Hurts,QB,Philadelphia Eagles,100.0
+4372026,Cameron Latu,TE,Philadelphia Eagles,100.0
+4685201,Tanner McKee,QB,Philadelphia Eagles,100.0
+4431545,Will Shipley,RB,Philadelphia Eagles,100.0
+4241478,DeVonta Smith,WR,Philadelphia Eagles,100.0
+4686104,Johnny Wilson,WR,Philadelphia Eagles,100.0
+3926231,Britain Covey,WR,Philadelphia Eagles,100.0
+4248557,E.J. Jenkins,TE,Philadelphia Eagles,100.0
+4362630,Terrace Marshall Jr.,WR,Philadelphia Eagles,100.0
+4433971,Kyle McCord,QB,Philadelphia Eagles,100.0
+4050373,Quez Watkins,WR,Philadelphia Eagles,100.0
+2578570,Jacoby Brissett,QB,Arizona Cardinals,100.0
+3914151,Josiah Deguara,TE,Arizona Cardinals,100.0
+4362478,Emari Demercado,RB,Arizona Cardinals,100.0
+4037235,Greg Dortch,WR,Arizona Cardinals,100.0
+4360739,Simi Fehoko,WR,Arizona Cardinals,100.0
+4432708,Marvin Harrison Jr.,WR,Arizona Cardinals,100.0
+4426844,Elijah Higgins,TE,Arizona Cardinals,100.0
+3059722,Zay Jones,WR,Arizona Cardinals,100.0
+4427728,Bam Knight,RB,Arizona Cardinals,100.0
+4361307,Trey McBride,TE,Arizona Cardinals,100.0
+3917315,Kyler Murray,QB,Arizona Cardinals,100.0
+4428512,Kedon Slovis,QB,Arizona Cardinals,100.0
+4428811,Xavier Weaver,WR,Arizona Cardinals,100.0
+4360761,Michael Wilson,WR,Arizona Cardinals,100.0
+4429275,Trey Benson,RB,Arizona Cardinals,100.0
+3045147,James Conner,RB,Arizona Cardinals,100.0
+4696700,Tip Reiman,TE,Arizona Cardinals,100.0
+4259324,Travis Vokolek,TE,Arizona Cardinals,100.0
+3886809,Andre Baccellia,WR,Arizona Cardinals,100.0
+2971281,Pharaoh Brown,TE,Arizona Cardinals,100.0
+4240657,Michael Carter,RB,Arizona Cardinals,100.0
+4374033,Jermar Jefferson,RB,Arizona Cardinals,100.0
+4875912,Tejhaun Palmer,WR,Arizona Cardinals,100.0
+4243389,Calvin Austin III,WR,Pittsburgh Steelers,100.0
+4361411,Pat Freiermuth,TE,Pittsburgh Steelers,100.0
+4371733,Kenneth Gainwell,RB,Pittsburgh Steelers,100.0
+4241961,Connor Heyward,TE,Pittsburgh Steelers,100.0
+4819231,Kaleb Johnson,RB,Pittsburgh Steelers,100.0
+4047650,DK Metcalf,WR,Pittsburgh Steelers,100.0
+3914397,Scotty Miller,WR,Pittsburgh Steelers,100.0
+8439,Aaron Rodgers,QB,Pittsburgh Steelers,100.0
+3116407,Mason Rudolph,QB,Pittsburgh Steelers,100.0
+4035656,Ben Skowronek,WR,Pittsburgh Steelers,100.0
+3054212,Jonnu Smith,TE,Pittsburgh Steelers,100.0
+4569987,Jaylen Warren,RB,Pittsburgh Steelers,100.0
+4430802,Darnell Washington,TE,Pittsburgh Steelers,100.0
+4570738,Ke'Shawn Williams,WR,Pittsburgh Steelers,100.0
+4431492,Roman Wilson,WR,Pittsburgh Steelers,100.0
+4429955,Will Howard,QB,Pittsburgh Steelers,100.0
+3912092,Donald Parham Jr.,TE,Pittsburgh Steelers,100.0
+4036419,Skylar Thompson,QB,Pittsburgh Steelers,100.0
+4242540,Isaiah Hodgins,WR,Pittsburgh Steelers,100.0
+4694237,Max Hurleman,RB,Pittsburgh Steelers,100.0
+4428119,Lew Nichols,RB,Pittsburgh Steelers,100.0
+4426494,John Rhys Plumlee,QB,Pittsburgh Steelers,100.0
+4241401,Trey Sermon,RB,Pittsburgh Steelers,100.0
+3121378,Matt Sokol,TE,Pittsburgh Steelers,100.0
+15818,Keenan Allen,WR,Los Angeles Chargers,100.0
+3915486,Tyler Conklin,TE,Los Angeles Chargers,100.0
+4362477,Derius Davis,WR,Los Angeles Chargers,100.0
+3127292,Will Dissly,TE,Los Angeles Chargers,100.0
+4242558,Tucker Fisk,TE,Los Angeles Chargers,100.0
+4595342,Oronde Gadsden II,TE,Los Angeles Chargers,100.0
+4686612,Tre' Harris,WR,Los Angeles Chargers,100.0
+4372071,Hassan Haskins,RB,Los Angeles Chargers,100.0
+4038941,Justin Herbert,QB,Los Angeles Chargers,100.0
+4429025,Quentin Johnston,WR,Los Angeles Chargers,100.0
+4430870,KeAndre Lambert-Smith,WR,Los Angeles Chargers,100.0
+4383351,Trey Lance,QB,Los Angeles Chargers,100.0
+4612826,Ladd McConkey,WR,Los Angeles Chargers,100.0
+4430968,Kimani Vidal,RB,Los Angeles Chargers,100.0
+4685382,Omarion Hampton,RB,Los Angeles Chargers,100.0
+4241457,Najee Harris,RB,Los Angeles Chargers,100.0
+4569372,Dalevon Campbell,WR,Los Angeles Chargers,100.0
+5160748,JaQuae Jackson,WR,Los Angeles Chargers,100.0
+4878878,Amar Johnson,RB,Los Angeles Chargers,100.0
+4362452,Jaret Patterson,RB,Los Angeles Chargers,100.0
+4429020,DJ Uiagalelei,QB,Los Angeles Chargers,100.0
+4035222,Trayveon Williams,RB,Los Angeles Chargers,100.0
+4361027,Thomas Yassmin,TE,Los Angeles Chargers,100.0
+3045523,Kendrick Bourne,WR,San Francisco 49ers,100.0
+4040612,Luke Farrell,TE,San Francisco 49ers,100.0
+4372561,Isaac Guerendo,RB,San Francisco 49ers,100.0
+4685397,Jordan James,RB,San Francisco 49ers,100.0
+3886598,Jauan Jennings,WR,San Francisco 49ers,100.0
+4241464,Mac Jones,QB,San Francisco 49ers,100.0
+3040151,George Kittle,TE,San Francisco 49ers,100.0
+4361182,Adrian Martinez,QB,San Francisco 49ers,100.0
+3117251,Christian McCaffrey,RB,San Francisco 49ers,100.0
+4430191,Skyy Moore,WR,San Francisco 49ers,100.0
+4428209,Ricky Pearsall,WR,San Francisco 49ers,100.0
+4361741,Brock Purdy,QB,San Francisco 49ers,100.0
+3043116,Demarcus Robinson,WR,San Francisco 49ers,100.0
+4241474,Brian Robinson Jr.,RB,San Francisco 49ers,100.0
+4259147,Jake Tonges,TE,San Francisco 49ers,100.0
+4431466,Jordan Watkins,WR,San Francisco 49ers,100.0
+4360438,Brandon Aiyuk,WR,San Francisco 49ers,100.0
+4575665,Jacob Cowing,WR,San Francisco 49ers,100.0
+4430431,Kurtis Rourke,QB,San Francisco 49ers,100.0
+3040569,Trent Taylor,WR,San Francisco 49ers,100.0
+4039358,Patrick Taylor Jr.,RB,San Francisco 49ers,100.0
+4887918,Junior Bergen,WR,San Francisco 49ers,100.0
+3115378,Russell Gage Jr.,WR,San Francisco 49ers,100.0
+4430104,Sincere McCormick,RB,San Francisco 49ers,100.0
+3115928,Malik Turner,WR,San Francisco 49ers,100.0
+4360290,Brayden Willis,TE,San Francisco 49ers,100.0
+4678006,Elijah Arroyo,TE,Seattle Seahawks,100.0
+4576297,AJ Barner,TE,Seattle Seahawks,100.0
+4360405,Jake Bobo,WR,Seattle Seahawks,100.0
+4426385,Zach Charbonnet,RB,Seattle Seahawks,100.0
+3912547,Sam Darnold,QB,Seattle Seahawks,100.0
+4429835,George Holani,RB,Seattle Seahawks,100.0
+4597703,Tory Horton,WR,Seattle Seahawks,100.0
+4569547,Nick Kallerup,TE,Seattle Seahawks,100.0
+2977187,Cooper Kupp,WR,Seattle Seahawks,100.0
+3924327,Drew Lock,QB,Seattle Seahawks,100.0
+4432734,Jalen Milroe,QB,Seattle Seahawks,100.0
+2975863,Eric Saubert,TE,Seattle Seahawks,100.0
+4430878,Jaxon Smith-Njigba,WR,Seattle Seahawks,100.0
+4567048,Kenneth Walker III,RB,Seattle Seahawks,100.0
+4401805,Dareke Young,WR,Seattle Seahawks,100.0
+4427391,Kenny McIntosh,RB,Seattle Seahawks,100.0
+4429313,Tyrone Broden,WR,Seattle Seahawks,100.0
+4565172,Courtney Jackson,WR,Seattle Seahawks,100.0
+4035693,Velus Jones Jr.,RB,Seattle Seahawks,100.0
+4241983,Cody White,WR,Seattle Seahawks,100.0
+4431479,Ricky White III,WR,Seattle Seahawks,100.0
+4428943,Jacardia Wright,RB,Seattle Seahawks,100.0
+16728,Teddy Bridgewater,QB,Tampa Bay Buccaneers,100.0
+4361112,Devin Culp,TE,Tampa Bay Buccaneers,100.0
+4372505,Payne Durham,TE,Tampa Bay Buccaneers,100.0
+4567750,Emeka Egbuka,WR,Tampa Bay Buccaneers,100.0
+3116165,Chris Godwin Jr.,WR,Tampa Bay Buccaneers,100.0
+4596448,Bucky Irving,RB,Tampa Bay Buccaneers,100.0
+5097554,Kameron Johnson,WR,Tampa Bay Buccaneers,100.0
+4608810,Tez Johnson,WR,Tampa Bay Buccaneers,100.0
+3052587,Baker Mayfield,QB,Tampa Bay Buccaneers,100.0
+4369466,Ryan Miller,WR,Tampa Bay Buccaneers,100.0
+4243331,Cade Otton,TE,Tampa Bay Buccaneers,100.0
+2976592,Sterling Shepard,WR,Tampa Bay Buccaneers,100.0
+4430871,Sean Tucker,RB,Tampa Bay Buccaneers,100.0
+4697815,Rachaad White,RB,Tampa Bay Buccaneers,100.0
+4568024,Josh Williams,RB,Tampa Bay Buccaneers,100.0
+16737,Mike Evans,WR,Tampa Bay Buccaneers,100.0
+4034779,Ko Kieft,TE,Tampa Bay Buccaneers,100.0
+4430834,Jalen McMillan,WR,Tampa Bay Buccaneers,100.0
+4581750,Jaden Smith,WR,Tampa Bay Buccaneers,100.0
+4426444,Connor Bazelak,QB,Tampa Bay Buccaneers,100.0
+4429847,Garrett Greene,WR,Tampa Bay Buccaneers,100.0
+4572786,Dennis Houston,WR,Tampa Bay Buccaneers,100.0
+4035198,Brandon Johnson,WR,Tampa Bay Buccaneers,100.0
+4248052,Tanner Taula,TE,Tampa Bay Buccaneers,100.0
+4569156,Michael Wiley,RB,Tampa Bay Buccaneers,100.0
+4249616,Owen Wright,RB,Tampa Bay Buccaneers,100.0
+4048228,John Bates,TE,Washington Commanders,100.0
+4575131,Jacory Croskey-Merritt,RB,Washington Commanders,100.0
+4426348,Jayden Daniels,QB,Washington Commanders,100.0
+15835,Zach Ertz,TE,Washington Commanders,100.0
+11394,Josh Johnson,QB,Washington Commanders,100.0
+4602667,Jaylin Lane,WR,Washington Commanders,100.0
+2576980,Marcus Mariota,QB,Washington Commanders,100.0
+4426948,Luke McCaffrey,WR,Washington Commanders,100.0
+3121422,Terry McLaurin,WR,Washington Commanders,100.0
+3127586,Jeremy McNichols,RB,Washington Commanders,100.0
+2576581,Chris Moore,WR,Washington Commanders,100.0
+4362619,Chris Rodriguez Jr.,RB,Washington Commanders,100.0
+3126486,Deebo Samuel,WR,Washington Commanders,100.0
+4690923,Ben Sinnott,TE,Washington Commanders,100.0
+4361088,Colson Yankoff,TE,Washington Commanders,100.0
+3121409,Noah Brown,WR,Washington Commanders,100.0
+3068267,Austin Ekeler,RB,Washington Commanders,100.0
+3916564,Tyree Jackson,TE,Washington Commanders,100.0
+4431506,Ja'Corey Brooks,WR,Washington Commanders,100.0
+4567156,Treylon Burks,WR,Washington Commanders,100.0
+3917849,Lawrence Cager,WR,Washington Commanders,100.0
+2574808,Robbie Chosen,WR,Washington Commanders,100.0
+3119195,Chase Edmonds,RB,Washington Commanders,100.0
+4431536,Donovan Edwards,RB,Washington Commanders,100.0
+4361994,Sam Hartman,QB,Washington Commanders,100.0
+5083297,Jacoby Jones,WR,Washington Commanders,100.0
+4695883,Jalen Coker,WR,Carolina Panthers,100.0
+4240631,DeeJay Dallas,RB,Carolina Panthers,100.0
+14012,Andy Dalton,QB,Carolina Panthers,100.0
+4038815,Rico Dowdle,RB,Carolina Panthers,100.0
+4685350,Trevor Etienne,RB,Carolina Panthers,100.0
+4683243,Mitchell Evans,TE,Carolina Panthers,100.0
+4708486,Jimmy Horn Jr.,WR,Carolina Panthers,100.0
+4241416,Chuba Hubbard,RB,Carolina Panthers,100.0
+4430034,Xavier Legette,WR,Carolina Panthers,100.0
+4685472,Tetairoa McMillan,WR,Carolina Panthers,100.0
+4361988,James Mitchell,TE,Carolina Panthers,100.0
+3135321,Hunter Renfrow,WR,Carolina Panthers,100.0
+4431588,Ja'Tavion Sanders,TE,Carolina Panthers,100.0
+4360763,Brycen Tremayne,WR,Carolina Panthers,100.0
+4372780,Tommy Tremble,TE,Carolina Panthers,100.0
+3051381,Mike White,QB,Carolina Panthers,100.0
+4685720,Bryce Young,QB,Carolina Panthers,100.0
+4678008,Jonathon Brooks,RB,Carolina Panthers,100.0
+4212909,David Moore,WR,Carolina Panthers,100.0
+3929637,Dan Chisena,WR,Carolina Panthers,100.0
+4240858,Hendon Hooker,QB,Carolina Panthers,100.0
+5082648,Bryce Pierre,TE,Carolina Panthers,100.0
+4876995,Ja'seem Reed,WR,Carolina Panthers,100.0
+4428532,Ainias Smith,WR,Carolina Panthers,100.0
+4709392,Anthony Tyus III,RB,Carolina Panthers,100.0
+4911851,LeQuint Allen Jr.,RB,Jacksonville Jaguars,100.0
+4361577,Dyami Brown,WR,Jacksonville Jaguars,100.0
+4239996,Travis Etienne Jr.,RB,Jacksonville Jaguars,100.0
+4685415,Travis Hunter,WR,Jacksonville Jaguars,100.0
+4360310,Trevor Lawrence,QB,Jacksonville Jaguars,100.0
+4239944,Hunter Long,TE,Jacksonville Jaguars,100.0
+4244049,Quintin Morris,TE,Jacksonville Jaguars,100.0
+3059989,Nick Mullens,QB,Jacksonville Jaguars,100.0
+3052096,Johnny Mundt,TE,Jacksonville Jaguars,100.0
+3134353,Tim Patrick,WR,Jacksonville Jaguars,100.0
+4391845,Cody Schrader,RB,Jacksonville Jaguars,100.0
+4432773,Brian Thomas Jr.,WR,Jacksonville Jaguars,100.0
+4882093,Bhayshul Tuten,RB,Jacksonville Jaguars,100.0
+4432620,Parker Washington,WR,Jacksonville Jaguars,100.0
+4426893,Joshua Cephus,WR,Jacksonville Jaguars,100.0
+4430539,Brenton Strange,TE,Jacksonville Jaguars,100.0
+3128452,Jordan Akins,TE,Jacksonville Jaguars,100.0
+4362260,Carter Bradley,QB,Jacksonville Jaguars,100.0
+4573243,Chandler Brayboy,WR,Jacksonville Jaguars,100.0
+4429811,Patrick Herbert,TE,Jacksonville Jaguars,100.0
+4379769,Qadir Ismail,TE,Jacksonville Jaguars,100.0
+4690972,Ja'Quinden Jackson,RB,Jacksonville Jaguars,100.0
+4245131,Tim Jones,WR,Jacksonville Jaguars,100.0
+4244856,Austin Trammell,WR,Jacksonville Jaguars,100.0

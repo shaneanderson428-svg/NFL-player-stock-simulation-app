@@ -12,28 +12,25 @@ export async function getAthleteStats(id: number) {
   const getIfFreshRuntime: <T = any>(key: string, ttlMs?: number) => T | undefined = (cache as any).getIfFreshTracked || (cache as any).getIfFresh;
   const cached = getIfFreshRuntime<any>(String(id), ATHLETE_STATS_TTL_MS) as any;
   if (cached) return cached;
-
-  const url = `https://nfl-api-data.p.rapidapi.com/nfl-ath-stats?id=${id}`;
-  const options = {
-    method: "GET",
-    url,
-    headers: {
-      "X-RapidAPI-Key": process.env.RAPIDAPI_KEY!,
-      "X-RapidAPI-Host": "nfl-api-data.p.rapidapi.com",
-    },
-  };
+  // Call our server-side proxy instead of calling RapidAPI directly. The proxy
+  // attaches the RapidAPI key server-side and implements filesystem caching.
+  const base =
+    process.env.NEXT_PUBLIC_BASE_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000');
+  const proxyPath = `/api/rapid-proxy?path=${encodeURIComponent(`/nfl-ath-stats?id=${id}`)}`;
+  const proxyUrl = `${base.replace(/\/$/, '')}${proxyPath}`;
 
   try {
-    const response = await axios.request(options);
-  cache.setCached(String(id), response.data);
-    console.log("✅ Athlete data (fresh):", response.data);
-    return response.data;
+    const response = await axios.get(proxyUrl, { timeout: 15_000 });
+    const data = response.data;
+    cache.setCached(String(id), data);
+    console.log('✅ Athlete data (fresh via proxy):', data);
+    return data;
   } catch (error: any) {
-    console.error("❌ API error in getAthleteStats:", error?.message ?? error);
+    console.error('❌ API/proxy error in getAthleteStats:', error?.message ?? error);
     // If we have stale cached data, return it as a best-effort fallback
-  const stale = cache.getAny<any>(String(id));
+    const stale = cache.getAny<any>(String(id));
     if (stale) {
-      console.warn("⚠️ Returning stale cached athlete data due to API error");
+      console.warn('⚠️ Returning stale cached athlete data due to API/proxy error');
       return stale;
     }
     return null;

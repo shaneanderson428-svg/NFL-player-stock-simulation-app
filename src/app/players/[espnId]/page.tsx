@@ -3,6 +3,7 @@ import path from 'path';
 import fs from 'fs/promises';
 import PlayerCard from '@/app/components/PlayerCard';
 import PlayerStatsChart from '@/components/PlayerStatsChart';
+import WeeklyPriceChartWrapper from '@/app/components/WeeklyPriceChartWrapper.client';
 import historyStore from '@/lib/historyStore';
 
 export const revalidate = 10;
@@ -17,7 +18,11 @@ async function readJson(p: string) {
 }
 
 export default async function Page({ params }: any) {
-  const espnId = String(params?.espnId ?? '');
+  // In newer Next.js versions `params` may be an awaitable object.
+  // Await it before accessing properties to avoid the runtime warning:
+  // "params should be awaited before using its properties".
+  const resolvedParams = await params;
+  const espnId = String(resolvedParams?.espnId ?? '');
   const DATA_DIR = path.join(process.cwd(), 'data', 'advanced');
   const idx = await readJson(path.join(DATA_DIR, 'index.json'));
   let fileName = `${espnId}.json`;
@@ -54,6 +59,10 @@ export default async function Page({ params }: any) {
           {/* PlayerStatsChart accepts defaultPlayer to preselect the current player */}
           {/* @ts-ignore server->client prop bridging is fine for primitive strings */}
           <PlayerStatsChart defaultPlayer={player.name ?? null} />
+          {/* WeeklyPriceChart is a client component that renders historical weekly prices. */}
+          {/* Pass server-side priceHistory (array of {t,p}) to the client chart. */}
+          {/* @ts-ignore server->client bridging: priceHistory is serializable */}
+          <WeeklyPriceChartWrapper history={player.priceHistory ?? []} />
         </div>
       </div>
     </div>

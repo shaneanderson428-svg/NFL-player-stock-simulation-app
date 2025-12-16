@@ -23,10 +23,25 @@ function coerceValue(v: string) {
 
 export async function GET(request: Request) {
   try {
-    const filePath = path.join(process.cwd(), "data/player_stock_summary.csv");
+    // Determine source CSV. By default read `player_stock_summary.csv`.
+    // If ?all=1 is passed, prefer the full roster in `data/roster_backup.csv` so
+    // callers can request the entire dataset (700+ players) for dev/testing.
+    let filePath = path.join(process.cwd(), "data", "player_stock_summary.csv");
+    try {
+      const _u = new URL((request && request.url) || 'http://localhost');
+      const inc = (_u.searchParams.get('all') || '').toLowerCase();
+      if (inc === '1' || inc === 'true' || inc === 'yes') {
+        const rosterPath = path.join(process.cwd(), 'data', 'roster_backup.csv');
+        if (fs.existsSync(rosterPath)) {
+          filePath = rosterPath;
+        }
+      }
+    } catch (e) {
+      // ignore URL parse errors and use default filePath
+    }
 
     if (!fs.existsSync(filePath)) {
-      return NextResponse.json({ ok: false, error: 'player_stock_summary.csv not found' }, { status: 404 });
+      return NextResponse.json({ ok: false, error: `${path.basename(filePath)} not found` }, { status: 404 });
     }
 
     const st = fs.statSync(filePath);
@@ -53,7 +68,10 @@ export async function GET(request: Request) {
   // try to load per-player history CSV if present
     const histPath = path.join(process.cwd(), "data/player_stock_history.csv");
     let histMtime = 0;
-    let historyMap: Record<string, Array<Record<string, any>>> = {};
+  let historyMap: Record<string, Array<Record<string, any>>> = {};
+  // count of new mappings created when attempting to map name-based history to espnIds
+  let historyMapNewMappings = 0;
+  let historyMapPreMergedCount = 0;
     if (fs.existsSync(histPath)) {
       const hst = fs.statSync(histPath);
       histMtime = hst.mtimeMs;
@@ -117,6 +135,74 @@ export async function GET(request: Request) {
         Object.keys(histByName).forEach((k) => histByName[k].sort((a, b) => sortKey(a) - sortKey(b)));
         Object.keys(histByEspn).forEach((k) => histByEspn[k].sort((a, b) => sortKey(a) - sortKey(b)));
         // store combined maps into historyMap with special keys
+        // If histByEspn is empty or sparse, attempt a best-effort mapping from
+        // histByName -> roster espnIds by normalizing names and looking up
+        // `data/roster_backup.csv`. This helps when the history CSV contains
+        // names but not espnId columns.
+        try {
+          const espnKeys = Object.keys(histByEspn || {});
+          if (!espnKeys.length) {
+            const rosterPath = path.join(process.cwd(), 'data', 'roster_backup.csv');
+            if (fs.existsSync(rosterPath)) {
+              try {
+                const rawRoster = fs.readFileSync(rosterPath, 'utf8');
+                const rrows = csvParseSync(rawRoster, { columns: true, skip_empty_lines: true }) as Array<Record<string, string>>;
+                const rosterByName: Record<string, string> = {};
+                  const rosterByLastName: Record<string, string[]> = {};
+                for (const rr of rrows) {
+                  const esp = String(rr.espnId || rr.espnid || rr.playerId || rr.player_id || rr.playerid || '').trim();
+                  const pname = String(rr.player || rr.player_name || rr.name || '').trim();
+                  if (!esp || !pname) continue;
+                  const nk = normalizeNameToKey(pname);
+                  if (nk) rosterByName[nk] = esp;
+                    // also prepare last-name map
+                    try {
+                      const parts = pname.split(/\s+/).filter(Boolean);
+                      const last = parts.length ? parts[parts.length - 1].replace(/[^a-zA-Z]/g, '').toLowerCase() : '';
+                      if (last) {
+                        rosterByLastName[last] = rosterByLastName[last] || [];
+                        rosterByLastName[last].push(esp);
+                      }
+                    } catch (e) {
+                      // ignore
+                    }
+                }
+                  // map histByName keys to espn ids using multiple heuristics
+                  Object.keys(histByName).forEach((k) => {
+                    try {
+                      let mappedEsp: string | undefined;
+                      // try direct normalized match
+                      const kNorm = normalizeNameToKey(k || '');
+                      if (kNorm && rosterByName[kNorm]) mappedEsp = rosterByName[kNorm];
+                      // try stripping dots/periods and re-normalizing
+                      if (!mappedEsp) {
+                        const stripped = String(k || '').replace(/\./g, '').trim();
+                        const sNorm = normalizeNameToKey(stripped);
+                        if (sNorm && rosterByName[sNorm]) mappedEsp = rosterByName[sNorm];
+                      }
+                      // try last-name unique mapping
+                      if (!mappedEsp) {
+                        const parts = String(k || '').split(/\s+|\.|,/).filter(Boolean);
+                        const last = parts.length ? parts[parts.length - 1].replace(/[^a-zA-Z]/g, '').toLowerCase() : '';
+                        if (last && rosterByLastName[last] && rosterByLastName[last].length === 1) mappedEsp = rosterByLastName[last][0];
+                      }
+                      if (mappedEsp) {
+                        if (!histByEspn[mappedEsp]) histByEspn[mappedEsp] = [];
+                        for (const ent of histByName[k]) histByEspn[mappedEsp].push(ent);
+                        historyMapNewMappings += 1;
+                      }
+                    } catch (e) {
+                      // ignore per-key errors
+                    }
+                  });
+              } catch (e) {
+                // ignore roster parse errors
+              }
+            }
+          }
+        } catch (e) {
+          // ignore mapping errors
+        }
         historyMap = { __byName: histByName, __byEspn: histByEspn } as any;
       } catch (e) {
         // ignore history parse errors and continue without history
@@ -161,8 +247,39 @@ export async function GET(request: Request) {
 
     const combinedMtime = mtimeMs + histMtime + profilesMtime;
     const cached = cache[filePath];
-    // read the CSV using helper which coerces numbers
-    const records = await readCSV('data/player_stock_summary.csv');
+    // Read the CSV file fresh from disk and parse it synchronously so each
+    // request (or dev reload) sees the latest `data/player_stock_summary.csv`.
+    // We use the same csv-parse/sync parser imported above and coerce simple
+    // numeric strings to numbers similar to the previous readCSV helper.
+    let records: Array<Record<string, any>> = [];
+    try {
+      const rawCsv = fs.readFileSync(filePath, 'utf8');
+      const parsed = csvParseSync(rawCsv, { columns: true, skip_empty_lines: true }) as Array<Record<string, string>>;
+      records = parsed.map((r) => {
+        const out: Record<string, any> = {};
+        Object.entries(r).forEach(([k, v]) => {
+          if (v === null || v === undefined) {
+            out[k] = v;
+            return;
+          }
+          const s = String(v).trim();
+          if (s === '') {
+            out[k] = null;
+          } else if (/^-?\d+$/.test(s)) {
+            out[k] = parseInt(s, 10);
+          } else if (/^-?\d+\.\d+$/.test(s)) {
+            out[k] = parseFloat(s);
+          } else {
+            out[k] = s;
+          }
+        });
+        return out;
+      });
+    } catch (e) {
+      // If parsing fails, fall back to an empty record set so the route can
+      // still respond gracefully.
+      records = [];
+    }
 
     // build normalized rows
     const rows = records.map((r) => {
@@ -192,6 +309,12 @@ export async function GET(request: Request) {
         hist = [];
       }
       out.history = hist || [];
+      // track when we pre-merged history rows from the CSV into the row
+      try {
+        if (Array.isArray(out.history) && out.history.length > 0) historyMapPreMergedCount += 1;
+      } catch (e) {
+        // ignore
+      }
       // enrich with profile info when available
       try {
   const rawName = String(out.player ?? '').trim();
@@ -307,6 +430,19 @@ export async function GET(request: Request) {
 
     let filtered = Object.values(groupedByTeam);
 
+    // Support an "all" query param to bypass the starter/grouping filters.
+    // Useful in dev/testing when you want the API to return every row from
+    // the CSV (including RB/WR/TE) without changing the compute output.
+    try {
+      const _url = new URL((request && request.url) || 'http://localhost');
+      const inc = (_url.searchParams.get('all') || '').toLowerCase();
+      if (inc === '1' || inc === 'true' || inc === 'yes') {
+        filtered = rowsWithIds.slice();
+      }
+    } catch (e) {
+      // ignore URL parse errors and keep normal filtering
+    }
+
     // Edge case: if grouping produced no results (e.g., no plays column),
     // fall back to the original pass-attempts / z-score filter so we don't
     // return an empty list.
@@ -396,6 +532,11 @@ export async function GET(request: Request) {
       } as Record<string, any>;
     });
 
+  // Log how many players were loaded from the CSV-derived filtered set
+  // This helps confirm that ?all=1 returns the full dataset in dev.
+  // eslint-disable-next-line no-console
+  console.log("Loaded players:", players.length);
+
     // Derive a numeric `priceHistory` (newest -> oldest) from available `history` objects
     const playersWithPrice: Array<Record<string, any>> = players.map((p) => {
       const rawHist = Array.isArray(p.history) ? p.history : [];
@@ -428,6 +569,76 @@ export async function GET(request: Request) {
 
   // optional unique teams list
   const teams = Array.from(new Set(playersWithPrice.map((p) => String(p.team || '').trim()).filter(Boolean)));
+
+  // Try to load weekly stock values (newly generated) and map latest per-player
+  const weeklyStockPath = path.join(process.cwd(), 'data', 'player_weekly_stock.csv');
+  const weeklyMap: Record<string, any> = {};
+  if (fs.existsSync(weeklyStockPath)) {
+    try {
+      const rawWeekly = fs.readFileSync(weeklyStockPath, 'utf8');
+      const weeklyRecords = csvParseSync(rawWeekly, { columns: true, skip_empty_lines: true }) as Array<Record<string, string>>;
+      // Keep only the latest week per player_id
+      const normalize = (s: string) => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+      for (const wr of weeklyRecords) {
+  const rawPid = String(wr.player_id || '').trim();
+  const rawPlayer = String(wr.player || '').trim();
+  // support an explicit espnId column written by the compute script
+  const rawEspnId = String(wr.espnId || wr.espnid || wr.espn || '').trim();
+        const week = Number(wr.week || 0) || 0;
+        // Build multiple keys so consumers can match by espnId, raw name, or a
+        // normalized name slug (alphanum lowercase) to improve matching.
+        const keys = [] as string[];
+  if (rawPid) keys.push(rawPid);
+  if (rawEspnId) keys.push(rawEspnId);
+        if (rawPlayer) keys.push(rawPlayer);
+        const n1 = normalize(rawPid);
+        const n2 = normalize(rawPlayer);
+        if (n1) keys.push(n1);
+        if (n2 && n2 !== n1) keys.push(n2);
+        if (!keys.length) continue;
+        for (const k of keys) {
+          const cur = weeklyMap[k];
+          if (!cur || (week && Number(cur.week || 0) < week)) {
+            weeklyMap[k] = wr;
+          }
+        }
+      }
+    } catch (e) {
+      // ignore weekly stock load errors
+    }
+  }
+
+  // Try to load price_history.json as a fallback source for players that
+  // don't have a weekly_stock entry. The JSON is keyed by espnId in most
+  // cases, but we also attempt to match by normalized player name using
+  // the historyMap built earlier.
+  const priceHistoryPath = path.join(process.cwd(), 'data', 'price_history.json');
+  let priceHistoryData: Record<string, Array<any>> = {};
+  if (fs.existsSync(priceHistoryPath)) {
+    try {
+      const raw = fs.readFileSync(priceHistoryPath, 'utf8');
+      const parsed = JSON.parse(raw) as Record<string, Array<any>>;
+      if (parsed && typeof parsed === 'object') priceHistoryData = parsed;
+    } catch (e) {
+      // ignore parse errors and continue without price_history fallback
+      priceHistoryData = {};
+    }
+  }
+
+    // If the caller requested the full dataset via ?all=1 (or true/yes), log how many
+    // players we're returning so devs can confirm the CSV was loaded in full.
+    try {
+      const _u = new URL(request.url);
+      const allParam = (_u.searchParams.get('all') || '').toLowerCase();
+      if (allParam === '1' || allParam === 'true' || allParam === 'yes') {
+        // log the raw count of players derived from the CSV (before any consumer-side slicing)
+        // This should be 700+ for a full dataset.
+        // eslint-disable-next-line no-console
+        console.log("Loaded players:", playersWithPrice.length);
+      }
+    } catch (e) {
+      // ignore URL parse errors
+    }
 
     // support slug query param: /api/nfl/stocks?slug=dak-prescott
     try {
@@ -521,8 +732,295 @@ export async function GET(request: Request) {
       // ignore URL parsing errors and fall back to list response
     }
 
+  // Honor query params: ?all=1 returns the full dataset (already handled earlier)
+  // Support an optional ?position=QB|RB|WR|TE filter to return only players
+  // matching that position (case-insensitive). This is applied to the
+  // final `players` array; `rows` (legacy) continues to reflect the
+  // filtered/grouped set used for selection.
+  let playersOut = playersWithPrice;
+  try {
+    const _u = new URL(request.url);
+    const allParam = (_u.searchParams.get('all') || '').toLowerCase();
+    const posParam = (_u.searchParams.get('position') || '').trim();
+    const isAll = allParam === '1' || allParam === 'true' || allParam === 'yes';
+    // Apply position filter when requested even in ?all=1 mode. The `all` flag
+    // only controls whether starter/grouping heuristics are applied earlier.
+    if (posParam) {
+      const want = posParam.toUpperCase();
+      playersOut = playersWithPrice.filter((p) => {
+        try {
+          const ppos = String(p.position || p.position_profile || '').toUpperCase();
+          return ppos === want;
+        } catch (e) {
+          return false;
+        }
+      });
+    }
+    // Support an `exclude` param to remove players by position, e.g. ?exclude=QB
+    const excludeParam = (_u.searchParams.get('exclude') || '').trim();
+    if (excludeParam) {
+      const excludes = excludeParam.split(',').map(s => String(s || '').trim().toUpperCase()).filter(Boolean);
+      if (excludes.length > 0) {
+        playersOut = playersOut.filter((p) => {
+          try {
+            const ppos = String(p.position || p.position_profile || '').toUpperCase();
+            return !excludes.includes(ppos);
+          } catch (e) {
+            return true;
+          }
+        });
+      }
+    }
+  } catch (e) {
+    // ignore URL parse errors and return the default players list
+  }
+
+  // Counters for instrumentation: how many players got a weekly stock vs
+  // how many received priceHistory from price_history.json
+  let weeklyStockCount = 0;
+  let priceHistoryJsonCount = 0;
+  let historyMapUsedCount = 0;
+
+  // Attach latest weekly stock values (if available) to each player object.
+  if (Object.keys(weeklyMap).length > 0) {
+    playersOut = playersOut.map((p) => {
+      try {
+        const pidCandidates = [String(p.espnId || ''), String(p.id || ''), String(p.name || '')].map((s) => String(s || '').trim());
+        let found = null as any;
+        for (const c of pidCandidates) {
+          if (!c) continue;
+          if (weeklyMap[c]) {
+            found = weeklyMap[c];
+            break;
+          }
+        }
+        if (found) {
+          // normalise numeric values
+          const sv = found.stock_value !== undefined ? Number(found.stock_value) : Number(found.stock || 0);
+          const sc = found.stock_change !== undefined ? Number(found.stock_change) : Number(found.stock_change || 0);
+          const lg = found.last_game_delta !== undefined ? Number(found.last_game_delta) : Number(found.last_game_delta || 0);
+          weeklyStockCount += 1;
+          return { ...p, stock_value: sv, stock_change: sc, last_game_delta: lg };
+        }
+      } catch (e) {
+        // ignore attach errors
+      }
+      return p;
+    });
+  }
+
+  // Option A: ensure every roster player has a `stock_value` field (default 0.0)
+  // so consumers see a consistent JSON shape and weeklyStockCount reflects
+  // full roster coverage. Only add when an espnId or id is present and the
+  // player does not already have `stock_value`.
+    playersOut = playersOut.map((p) => {
+    try {
+      const hasStock = Object.prototype.hasOwnProperty.call(p, 'stock_value') && p.stock_value !== undefined && p.stock_value !== null;
+      const hasId = Boolean(String(p.espnId || p.id || '').trim());
+      if (!hasStock && hasId) {
+        weeklyStockCount += 1;
+        return { ...p, stock_value: 0.0, stock_change: 0.0, last_game_delta: 0.0 };
+      }
+    } catch (e) {
+      // ignore
+    }
+    return p;
+  });
+
+  // If there are players without weeklyMap matches, attempt to attach a
+  // `priceHistory` array from `price_history.json` (by espnId) or from the
+  // CSV historyMap (by espnId or normalized name). This helps the UI render
+  // charts for more players even when a weekly stock row is not present.
+  if (Object.keys(priceHistoryData || {}).length > 0 || (historyMap && Object.keys(historyMap).length)) {
+    playersOut = playersOut.map((p) => {
+      try {
+        // if they already have a priceHistory (computed earlier), leave it
+        if (Array.isArray(p.priceHistory) && p.priceHistory.length > 0) return p;
+
+        const esp = String(p.espnId || p.id || '').trim();
+        const rawName = String(p.name || p.player || p.player_name || '').trim();
+        const nameKey = normalizeNameToKey(rawName);
+
+        // Build a set of candidate variants for robust matching. We try:
+        // - the raw espn id / id
+        // - a digits-only form (strip non-digits)
+        // - Number(esp) string form (to normalize floats like '1234.0')
+        // - the normalized name slug
+        const makeVariants = (s: string) => {
+          const out: string[] = [];
+          try {
+            if (s && String(s).trim()) out.push(String(s).trim());
+          } catch (e) {}
+          try {
+            const digits = String(s || '').replace(/[^0-9]/g, '');
+            if (digits && !out.includes(digits)) out.push(digits);
+          } catch (e) {}
+          try {
+            const n = Number(String(s || ''));
+            if (!Number.isNaN(n)) {
+              const ns = String(n).replace(/\.0+$/, '');
+              if (ns && !out.includes(ns)) out.push(ns);
+            }
+          } catch (e) {}
+          try {
+            const nk = normalizeNameToKey(String(s || ''));
+            if (nk && !out.includes(nk)) out.push(nk);
+          } catch (e) {}
+          return out;
+        };
+
+        // Also generate some conservative name-variants used in price_history.json
+        // (short forms like `a-rodgers`, `arodgers`, or just the last name) so
+        // we can match entries authored with initials or compact slugs.
+        const extraNameVariants: string[] = [];
+        try {
+          if (rawName) {
+            const parts = String(rawName).split(/\s+/).filter(Boolean);
+            const first = parts[0] || '';
+            const last = parts.length ? parts[parts.length - 1] : '';
+            if (first && last) {
+              const initial = String(first).charAt(0).toLowerCase();
+              // e.g. a-rodgers
+              extraNameVariants.push(`${initial}-${last.toLowerCase()}`);
+              // e.g. arodriges -> arodgers (no hyphen)
+              extraNameVariants.push(`${initial}${last.toLowerCase()}`);
+            }
+            if (last) extraNameVariants.push(last.toLowerCase());
+          }
+        } catch (e) {
+          // ignore
+        }
+
+        const candidates = Array.from(new Set([...(makeVariants(esp) || []), ...(nameKey ? [nameKey] : []), ...extraNameVariants]));
+
+        // Try price_history.json using candidate variants
+        for (const c of candidates) {
+          try {
+            if (!c) continue;
+            const phRaw = (priceHistoryData as any)[c];
+            if (phRaw && Array.isArray(phRaw) && phRaw.length > 0) {
+              const ph = phRaw.slice().reverse();
+              priceHistoryJsonCount += 1;
+              return { ...p, priceHistory: ph };
+            }
+          } catch (e) {
+            // ignore
+          }
+        }
+
+        // Fall back to CSV-derived historyMap by espnId/id variants
+        for (const c of candidates) {
+          try {
+            if (!c) continue;
+            const hm = (historyMap as any).__byEspn && ((historyMap as any).__byEspn[c] || (historyMap as any).__byEspn[String(c)]);
+            if (hm && Array.isArray(hm) && hm.length > 0) {
+              const raw = hm as Array<any>;
+              const pts = raw.map((h) => ({ t: h.t ?? h.date ?? '', p: Number(h.stock ?? h.p ?? h.price ?? NaN) })).filter((x) => typeof x.p === 'number' && !Number.isNaN(x.p));
+              const ph = pts.length ? pts.slice().reverse() : [];
+              historyMapUsedCount += 1;
+              return { ...p, priceHistory: ph };
+            }
+          } catch (e) {
+            // ignore
+          }
+        }
+
+        // Final fallback: match by normalized player name against historyMap.__byName
+        if (nameKey && historyMap && (historyMap as any).__byName) {
+          try {
+            const candidatesName = [rawName, nameKey].filter(Boolean);
+            for (const nk of candidatesName) {
+              const raw = (historyMap as any).__byName[nk];
+              if (raw && Array.isArray(raw) && raw.length > 0) {
+                const pts = raw.map((h) => ({ t: h.t ?? h.date ?? '', p: Number(h.stock ?? h.p ?? h.price ?? NaN) })).filter((x) => typeof x.p === 'number' && !Number.isNaN(x.p));
+                const ph = pts.length ? pts.slice().reverse() : [];
+                historyMapUsedCount += 1;
+                return { ...p, priceHistory: ph };
+              }
+            }
+          } catch (e) {
+            // ignore
+          }
+        }
+      } catch (e) {
+        // ignore
+      }
+      return p;
+    });
+  }
+
   // include both `rows` (legacy) and `players` (consumer-friendly) keys
-  return NextResponse.json({ ok: true, rows: filtered, players: playersWithPrice, teams });
+  try {
+    // Build detailed summary and log it.
+    const historyMapCount = (historyMap && (historyMap as any).__byEspn)
+      ? Object.keys((historyMap as any).__byEspn).length
+      : 0;
+    // Count players without any attached stock or priceHistory
+    let noHistoryCount = 0;
+    try {
+      noHistoryCount = playersOut.filter((p) => !p.stock_value && !(Array.isArray(p.priceHistory) && p.priceHistory.length > 0)).length;
+    } catch (e) {
+      noHistoryCount = 0;
+    }
+  const logLine = `nfl/stocks: attached weeklyStock=${weeklyStockCount || 0}, price_history.json=${priceHistoryJsonCount || 0}, historyMapPreMerged=${historyMapPreMergedCount || 0}, historyMapUsed=${historyMapUsedCount || 0}, historyCsvEntries=${historyMapCount || 0}, historyMapNewMappings=${historyMapNewMappings || 0}, playersWithNoHistory=${noHistoryCount || 0}`;
+    // eslint-disable-next-line no-console
+    console.log(logLine);
+    // Include the same summary in the JSON response under `debug` for callers that
+    // cannot easily access the server console.
+    // Additional diagnostics: inspect the historyMap keys and roster coverage
+    const histByEspn = (historyMap as any) && (historyMap as any).__byEspn ? Object.keys((historyMap as any).__byEspn) : [];
+    const histByName = (historyMap as any) && (historyMap as any).__byName ? Object.keys((historyMap as any).__byName) : [];
+    // try to load roster backup to compare keys
+    let rosterEspn = [] as string[];
+    let rosterNameKeys = [] as string[];
+    try {
+      const rosterPath = path.join(process.cwd(), 'data', 'roster_backup.csv');
+      if (fs.existsSync(rosterPath)) {
+        const rawRoster = fs.readFileSync(rosterPath, 'utf8');
+        const rrows = csvParseSync(rawRoster, { columns: true, skip_empty_lines: true }) as Array<Record<string, string>>;
+        for (const rr of rrows) {
+          const esp = String(rr.espnId || rr.espnid || rr.playerId || rr.player_id || '').trim();
+          const pname = String(rr.player || rr.player_name || rr.name || '').trim();
+          if (esp) rosterEspn.push(esp);
+          const nk = normalizeNameToKey(pname || '');
+          if (nk) rosterNameKeys.push(nk);
+        }
+      }
+    } catch (e) {
+      // ignore roster parse errors
+    }
+
+    const rosterTotal = rosterEspn.length;
+    const rosterWithPriceJson = rosterEspn.filter((e) => Boolean((priceHistoryData as any)[e])).length;
+    const rosterWithHistoryCsv = rosterEspn.filter((e) => Boolean((historyMap as any).__byEspn && (historyMap as any).__byEspn[e])).length;
+    const rosterMissingHistory = rosterEspn.filter((e) => !((priceHistoryData as any)[e]) && !((historyMap as any).__byEspn && (historyMap as any).__byEspn[e]));
+    const sampleMissingEspn = rosterMissingHistory.slice(0, 25);
+
+    const sampleHistEspn = histByEspn.slice(0, 25);
+    const sampleHistName = histByName.slice(0, 25);
+
+    const debug = {
+      weeklyStockCount: weeklyStockCount || 0,
+      priceHistoryJsonCount: priceHistoryJsonCount || 0,
+      historyMapPreMerged: historyMapPreMergedCount || 0,
+      historyMapUsed: historyMapUsedCount || 0,
+      historyMapNewMappings: historyMapNewMappings || 0,
+      historyCsvEntries: historyMapCount || 0,
+      playersWithNoHistory: noHistoryCount || 0,
+      rosterTotal: rosterTotal || 0,
+      rosterWithPriceHistoryJson: rosterWithPriceJson || 0,
+      rosterWithHistoryCsv: rosterWithHistoryCsv || 0,
+      rosterMissingHistoryCount: (rosterMissingHistory && rosterMissingHistory.length) || 0,
+      sampleMissingEspn,
+      sampleHistEspn,
+      sampleHistName,
+      log: logLine,
+    };
+    return NextResponse.json({ ok: true, rows: filtered, players: playersOut, teams, debug });
+  } catch (e) {
+    // ignore logging errors and fall back to normal response
+  }
+  return NextResponse.json({ ok: true, rows: filtered, players: playersOut, teams });
   } catch (err: any) {
     return NextResponse.json({ ok: false, error: err.message }, { status: 500 });
   }

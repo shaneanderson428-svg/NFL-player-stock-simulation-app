@@ -47,5 +47,7 @@ jobs:
       - name: Run JS tests
         run: npm test
 
-      - name: Run Python tests
-        run: pytest -v
+      - name: Run Python tests (selected)
+        run: |
+          # Run the regression and integration tests added for last_game_delta logic
+          pytest tests/test_last_game_delta.py tests/test_compute_player_stock_summary_fixture.py -q

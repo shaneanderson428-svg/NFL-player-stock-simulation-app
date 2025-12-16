@@ -1,0 +1,6 @@
+linters: with_defaults()
+exclusions: list(
+  "^scripts/.*",
+  "^data/.*",
+  "^public/.*"
+)

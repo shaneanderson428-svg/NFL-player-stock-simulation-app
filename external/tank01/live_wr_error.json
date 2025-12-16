@@ -1,0 +1,8 @@
+{
+  "ts": "2025-12-16T20:24:21.482Z",
+  "endpoint": "https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getPlayerList?position=WR",
+  "status": 429,
+  "body": {
+    "message": "Too many requests"
+  }
+}

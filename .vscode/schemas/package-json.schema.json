@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Minimal package.json schema for offline dev",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "private": { "type": "boolean" },
+    "scripts": { "type": "object", "additionalProperties": { "type": "string" } },
+    "dependencies": { "type": "object", "additionalProperties": { "type": "string" } },
+    "devDependencies": { "type": "object", "additionalProperties": { "type": "string" } }
+  }
+}

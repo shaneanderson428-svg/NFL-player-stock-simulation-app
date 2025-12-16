@@ -1,0 +1,56 @@
+
+=== URL: https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLPlayerList/
+Status: 403
+Response headers:
+  content-type: application/json
+Body (truncated 8000 chars):
+{"message":"You are not subscribed to this API."}
+
+
+=== URL: https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLPlayerList
+Status: 429
+Response headers:
+  content-type: application/json
+Body (truncated 8000 chars):
+{"message":"Too many requests"}
+
+
+=== URL: https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getPlayers
+Status: 429
+Response headers:
+  content-type: application/json
+Body (truncated 8000 chars):
+{"message":"Too many requests"}
+
+
+=== URL: https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/players
+Status: 429
+Response headers:
+  content-type: application/json
+Body (truncated 8000 chars):
+{"message":"Too many requests"}
+
+
+=== URL: https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/playerList
+Status: 429
+Response headers:
+  content-type: application/json
+Body (truncated 8000 chars):
+{"message":"Too many requests"}
+
+
+=== URL: https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/players/list
+Status: 429
+Response headers:
+  content-type: application/json
+Body (truncated 8000 chars):
+{"message":"Too many requests"}
+
+
+=== URL: https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLGamesForPlayer
+Status: 429
+Response headers:
+  content-type: application/json
+Body (truncated 8000 chars):
+{"message":"Too many requests"}
+

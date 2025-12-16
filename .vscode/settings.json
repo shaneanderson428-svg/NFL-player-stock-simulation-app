@@ -1,7 +1,17 @@
 {
+  "json.schemas": [
+    {
+      "fileMatch": ["/package.json", "package.json"],
+      "url": ".vscode/schemas/package-json.schema.json"
+    }
+  ],
+  "json.schemaDownload.enable": false,
+
   // Reduce noisy diagnostics when node modules or native build toolchain aren't installed locally.
   "yaml.validate": false,
   "eslint.enable": false,
+  "python.linting.enabled": false,
+  "python.analysis.typeCheckingMode": "off",
   "python.analysis.diagnosticMode": "openFilesOnly",
   "python.analysis.reportMissingImports": false,
   "files.exclude": {
@@ -19,5 +29,9 @@
   // - /opt/homebrew/bin/R (Apple Silicon Homebrew)
   // - /usr/local/bin/R (Intel Homebrew)
   // - /Library/Frameworks/R.framework/Resources/bin/R (CRAN framework installer)
-  "r.rpath.mac": "/usr/local/bin/R"
+  "r.rpath.mac": "/usr/local/bin/R",
+  // Disable R lintr diagnostics in the workspace to avoid editor linter failures
+  // (some environments/configs cause lintr::load_config() to fail).
+  "r.lsp.diagnostics": false,
+  "r.lintr.lintOnSave": false
 }

@@ -1,0 +1,9 @@
+{
+  "ts": "2025-12-08T17:16:29Z",
+  "endpoint": "getNFLPlayerLiveGameStats",
+  "status_code": 403,
+  "url": "https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLPlayerLiveGameStats?season=2025&week=14&position=WR",
+  "raw": {
+    "message": "You are not subscribed to this API."
+  }
+}

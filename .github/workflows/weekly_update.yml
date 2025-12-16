@@ -1,0 +1,47 @@
+name: Weekly Player Stock Update
+
+# Run weekly at two times (Monday 05:00 UTC and Tuesday 07:00 UTC) to cover
+# different schedules. Also allow manual runs via workflow_dispatch.
+on:
+  schedule:
+    - cron: '0 5 * * 1'   # every Monday at 05:00 UTC
+    - cron: '0 7 * * 2'   # every Tuesday at 07:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node (optional)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then
+            python -m pip install -r requirements.txt
+          fi
+
+      - name: Run compute script to ensure outputs are generated
+        run: python3 scripts/compute_player_stock.py
+
+      - name: Commit and push outputs
+        run: |
+          git config user.name "StockBot"
+          git config user.email "stockbot@github.com"
+          git add data/player_stock_summary.csv data/player_stock_history.csv || true
+          git commit -m "Weekly auto-update" || echo "No changes to commit"
+          git push || echo "Push failed (maybe read-only token)"
+
+      - run: echo "✅ Weekly player stock update complete!"

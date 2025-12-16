@@ -1,6 +1,7 @@
 import importlib.util
 from pathlib import Path
 import pandas as pd
+import math
 
 # Import compute_player_stock by file location so tests work regardless of PYTHONPATH
 proj_root = Path(__file__).resolve().parents[1]
@@ -68,59 +69,54 @@ def test_volatility_multipliers_and_capping():
 
     # Row 0: gameday -> multiplier 1.5
     assert float(out.loc[0, "multiplier"]) == 1.5
-    assert (
-        abs(
-            float(out.loc[0, "rawChange"]) * 1.5
-            - float(out.loc[0, "applied_weekly_change"])
-        )
-        < 1e-8
+    # applied_weekly_change now reflects a 70/30 split between performance
+    # and amplified market activity. Recompute expectation from diagnostics.
+    expected0 = (
+        0.7 * float(out.loc[0, "performance_change"]) 
+        + 0.3 * (float(out.loc[0, "market_change"]) * float(out.loc[0, "multiplier"]))
     )
-    assert float(out.loc[0, "cappedChange"]) == float(
-        out.loc[0, "applied_weekly_change"]
-    )
-    assert (
-        abs(
-            float(out.loc[0, "newPrice"])
-            - (100.0 * (1.0 + float(out.loc[0, "cappedChange"])))
-        )
-        < 1e-8
-    )
+    assert abs(float(out.loc[0, "applied_weekly_change"]) - expected0) < 1e-8
+    # cappedChange is the tanh-smoothed version of the applied change
+    expected0_capped = 0.25 * math.tanh(2.5 * expected0)
+    assert abs(float(out.loc[0, "cappedChange"]) - expected0_capped) < 1e-6
+    expected0_price = round(100.0 * (1.0 + round(expected0_capped, 6)), 4)
+    assert abs(float(out.loc[0, "newPrice"]) - expected0_price) < 1e-8
 
-    # Row 1: primetime -> multiplier >= 1.75 (we set primetime True)
+    # Row 1: primetime -> multiplier >= 1.75
     assert float(out.loc[1, "multiplier"]) >= 1.75
-    assert (
-        abs(
-            float(out.loc[1, "rawChange"]) * float(out.loc[1, "multiplier"])
-            - float(out.loc[1, "applied_weekly_change"])
-        )
-        < 1e-8
+    expected1 = (
+        0.7 * float(out.loc[1, "performance_change"]) 
+        + 0.3 * (float(out.loc[1, "market_change"]) * float(out.loc[1, "multiplier"]))
     )
-    assert float(out.loc[1, "cappedChange"]) == float(
-        out.loc[1, "applied_weekly_change"]
-    )
+    assert abs(float(out.loc[1, "applied_weekly_change"]) - expected1) < 1e-8
+    expected1_capped = 0.25 * math.tanh(2.5 * expected1)
+    assert abs(float(out.loc[1, "cappedChange"]) - expected1_capped) < 1e-6
 
-    # Row 2: playoff -> multiplier 2.0 and capping to 0.20
+    # Row 2: playoff -> multiplier 2.0 -- ensure multiplier is set and smoothing applied
     assert float(out.loc[2, "multiplier"]) == 2.0
-    # applied raw change before cap should be 0.12 * 2 = 0.24
-    assert abs(float(out.loc[2, "applied_weekly_change"]) - 0.24) < 1e-8
-    # cappedChange should be clamped to 0.20
-    assert abs(float(out.loc[2, "cappedChange"]) - 0.20) < 1e-8
-    # newPrice should reflect the capped change
-    assert abs(float(out.loc[2, "newPrice"]) - (100.0 * 1.20)) < 1e-8
+    expected2 = (
+        0.7 * float(out.loc[2, "performance_change"]) 
+        + 0.3 * (float(out.loc[2, "market_change"]) * float(out.loc[2, "multiplier"]))
+    )
+    assert abs(float(out.loc[2, "applied_weekly_change"]) - expected2) < 1e-8
+    expected2_capped = 0.25 * math.tanh(2.5 * expected2)
+    assert abs(float(out.loc[2, "cappedChange"]) - expected2_capped) < 1e-6
+    expected2_price = round(100.0 * (1.0 + round(expected2_capped, 6)), 4)
+    assert abs(float(out.loc[2, "newPrice"]) - expected2_price) < 1e-8
 
-    # Row 3: off-season (is_gameday False) with positive sentiment ->
-    # - multiplier should remain 1.0 (no game)
-    # - sentiment_factor should be 1 + 0.1*0.8 = 1.08 (clamped between 0.8 and 1.2)
-    # - applied_weekly_change should be weekly_change * multiplier * sentiment_factor
+    # Row 3: off-season (is_gameday False) with positive sentiment
     assert float(out.loc[3, "multiplier"]) == 1.0
+    # sentiment_factor should be 1 + 0.1*0.8 = 1.08 (clamped between 0.8 and 1.2)
     assert abs(float(out.loc[3, "sentiment_factor"]) - 1.08) < 1e-8
-    # compute expected: base raw = weekly_change * multiplier = 0.02
-    expected_after_sentiment = 0.02 * 1.08
-    assert abs(float(out.loc[3, "applied_weekly_change"]) - expected_after_sentiment) < 1e-8
-    # newPrice should be computed with cappedChange and then off-season decay 0.995 applied
-    # capped change equals applied change (well under 20%)
-    expected_price_pre_decay = 100.0 * (1.0 + float(out.loc[3, "cappedChange"]))
+    expected3 = (
+        0.7 * float(out.loc[3, "performance_change"]) 
+        + 0.3 * (float(out.loc[3, "market_change"]) * float(out.loc[3, "multiplier"]))
+    )
+    assert abs(float(out.loc[3, "applied_weekly_change"]) - expected3) < 1e-8
+    expected3_capped = 0.25 * math.tanh(2.5 * expected3)
+    expected_price_pre_decay = 100.0 * (1.0 + round(expected3_capped, 6))
     expected_price_after_decay = expected_price_pre_decay * 0.995
-    assert abs(float(out.loc[3, "newPrice"]) - expected_price_after_decay) < 1e-8
+    expected_price_after_decay = round(expected_price_after_decay, 4)
+    assert abs(float(out.loc[3, "newPrice"]) - expected_price_after_decay) < 1e-6
     # trading_volume should be present and equal to 5000
     assert int(out.loc[3, "trading_volume"]) == 5000

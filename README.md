@@ -79,6 +79,40 @@ python3 scripts/clean_player_profiles.py
 ```
 
 
+## Manual weekly update (MVP)
+
+This project ships as a file-based, manually-run weekly pipeline. No background jobs or live polling are required. Follow these steps to perform the weekly update (manual, once per week):
+
+1. Ensure you have a valid RapidAPI key available in your shell environment:
+
+```bash
+export RAPIDAPI_KEY=your_key_here
+```
+
+2. Make the runner executable (one-time):
+
+```bash
+chmod +x scripts/run_weekly_update.sh
+```
+
+3. Run the pipeline for the season and week you want to update (example: 2025 week 7):
+
+```bash
+./scripts/run_weekly_update.sh 2025 7
+```
+
+What it does:
+- Fetches boxscores and player stats for the requested week
+- Computes advanced metrics
+- Computes player stock/site-ready CSV outputs (or falls back to price update script)
+- Writes a small JSON summary file to `data/weekly_update_summary_<SEASON>_w<WEEK>.json`
+
+Notes and constraints:
+- Manual-only process: do not schedule or enable background polling unless you intentionally add CI automation.
+- No new external APIs from the frontend: the site only reads generated CSV/JSON artifacts under `external/` and `data/`.
+- If you hit rate limits while fetching data, check your `RAPIDAPI_KEY` quota. The scripts include some retry/backoff but heavy rate-limiting will require a higher quota or slower manual runs.
+
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
