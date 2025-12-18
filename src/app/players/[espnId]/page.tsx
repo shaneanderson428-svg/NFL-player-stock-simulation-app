@@ -1,70 +1,12 @@
 import React from 'react';
-import path from 'path';
-import fs from 'fs/promises';
-import PlayerCard from '@/app/components/PlayerCard';
-import PlayerStatsChart from '@/components/PlayerStatsChart';
-import WeeklyPriceChartWrapper from '@/app/components/WeeklyPriceChartWrapper.client';
-import historyStore from '@/lib/historyStore';
+import PlayerClient from './PlayerClient';
 
-export const revalidate = 10;
-
-async function readJson(p: string) {
-  try {
-    const raw = await fs.readFile(p, 'utf8');
-    return JSON.parse(raw);
-  } catch (e) {
-    return null;
-  }
-}
-
-export default async function Page({ params }: any) {
-  // In newer Next.js versions `params` may be an awaitable object.
-  // Await it before accessing properties to avoid the runtime warning:
-  // "params should be awaited before using its properties".
-  const resolvedParams = await params;
-  const espnId = String(resolvedParams?.espnId ?? '');
-  const DATA_DIR = path.join(process.cwd(), 'data', 'advanced');
-  const idx = await readJson(path.join(DATA_DIR, 'index.json'));
-  let fileName = `${espnId}.json`;
-  if (idx) {
-    if (Array.isArray(idx.players)) {
-      const found = idx.players.find((p: any) => String(p.espnId) === String(espnId));
-      if (found) fileName = found.file || fileName;
-    } else if (idx[espnId]) {
-      fileName = idx[espnId];
-    }
-  }
-
-  const playerJson = await readJson(path.join(DATA_DIR, fileName));
-  const histMap = await historyStore.loadMap();
-  const persisted = histMap.get(String(espnId)) || null;
-
-  const player = {
-    id: espnId,
-    espnId: espnId,
-    name: playerJson?.player ?? playerJson?.playerName ?? playerJson?.name ?? null,
-    position: playerJson?.position ?? null,
-    team: playerJson?.team ?? null,
-    priceHistory: Array.isArray(persisted) ? persisted : playerJson?.priceHistory ?? [],
-    raw: playerJson ?? null,
-  };
-
+export default function Page({ params }: any) {
+  // Keep this server component minimal: only pass the espnId from params to the client.
+  const espnId = String((params && (params.espnId ?? '')) ?? '');
   return (
-    <div style={{ padding: 18 }}>
-      <div style={{ display: 'flex', gap: 24 }}>
-        <div style={{ flex: '0 0 360px' }}>
-          <PlayerCard player={player} />
-        </div>
-        <div style={{ flex: 1 }}>
-          {/* PlayerStatsChart accepts defaultPlayer to preselect the current player */}
-          {/* @ts-ignore server->client prop bridging is fine for primitive strings */}
-          <PlayerStatsChart defaultPlayer={player.name ?? null} />
-          {/* WeeklyPriceChart is a client component that renders historical weekly prices. */}
-          {/* Pass server-side priceHistory (array of {t,p}) to the client chart. */}
-          {/* @ts-ignore server->client bridging: priceHistory is serializable */}
-          <WeeklyPriceChartWrapper history={player.priceHistory ?? []} />
-        </div>
-      </div>
+    <div>
+      <PlayerClient espnId={espnId} />
     </div>
   );
 }

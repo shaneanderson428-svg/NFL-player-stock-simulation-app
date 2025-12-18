@@ -1,0 +1,45 @@
+{
+  "playerId": 3043275,
+  "history": [
+    {
+      "week": 1,
+      "price": 90.0
+    },
+    {
+      "week": 2,
+      "price": 81.0
+    },
+    {
+      "week": 3,
+      "price": 72.9
+    },
+    {
+      "week": 4,
+      "price": 65.61
+    },
+    {
+      "week": 6,
+      "price": 59.05
+    },
+    {
+      "week": 7,
+      "price": 58.75
+    },
+    {
+      "week": 8,
+      "price": 52.88
+    },
+    {
+      "week": 9,
+      "price": 47.59
+    },
+    {
+      "week": 10,
+      "price": 42.83
+    },
+    {
+      "week": 12,
+      "price": 38.55
+    }
+  ]
+}

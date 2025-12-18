@@ -6,14 +6,31 @@ import { Sparkline } from '@/lib/sparkline';
 
 const WRChart = dynamic(() => import('@/components/WRChart'), { ssr: false });
 
-export default function PlayerPage({ params }: { params: { espnId: string } }) {
-  const { espnId } = params;
+export default function PlayerPage({ params }: { params: Promise<{ espnId: string }> | { espnId: string } }) {
+  // Next.js App Router may provide params as a Promise (Next 15).
+  // This is a client component, so we must not call React's `use()` here.
+  // Instead, resolve params inside an effect and store espnId in state.
+  const [espnId, setEspnId] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const resolved = (params as any)?.then ? await (params as Promise<{ espnId: string }>) : (params as { espnId: string });
+        if (!cancelled) setEspnId(String(resolved?.espnId ?? ''));
+      } catch (e) {
+        // ignore - keep espnId null which shows loading/error as appropriate
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [params]);
   const [row, setRow] = useState<Record<string, any> | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [history, setHistory] = useState<{ week: number; price: number }[] | null>(null);
 
   useEffect(() => {
+    if (!espnId) return;
     const ac = new AbortController();
     setLoading(true);
     setError(null);
@@ -62,14 +79,24 @@ export default function PlayerPage({ params }: { params: { espnId: string } }) {
         // New API shape returns weeklyHistory: [{week, price}, ...]
         const hist = Array.isArray(json.weeklyHistory) ? json.weeklyHistory : [];
         setHistory(hist);
-        // attach to row so other components can use it (sparkline/team pages expect persistedHistory/priceHistory)
+        // build a chart-friendly dataset that includes multiple key shapes for compatibility
+        const chartData = hist.map((h: any) => ({
+          x: `W${h.week}`,
+          y: Number(h.price),
+          t: `W${h.week}`,
+          p: Number(h.price),
+          price: Number(h.price),
+          name: `W${h.week}`,
+          week: Number(h.week),
+        }));
+
+        // attach to row so other components that still read priceHistory/persistedHistory
+        // continue to work. We also fill name/position from API if missing.
         setRow((prev) => {
           if (!prev) return prev;
-          const persisted = hist.map((h: any) => ({ t: `W${h.week}`, p: Number(h.price) }));
-          // if row name/position are missing, try to fill from API response
           const name = prev.longName ?? prev.player ?? json.playerName ?? prev.longName ?? '';
           const pos = prev.position ?? json.position ?? prev.position ?? '';
-          return { ...prev, persistedHistory: persisted, priceHistory: persisted, longName: name, player: name, position: pos };
+          return { ...prev, persistedHistory: chartData, priceHistory: chartData, weeklyHistory: hist, longName: name, player: name, position: pos };
         });
       } catch (e: any) {
         if (e?.name === 'AbortError') return;
@@ -81,17 +108,20 @@ export default function PlayerPage({ params }: { params: { espnId: string } }) {
     return () => ac.abort();
   }, [row]);
 
-  const last = useMemo(() => {
-    if (!row) return null;
-    const hist = Array.isArray(row.priceHistory) ? row.priceHistory : [];
+  const last: any = useMemo(() => {
+    const hist = Array.isArray(history)
+      ? history
+      : (Array.isArray(row?.priceHistory) ? row.priceHistory.map((h: any) => ({ week: h.week ?? null, price: Number(h.p ?? h.price ?? h.y ?? 0), ...h })) : []);
     return hist.length ? hist[hist.length - 1] : null;
-  }, [row]);
+  }, [history, row]);
 
   if (loading) return <div style={{ padding: 18 }}>Loading…</div>;
   if (error) return <div style={{ padding: 18 }} className="text-red-500">Error: {error}</div>;
   if (!row) return <div style={{ padding: 18 }}>Player not found</div>;
 
-  const name = row.longName ?? row.player ?? '';
+  let name = (row.longName ?? row.player ?? '').toString();
+  // Never render placeholder names like "player_123"
+  if (/^(player[_-]?\d+)$/i.test(name.trim())) name = '';
   const team = row.team ?? '';
   const headshot = row.espnHeadshot || row.headshot || row.imageUrl || undefined;
 
@@ -123,11 +153,11 @@ export default function PlayerPage({ params }: { params: { espnId: string } }) {
             <div className="text-sm text-gray-400">No weekly history available</div>
           ) : (
             <>
+              {/* Main chart: PriceHistoryChart expects {week,price} entries */}
               <PriceHistoryChart history={history} />
               <div className="mt-2 w-40">
-                {/* sparkline uses the same history data (as t/p pairs) */}
-                {/** renderSparkline expects objects with p or price */}
-                <Sparkline history={history.map(h => ({ t: `W${h.week}`, p: Number(h.price) }))} width={200} height={40} />
+                {/* Sparkline expects objects with p or price; we build a compatible array from weeklyHistory */}
+                <Sparkline history={history.map(h => ({ t: `W${h.week}`, p: Number(h.price), price: Number(h.price) }))} width={200} height={40} />
               </div>
             </>
           )}

@@ -46,6 +46,51 @@ async function main() {
   }
 
   console.log('vercel_build: data generation step complete');
+  
+    // Ensure data/history is available in public for runtime/static serving on Vercel
+    try {
+      const srcDir = path.join(repoRoot, 'data', 'history');
+      const destDir = path.join(repoRoot, 'public', 'history');
+      if (fs.existsSync(srcDir)) {
+        if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
+        // Recursive copy to handle nested dirs (e.g., per-season folders)
+        function copyRecursive(src, dest) {
+          const lst = fs.lstatSync(src);
+          if (lst.isSymbolicLink()) {
+            // skip symlinks in history directory
+            return;
+          }
+          if (lst.isDirectory()) {
+            if (!fs.existsSync(dest)) fs.mkdirSync(dest, { recursive: true });
+            const children = fs.readdirSync(src);
+            children.forEach((c) => copyRecursive(path.join(src, c), path.join(dest, c)));
+          } else if (lst.isFile()) {
+            fs.copyFileSync(src, dest);
+          } else {
+            // skip sockets, pipes, and other special files
+            return;
+          }
+        }
+
+        const items = fs.readdirSync(srcDir);
+        let copied = 0;
+        items.forEach((f) => {
+          const s = path.join(srcDir, f);
+          const d = path.join(destDir, f);
+          try {
+            copyRecursive(s, d);
+            copied++;
+          } catch (e) {
+            console.warn('vercel_build: failed to copy', s, '->', d, e && e.message);
+          }
+        });
+        console.log('vercel_build: copied data/history -> public/history (', copied, 'items)');
+      } else {
+        console.log('vercel_build: no data/history dir found to copy');
+      }
+    } catch (err) {
+      console.warn('vercel_build: error copying history to public', err && err.message);
+    }
 }
 
 main().catch(err => {

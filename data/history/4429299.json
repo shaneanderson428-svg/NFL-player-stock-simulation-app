@@ -1,0 +1,21 @@
+{
+  "playerId": 4429299,
+  "history": [
+    {
+      "week": 3,
+      "price": 90.0
+    },
+    {
+      "week": 9,
+      "price": 81.0
+    },
+    {
+      "week": 11,
+      "price": 72.9
+    },
+    {
+      "week": 12,
+      "price": 65.61
+    }
+  ]
+}

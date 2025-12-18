@@ -24,7 +24,10 @@ async function lookupPlayerInfo(id: string) {
       const parts = lines[i].split(',');
       const espn = parts[idxEspn];
       if (String(espn) === String(id)) {
-        return { playerName: parts[idxPlayer] || null, position: parts[idxPos] || null };
+        const rawName = parts[idxPlayer] || null;
+        // Ignore placeholder names like "player_123" which are not user-friendly
+        const isPlaceholder = typeof rawName === 'string' && /^(player[_-]?\d+)$/i.test(rawName.trim());
+        return { playerName: isPlaceholder ? null : rawName, position: parts[idxPos] || null };
       }
     }
   } catch (e) {
@@ -37,7 +40,11 @@ async function lookupPlayerInfo(id: string) {
     const lines2 = raw2.split(/\r?\n/).filter(Boolean);
     for (const ln of lines2) {
       const parts = ln.split(',');
-      if (String(parts[0]) === String(id)) return { playerName: parts[1] || null, position: parts[2] || null };
+      if (String(parts[0]) === String(id)) {
+        const rawName = parts[1] || null;
+        const isPlaceholder = typeof rawName === 'string' && /^(player[_-]?\d+)$/i.test(rawName.trim());
+        return { playerName: isPlaceholder ? null : rawName, position: parts[2] || null };
+      }
     }
   } catch (e) {
     // ignore
@@ -60,7 +67,19 @@ export async function GET(req: Request) {
         const info = await lookupPlayerInfo(id);
         return NextResponse.json({ playerId: Number(id), playerName: info.playerName, position: info.position, currentPrice: null, weeklyHistory: [] });
       }
-      const obj = JSON.parse(raw);
+  const obj = JSON.parse(raw);
+
+  // If the history file itself contains player metadata, prefer that when present
+  const embeddedName = (obj && (obj.playerName || obj.name || obj.player || obj.longName)) || null;
+  const embeddedPos = (obj && (obj.position || obj.pos)) || null;
+
+  const isPlaceholder = (nm: any) => typeof nm === 'string' && /^(player[_-]?\d+)$/i.test(nm.trim());
+
+  // If embeddedName looks valid (and not a placeholder), use it; otherwise fall back to CSV lookups later
+  let embeddedPlayerName: string | null = null;
+  let embeddedPlayerPos: string | null = null;
+  if (embeddedName && !isPlaceholder(embeddedName)) embeddedPlayerName = String(embeddedName);
+  if (embeddedPos) embeddedPlayerPos = String(embeddedPos);
 
       // Points may be stored in different shapes. Normalize all supported shapes
       let points: any[] = [];
@@ -107,7 +126,10 @@ export async function GET(req: Request) {
       // Sort by week ascending
       weekly.sort((a, b) => (a.week - b.week));
 
-      const info = await lookupPlayerInfo(id);
+  // Lookup CSV info but prefer embedded metadata found in the history file
+  const info = await lookupPlayerInfo(id);
+  const finalName = embeddedPlayerName ?? info.playerName ?? null;
+  const finalPos = embeddedPlayerPos ?? info.position ?? null;
 
       // Determine currentPrice: prefer last weekly price, else try last point p, else null
       let currentPrice: number | null = null;
@@ -118,7 +140,7 @@ export async function GET(req: Request) {
         if (pf !== null) currentPrice = pf;
       }
 
-      return NextResponse.json({ playerId: Number(id), playerName: info.playerName, position: info.position, currentPrice, weeklyHistory: weekly });
+  return NextResponse.json({ playerId: Number(id), playerName: finalName, position: finalPos, currentPrice, weeklyHistory: weekly });
     } catch (e) {
       const info = await lookupPlayerInfo(id);
       // missing file or parse error -> return empty history
