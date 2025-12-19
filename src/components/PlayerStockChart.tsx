@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 type PricePoint = { week: number; price: number }
+type Candle = { week: number; open: number; close: number; high: number; low: number }
 
 export default function PlayerStockChart({ playerId }: { playerId: string }) {
   const [data, setData] = useState<PricePoint[] | null>(null)
@@ -10,7 +11,7 @@ export default function PlayerStockChart({ playerId }: { playerId: string }) {
   const [error, setError] = useState<string | null>(null)
   const containerRef = useRef<HTMLDivElement | null>(null)
   const [size, setSize] = useState({ width: 600, height: 240 })
-  const [hover, setHover] = useState<{ x: number; y: number; point?: PricePoint } | null>(null)
+  const [hover, setHover] = useState<{ x: number; y: number; point?: Candle } | null>(null)
 
   useEffect(() => {
     let mounted = true
@@ -64,48 +65,33 @@ export default function PlayerStockChart({ playerId }: { playerId: string }) {
   const innerWidth = Math.max(0, size.width - margin.left - margin.right)
   const innerHeight = Math.max(0, size.height - margin.top - margin.bottom)
 
-  const points = (data || []).map((d) => ({ x: d.week, y: d.price }))
+  // Build candlestick data from price points
+  const sorted = (data || []).slice().sort((a, b) => (a.week || 0) - (b.week || 0))
+  const candles: Candle[] = sorted.map((d, i) => {
+    const close = d.price
+    const open = i > 0 ? sorted[i - 1].price : d.price
+    const high = Math.max(open, close) * 1.05
+    const low = Math.min(open, close) * 0.95
+    return { week: d.week, open, close, high, low }
+  })
 
-  const xScale = (week: number) => {
-    if (!points.length) return 0
-    const xs = points.map((p) => p.x)
-    const min = Math.min(...xs)
-    const max = Math.max(...xs)
-    if (min === max) return innerWidth / 2
-    return ((week - min) / (max - min)) * innerWidth
+  const n = candles.length
+  const step = n > 1 ? innerWidth / (n - 1) : innerWidth / 2
+  const candleWidth = Math.max(6, Math.min(24, step * 0.5))
+
+  const ys = candles.flatMap((c) => [c.low, c.high])
+  const minY = ys.length ? Math.min(...ys) : 0
+  const maxY = ys.length ? Math.max(...ys) : 1
+
+  const xForIndex = (i: number) => {
+    if (n === 1) return innerWidth / 2
+    return i * step
   }
 
   const yScale = (price: number) => {
-    if (!points.length) return innerHeight / 2
-    const ys = points.map((p) => p.y)
-    const min = Math.min(...ys)
-    const max = Math.max(...ys)
-    if (min === max) return innerHeight / 2
-    // invert y: higher price -> lower pixel
-    return innerHeight - ((price - min) / (max - min)) * innerHeight
+    if (minY === maxY) return innerHeight / 2
+    return innerHeight - ((price - minY) / (maxY - minY)) * innerHeight
   }
-
-  // create a smooth SVG path using Catmull-Rom to Bezier
-  function pathFromPoints(pts: { x: number; y: number }[]) {
-    if (!pts.length) return ''
-    if (pts.length === 1) return `M ${pts[0].x} ${pts[0].y}`
-    const p = pts
-    let d = `M ${p[0].x} ${p[0].y}`
-    for (let i = 0; i < p.length - 1; i++) {
-      const p0 = p[i - 1] || p[i]
-      const p1 = p[i]
-      const p2 = p[i + 1]
-      const p3 = p[i + 2] || p[i + 1]
-      const control1x = p1.x + (p2.x - p0.x) / 6
-      const control1y = p1.y + (p2.y - p0.y) / 6
-      const control2x = p2.x - (p3.x - p1.x) / 6
-      const control2y = p2.y - (p3.y - p1.y) / 6
-      d += ` C ${control1x} ${control1y}, ${control2x} ${control2y}, ${p2.x} ${p2.y}`
-    }
-    return d
-  }
-
-  const svgPoints = points.map((pt) => ({ x: xScale(pt.x), y: yScale(pt.y) }))
 
   function handleMouseMove(e: React.MouseEvent) {
     if (!containerRef.current) return
@@ -116,21 +102,22 @@ export default function PlayerStockChart({ playerId }: { playerId: string }) {
       setHover(null)
       return
     }
-    // find nearest point
-    let nearestIdx = -1
+    // find nearest candle by x
+    let nearestIdx = 0
     let nearestDist = Infinity
-    svgPoints.forEach((p, idx) => {
-      const dx = p.x - x
-      const dy = p.y - y
-      const dist = Math.hypot(dx, dy)
+    for (let i = 0; i < n; i++) {
+      const cx = xForIndex(i)
+      const dist = Math.abs(cx - x)
       if (dist < nearestDist) {
         nearestDist = dist
-        nearestIdx = idx
+        nearestIdx = i
       }
-    })
-    if (nearestIdx >= 0) {
-      const p = (data || [])[nearestIdx]
-      setHover({ x: svgPoints[nearestIdx].x + margin.left, y: svgPoints[nearestIdx].y + margin.top, point: p })
+    }
+    const c = candles[nearestIdx]
+    if (c) {
+      const cx = xForIndex(nearestIdx)
+      const cy = yScale(c.close)
+      setHover({ x: cx + margin.left, y: cy + margin.top, point: { week: c.week, open: c.open, close: c.close, high: c.high, low: c.low } })
     }
   }
 
@@ -139,7 +126,7 @@ export default function PlayerStockChart({ playerId }: { playerId: string }) {
   }
 
   return (
-    <div ref={containerRef} style={{ width: '100%', height: 280, position: 'relative', fontFamily: 'Inter, system-ui, sans-serif' }}>
+    <div ref={containerRef} className="w-full h-72 relative" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
       {loading && (
         <div style={{ padding: 16 }}>Loading price history…</div>
       )}
@@ -151,51 +138,51 @@ export default function PlayerStockChart({ playerId }: { playerId: string }) {
       )}
 
       {!loading && !error && data && data.length > 0 && (
-        <svg width={size.width} height={size.height} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} style={{ display: 'block' }}>
-          <defs>
-            <linearGradient id={`grad-${playerId}`} x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0%" stopColor="#0ea5e9" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="#0ea5e9" stopOpacity="0.05" />
-            </linearGradient>
-          </defs>
+  <svg width={size.width} height={size.height} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} style={{ display: 'block' }}>
           <g transform={`translate(${margin.left},${margin.top})`}>
-            {/* axes */}
-            <line x1={0} y1={innerHeight} x2={innerWidth} y2={innerHeight} stroke="#e6e6e6" />
-            <line x1={0} y1={0} x2={0} y2={innerHeight} stroke="#e6e6e6" />
+            {/* dark background */}
+            <rect x={0} y={0} width={innerWidth} height={innerHeight} fill="#071126" rx={6} />
+            {/* axes lines */}
+            <line x1={0} y1={innerHeight} x2={innerWidth} y2={innerHeight} stroke="#0f1724" />
+            <line x1={0} y1={0} x2={0} y2={innerHeight} stroke="#0f1724" />
 
-            {/* area under curve */}
-            <path d={`${pathFromPoints([{ x: 0, y: innerHeight }, ...svgPoints, { x: innerWidth, y: innerHeight }])}`} fill={`url(#grad-${playerId})`} stroke="none" />
+            {/* candlesticks */}
+        {candles.map((c, i) => {
+              const cx = xForIndex(i)
+              const cyHigh = yScale(c.high)
+              const cyLow = yScale(c.low)
+              const cyOpen = yScale(c.open)
+              const cyClose = yScale(c.close)
+              const isUp = c.close >= c.open
+              const bodyTop = Math.min(cyOpen, cyClose)
+              const bodyHeight = Math.max(1, Math.abs(cyClose - cyOpen))
+              const color = isUp ? '#16a34a' : '#dc2626'
+              return (
+                <g key={i}>
+                  <line x1={cx} x2={cx} y1={cyHigh} y2={cyLow} stroke={color} strokeWidth={2} strokeLinecap="round" />
+                  <rect x={cx - candleWidth / 2} y={bodyTop} width={candleWidth} height={bodyHeight} fill={color} rx={2} />
+                </g>
+              )
+            })}
 
-            {/* line */}
-            <path d={pathFromPoints(svgPoints)} fill="none" stroke="#0369a1" strokeWidth={2} strokeLinejoin="round" strokeLinecap="round" />
-
-            {/* points */}
-            {svgPoints.map((p, idx) => (
-              <circle key={idx} cx={p.x} cy={p.y} r={3} fill="#0369a1" />
-            ))}
-
-            {/* y-axis labels: min/max */}
-            {data && data.length > 0 && (() => {
-              const ys = data.map(d => d.price)
-              const min = Math.min(...ys)
-              const max = Math.max(...ys)
+            {/* y-axis labels */}
+            {candles.length > 0 && (() => {
               return (
                 <g>
-                  <text x={-8} y={0} textAnchor="end" fontSize={11} fill="#444">{max.toFixed(0)}</text>
-                  <text x={-8} y={innerHeight} textAnchor="end" fontSize={11} fill="#444">{min.toFixed(0)}</text>
+                  <text x={-8} y={0} textAnchor="end" fontSize={11} fill="#9ca3af">{maxY.toFixed(0)}</text>
+                  <text x={-8} y={innerHeight} textAnchor="end" fontSize={11} fill="#9ca3af">{minY.toFixed(0)}</text>
                 </g>
               )
             })()}
 
-            {/* x-axis labels: first and last week */}
-            {data && data.length > 0 && (() => {
-              const weeks = data.map(d => d.week)
-              const first = weeks[0]
-              const last = weeks[weeks.length - 1]
+            {/* x-axis labels */}
+            {candles.length > 0 && (() => {
+              const first = candles[0].week
+              const last = candles[candles.length - 1].week
               return (
                 <g>
-                  <text x={0} y={innerHeight + 16} textAnchor="start" fontSize={11} fill="#444">W{first}</text>
-                  <text x={innerWidth} y={innerHeight + 16} textAnchor="end" fontSize={11} fill="#444">W{last}</text>
+                  <text x={0} y={innerHeight + 16} textAnchor="start" fontSize={11} fill="#9ca3af">W{first}</text>
+                  <text x={innerWidth} y={innerHeight + 16} textAnchor="end" fontSize={11} fill="#9ca3af">W{last}</text>
                 </g>
               )
             })()}
@@ -205,9 +192,21 @@ export default function PlayerStockChart({ playerId }: { playerId: string }) {
 
       {/* tooltip */}
       {hover && hover.point && (
-        <div style={{ position: 'absolute', left: hover.x + 8, top: hover.y - 12, background: 'rgba(17,24,39,0.95)', color: 'white', padding: '6px 8px', borderRadius: 6, fontSize: 12, pointerEvents: 'none' }}>
-          <div style={{ fontWeight: 600 }}>W{hover.point.week}</div>
-          <div>${hover.point.price.toFixed(2)}</div>
+        <div style={{ position: 'absolute', left: Math.min(size.width - 220, hover.x + 8), top: Math.max(8, hover.y - 44), width: 208, padding: '8px 10px', borderRadius: 8, fontSize: 13, pointerEvents: 'none' }} className="bg-zinc-900 text-zinc-100 border border-zinc-800 shadow-lg">
+          <div className="flex items-baseline justify-between">
+            <div className="font-medium">W{hover.point.week}</div>
+            <div className="text-sm text-zinc-400">{hover.point.close >= hover.point.open ? <span className="text-emerald-400">▲</span> : <span className="text-red-400">▼</span>}</div>
+          </div>
+          <div className="mt-1 grid grid-cols-2 gap-2 text-zinc-300 text-sm">
+            <div className="text-zinc-400">Open</div>
+            <div className="font-mono text-zinc-100">${hover.point.open.toFixed(2)}</div>
+            <div className="text-zinc-400">High</div>
+            <div className="font-mono text-zinc-100">${hover.point.high.toFixed(2)}</div>
+            <div className="text-zinc-400">Low</div>
+            <div className="font-mono text-zinc-100">${hover.point.low.toFixed(2)}</div>
+            <div className="text-zinc-400">Close</div>
+            <div className="font-mono text-zinc-100">${hover.point.close.toFixed(2)}</div>
+          </div>
         </div>
       )}
     </div>

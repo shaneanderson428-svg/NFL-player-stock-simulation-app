@@ -91,6 +91,20 @@ async function main() {
     } catch (err) {
       console.warn('vercel_build: error copying history to public', err && err.message);
     }
+
+    // Also copy data/player_stock_summary.csv to public so server runtime can read a single CSV
+    try {
+      const summarySrc = path.join(repoRoot, 'data', 'player_stock_summary.csv')
+      const summaryDest = path.join(repoRoot, 'public', 'player_stock_summary.csv')
+      if (fs.existsSync(summarySrc)) {
+        fs.copyFileSync(summarySrc, summaryDest)
+        console.log('vercel_build: copied player_stock_summary.csv -> public/player_stock_summary.csv')
+      } else {
+        console.log('vercel_build: no data/player_stock_summary.csv found to copy')
+      }
+    } catch (err) {
+      console.warn('vercel_build: error copying player_stock_summary.csv to public', err && err.message)
+    }
 }
 
 main().catch(err => {
