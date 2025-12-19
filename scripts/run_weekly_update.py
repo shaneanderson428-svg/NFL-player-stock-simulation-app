@@ -30,6 +30,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--season', type=int, required=True)
     ap.add_argument('--week', type=int, required=True)
+    ap.add_argument('--dnp-penalty', type=float, default=0.05, help='Penalty applied to close price for DNP weeks (e.g., 0.05 for 5)')
     args = ap.parse_args()
 
     py = sys.executable
@@ -38,7 +39,7 @@ def main():
     # ensure scripts are executable via python
     compute_cmd = [py, os.path.join(cwd, 'scripts', 'compute_weekly_prices.py'), '--season', str(args.season), '--week', str(args.week)]
     backfill_cmd = [py, os.path.join(cwd, 'scripts', 'backfill_historical_prices.py'), '--season', str(args.season)]
-    append_cmd = [py, os.path.join(cwd, 'scripts', 'append_price_history.py'), '--season', str(args.season), '--week', str(args.week)]
+    append_cmd = [py, os.path.join(cwd, 'scripts', 'append_price_history.py'), '--season', str(args.season), '--week', str(args.week), '--dnp-penalty', str(args.dnp_penalty)]
 
     # Hybrid fetch logic:
     # 1) If data/weekly/player_stats_{season}_week_{week}.csv exists, use it.
@@ -120,7 +121,7 @@ def main():
     run_step(compute_cmd, 'compute_weekly_prices')
 
     # Append prices to per-player history JSONs
-    append_cmd = [py, os.path.join(cwd, 'scripts', 'append_price_history.py'), '--season', str(args.season), '--week', str(args.week)]
+    append_cmd = [py, os.path.join(cwd, 'scripts', 'append_price_history.py'), '--season', str(args.season), '--week', str(args.week), '--dnp-penalty', str(args.dnp_penalty)]
     run_step(append_cmd, 'append_price_history')
 
     print('\n[prices] computed')

@@ -10,8 +10,9 @@ export default function PlayerStockChart({ playerId }: { playerId: string }) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const containerRef = useRef<HTMLDivElement | null>(null)
-  const [size, setSize] = useState({ width: 600, height: 240 })
+  const [size, setSize] = useState({ width: 600, height: 600 })
   const [hover, setHover] = useState<{ x: number; y: number; point?: Candle } | null>(null)
+  const [marketOverride, setMarketOverride] = useState<number | null>(null)
 
   useEffect(() => {
     let mounted = true
@@ -31,6 +32,15 @@ export default function PlayerStockChart({ playerId }: { playerId: string }) {
         // sort by week
         const sorted = (json || []).slice().sort((a, b) => (a.week || 0) - (b.week || 0))
         setData(sorted)
+        // read local market override for this player
+        try {
+          const raw = localStorage.getItem('nfl_market_overrides')
+          if (raw) {
+            const map = JSON.parse(raw)
+            const v = map?.[playerId]?.price
+            if (typeof v === 'number') setMarketOverride(v)
+          }
+        } catch (err) {}
       })
       .catch((err: any) => {
         if (!mounted) return
@@ -51,7 +61,7 @@ export default function PlayerStockChart({ playerId }: { playerId: string }) {
     if (!el) return
     const ro = new ResizeObserver(() => {
       const rect = el.getBoundingClientRect()
-      setSize({ width: Math.max(200, Math.round(rect.width)), height: Math.max(120, Math.round(rect.height || 240)) })
+      setSize({ width: Math.max(240, Math.round(rect.width)), height: Math.max(240, Math.round(rect.height || 360)) })
     })
     ro.observe(el)
     // initialize
@@ -60,16 +70,49 @@ export default function PlayerStockChart({ playerId }: { playerId: string }) {
     return () => ro.disconnect()
   }, [])
 
+  // listen for market overrides in the same tab or other tabs
+  useEffect(() => {
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === 'nfl_market_overrides' || e.key === null) {
+        try {
+          const raw = localStorage.getItem('nfl_market_overrides')
+          if (!raw) return
+          const map = JSON.parse(raw)
+          const v = map?.[playerId]?.price
+          setMarketOverride(typeof v === 'number' ? v : null)
+        } catch (err) {}
+      }
+    }
+    const onCustom = (e: any) => {
+      try {
+        const detail = e?.detail
+        if (!detail) return
+        if (String(detail.playerId) === String(playerId)) {
+          setMarketOverride(typeof detail.price === 'number' ? detail.price : null)
+        }
+      } catch (err) {}
+    }
+    window.addEventListener('storage', onStorage)
+    window.addEventListener('market:changed', onCustom as EventListener)
+    return () => {
+      window.removeEventListener('storage', onStorage)
+      window.removeEventListener('market:changed', onCustom as EventListener)
+    }
+  }, [playerId])
+
   // helpers
-  const margin = { top: 12, right: 12, bottom: 24, left: 40 }
+  const margin = { top: 12, right: 12, bottom: 44, left: 40 }
   const innerWidth = Math.max(0, size.width - margin.left - margin.right)
   const innerHeight = Math.max(0, size.height - margin.top - margin.bottom)
 
   // Build candlestick data from price points
   const sorted = (data || []).slice().sort((a, b) => (a.week || 0) - (b.week || 0))
   const candles: Candle[] = sorted.map((d, i) => {
-    const close = d.price
-    const open = i > 0 ? sorted[i - 1].price : d.price
+    // if marketOverride exists, apply it to the most recent point
+    const isLast = i === sorted.length - 1
+    const close = isLast && marketOverride != null ? marketOverride : d.price
+    const prevPrice = i > 0 ? (i - 1 === sorted.length - 1 && marketOverride != null ? marketOverride : sorted[i - 1].price) : d.price
+    const open = i > 0 ? prevPrice : d.price
     const high = Math.max(open, close) * 1.05
     const low = Math.min(open, close) * 0.95
     return { week: d.week, open, close, high, low }
@@ -126,7 +169,7 @@ export default function PlayerStockChart({ playerId }: { playerId: string }) {
   }
 
   return (
-    <div ref={containerRef} className="w-full h-72 relative" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+  <div ref={containerRef} className="w-full h-[min(60vw,600px)] relative" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
       {loading && (
         <div style={{ padding: 16 }}>Loading price history…</div>
       )}
@@ -192,23 +235,33 @@ export default function PlayerStockChart({ playerId }: { playerId: string }) {
 
       {/* tooltip */}
       {hover && hover.point && (
-        <div style={{ position: 'absolute', left: Math.min(size.width - 220, hover.x + 8), top: Math.max(8, hover.y - 44), width: 208, padding: '8px 10px', borderRadius: 8, fontSize: 13, pointerEvents: 'none' }} className="bg-zinc-900 text-zinc-100 border border-zinc-800 shadow-lg">
-          <div className="flex items-baseline justify-between">
-            <div className="font-medium">W{hover.point.week}</div>
-            <div className="text-sm text-zinc-400">{hover.point.close >= hover.point.open ? <span className="text-emerald-400">▲</span> : <span className="text-red-400">▼</span>}</div>
-          </div>
-          <div className="mt-1 grid grid-cols-2 gap-2 text-zinc-300 text-sm">
-            <div className="text-zinc-400">Open</div>
-            <div className="font-mono text-zinc-100">${hover.point.open.toFixed(2)}</div>
-            <div className="text-zinc-400">High</div>
-            <div className="font-mono text-zinc-100">${hover.point.high.toFixed(2)}</div>
-            <div className="text-zinc-400">Low</div>
-            <div className="font-mono text-zinc-100">${hover.point.low.toFixed(2)}</div>
-            <div className="text-zinc-400">Close</div>
-            <div className="font-mono text-zinc-100">${hover.point.close.toFixed(2)}</div>
-          </div>
-        </div>
-      )}
+        // place tooltip below the hovered candle; clamp inside container
+        (() => {
+          const tooltipW = 220
+          const tooltipH = 140
+          const left = Math.max(8, Math.min(size.width - tooltipW - 8, hover!.x + 8))
+          const top = Math.min(size.height - tooltipH - 8, hover!.y + 8)
+          const p = hover!.point!
+          return (
+            <div style={{ position: 'absolute', left, top, width: tooltipW - 12, padding: '8px 10px', borderRadius: 8, fontSize: 13, pointerEvents: 'none' }} className="bg-zinc-900 text-zinc-100 border border-zinc-800 shadow-lg">
+              <div className="flex items-baseline justify-between">
+                <div className="font-medium">W{p.week}</div>
+                <div className="text-sm text-zinc-400">{p.close >= p.open ? <span className="text-emerald-400">▲</span> : <span className="text-red-400">▼</span>}</div>
+              </div>
+              <div className="mt-1 grid grid-cols-2 gap-2 text-zinc-300 text-sm">
+                <div className="text-zinc-400">Open</div>
+                <div className="font-mono text-zinc-100">${p.open.toFixed(2)}</div>
+                <div className="text-zinc-400">High</div>
+                <div className="font-mono text-zinc-100">${p.high.toFixed(2)}</div>
+                <div className="text-zinc-400">Low</div>
+                <div className="font-mono text-zinc-100">${p.low.toFixed(2)}</div>
+                <div className="text-zinc-400">Close</div>
+                <div className="font-mono text-zinc-100">${p.close.toFixed(2)}</div>
+              </div>
+            </div>
+          )
+        })()
+  )}
     </div>
   )
 }

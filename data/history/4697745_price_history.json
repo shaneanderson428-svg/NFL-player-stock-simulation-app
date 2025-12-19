@@ -51,5 +51,14 @@
     "low": 95.0,
     "close": 103.24,
     "reason": "STATS"
+  },
+  {
+    "week": 6,
+    "price": 103.24,
+    "open": 103.24,
+    "high": 108.402,
+    "low": 98.07799999999999,
+    "close": 103.24,
+    "reason": "STATS"
   }
 ]

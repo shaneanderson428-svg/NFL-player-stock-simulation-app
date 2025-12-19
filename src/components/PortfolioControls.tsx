@@ -71,6 +71,13 @@ export default function PortfolioControls({ playerId }: { playerId: string }) {
     }
   }, [playerId])
 
+  // auto-clear messages after a short delay so UI stays clean
+  useEffect(() => {
+    if (!message) return
+    const t = setTimeout(() => setMessage(null), 3000)
+    return () => clearTimeout(t)
+  }, [message])
+
   if (!portfolio) return null
 
   const pf = portfolio as Portfolio
@@ -81,6 +88,36 @@ export default function PortfolioControls({ playerId }: { playerId: string }) {
   function updateAndSave(next: Portfolio) {
     setPortfolio(next)
     savePortfolio(next)
+    // notify other components in the same window so they update immediately
+    try {
+      if (typeof window !== 'undefined') {
+        // debug: notify other components and log that we dispatched
+        console.debug('[PortfolioControls] dispatch portfolio:changed', playerId, next)
+        window.dispatchEvent(new CustomEvent('portfolio:changed', { detail: { playerId, portfolio: next } }))
+      }
+    } catch (err) {
+      // ignore
+    }
+  }
+
+  // simple market impact model: small price move per share bought/sold
+  function applyMarketImpact(playerId: string, qty: number, isBuy: boolean) {
+    if (price == null) return
+    try {
+      const KEY = 'nfl_market_overrides'
+      const raw = localStorage.getItem(KEY)
+      const current = raw ? JSON.parse(raw) : {}
+      // delta percent per share (0.5% per share), capped
+      const sign = isBuy ? 1 : -1
+      const deltaPct = Math.min(0.2, 0.005 * qty) * sign
+      const newPrice = +(price * (1 + deltaPct))
+      current[playerId] = { price: +newPrice.toFixed(2), at: Date.now() }
+      localStorage.setItem(KEY, JSON.stringify(current))
+      console.debug('[PortfolioControls] market override set', playerId, current[playerId])
+      window.dispatchEvent(new CustomEvent('market:changed', { detail: { playerId, price: current[playerId].price } }))
+    } catch (err) {
+      // ignore
+    }
   }
 
   function buy(n: number) {
@@ -101,7 +138,8 @@ export default function PortfolioControls({ playerId }: { playerId: string }) {
       positions: { ...pf.positions, [playerId]: { shares: newShares, avgPrice: +newAvg.toFixed(4) } },
     }
     updateAndSave(next)
-    setMessage(`Bought ${n} share${n !== 1 ? 's' : ''} @ $${price.toFixed(2)}`)
+    setMessage(`Bought ${n}`)
+    applyMarketImpact(playerId, n, true)
   }
 
   function sell(n: number) {
@@ -111,7 +149,7 @@ export default function PortfolioControls({ playerId }: { playerId: string }) {
     }
     const existing = pf.positions[playerId] ?? { shares: 0, avgPrice: 0 }
     if (n > existing.shares) {
-      setMessage('Not enough shares to sell')
+      setMessage('Not enough shares')
       return
     }
     const proceeds = price * n
@@ -125,41 +163,42 @@ export default function PortfolioControls({ playerId }: { playerId: string }) {
       positions: nextPositions,
     }
     updateAndSave(next)
-    setMessage(`Sold ${n} share${n !== 1 ? 's' : ''} @ $${price.toFixed(2)}`)
+    setMessage(`Sold ${n}`)
+    applyMarketImpact(playerId, n, false)
   }
 
+
   return (
-    <div className="mt-6 p-4 bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-100">
-      <h3 className="text-lg font-semibold mb-2">Portfolio</h3>
-      <div className="flex items-center gap-6">
+    <div className="mt-4 p-4 bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-100">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 items-end">
         <div>
-          <div className="text-sm text-zinc-400">Cash</div>
+          <div className="text-xs text-zinc-400">Cash</div>
           <div className="text-zinc-100 font-medium font-mono">${pf.cash.toFixed(2)}</div>
         </div>
 
         <div>
-          <div className="text-sm text-zinc-400">Shares ({playerId})</div>
-          <div className="text-zinc-100 font-medium">{pos.shares} @ {pos.avgPrice ? <span className="font-mono">${pos.avgPrice.toFixed(2)}</span> : '—'}</div>
+          <div className="text-xs text-zinc-400">Shares</div>
+          <div className="text-zinc-100 font-medium font-mono">{Math.floor(pos.shares)}</div>
         </div>
 
         <div>
-          <div className="text-sm text-zinc-400">Position Value</div>
-          <div className="text-zinc-100 font-medium">{price != null ? <span className="font-mono">${positionValue.toFixed(2)}</span> : '—'}</div>
+          <div className="text-xs text-zinc-400">Avg</div>
+          <div className="text-zinc-100 font-medium">{pos.avgPrice ? <span className="font-mono">${pos.avgPrice.toFixed(2)}</span> : '—'}</div>
         </div>
 
         <div>
-          <div className="text-sm text-zinc-400">Portfolio (cash + this position)</div>
+          <div className="text-xs text-zinc-400">Total</div>
           <div className="text-zinc-100 font-medium">${portfolioValue.toFixed(2)}</div>
         </div>
       </div>
 
-      <div className="mt-4 flex items-center gap-3">
+      <div className="mt-3 flex items-center gap-3">
         <input
           type="number"
           min={1}
           value={qty}
           onChange={(e) => setQty(Math.max(1, Number(e.target.value || 1)))}
-          className="w-24 py-1 px-2 rounded-md bg-zinc-800 border border-zinc-700 text-zinc-100"
+          className="w-20 py-1 px-2 rounded-md bg-zinc-800 border border-zinc-700 text-zinc-100"
         />
         <button
           className="bg-emerald-600 hover:bg-emerald-500 text-zinc-950 font-semibold py-2 px-4 rounded-md"
@@ -173,7 +212,8 @@ export default function PortfolioControls({ playerId }: { playerId: string }) {
         >
           Sell
         </button>
-        {loadingPrice ? <div className="text-zinc-400">Loading price…</div> : price == null ? <div className="text-zinc-400">Price N/A</div> : <div className="text-zinc-400">Price: <span className="font-mono">${price.toFixed(2)}</span></div>}
+
+        <div className="ml-auto text-zinc-400">{loadingPrice ? 'Loading…' : price == null ? 'N/A' : <span className="font-mono">${price.toFixed(2)}</span>}</div>
       </div>
 
       {message ? <div className="mt-3 text-sm text-zinc-200">{message}</div> : null}

@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import Link from 'next/link'
+import PlayersSearch from '../../src/components/PlayersSearch'
 import React from 'react'
 
 export default async function PlayersPage() {
@@ -17,8 +18,8 @@ export default async function PlayersPage() {
 
   const suffix = '_price_history.json'
 
-  // Attempt to load player names from player_stock_summary.csv (prefer public copy generated at build)
-  const nameMap: Record<string, string> = {}
+  // Attempt to load player metadata from player_stock_summary.csv (prefer public copy generated at build)
+  const infoMap: Record<string, { name?: string; team?: string; position?: string }> = {}
   try {
     const publicCsv = path.join(repoRoot, 'public', 'player_stock_summary.csv')
     const dataCsv = path.join(repoRoot, 'data', 'player_stock_summary.csv')
@@ -29,12 +30,16 @@ export default async function PlayersPage() {
       const header = lines[0].split(',')
       const idxName = header.indexOf('player')
       const idxEspn = header.indexOf('espnId')
-      if (idxName >= 0 && idxEspn >= 0) {
+      const idxTeam = header.indexOf('team')
+      const idxPos = header.indexOf('position')
+      if (idxEspn >= 0) {
         for (let i = 1; i < lines.length; i++) {
           const parts = lines[i].split(',')
           const espn = parts[idxEspn]
-          const nm = parts[idxName]
-          if (espn && nm) nameMap[String(espn)] = nm
+          const nm = idxName >= 0 ? parts[idxName] : undefined
+          const team = idxTeam >= 0 ? parts[idxTeam] : undefined
+          const pos = idxPos >= 0 ? parts[idxPos] : undefined
+          if (espn) infoMap[String(espn)] = { name: nm || undefined, team: team || undefined, position: pos || undefined }
         }
       }
     }
@@ -62,21 +67,24 @@ export default async function PlayersPage() {
           delta = last - prev
           pct = prev !== 0 ? (delta / prev) * 100 : null
         }
+        const info = infoMap[id] || {}
         return {
           id,
-          name: nameMap[id] || null,
+          name: info.name || null,
+          team: info.team || null,
+          position: info.position || null,
           last,
           prev,
           delta,
           pct,
         }
       } catch (err) {
-        return { id, name: nameMap[id] || null, last: null, prev: null, delta: null, pct: null }
+        const info = infoMap[id] || {}
+        return { id, name: info.name || null, team: info.team || null, position: info.position || null, last: null, prev: null, delta: null, pct: null }
       }
     })
   )
   // (dir already determined above)
-
   return (
     <div className="container mx-auto p-8">
       <h1 className="text-2xl font-bold text-zinc-100 mb-6">Players</h1>
@@ -91,35 +99,9 @@ export default async function PlayersPage() {
           </ul>
         </div>
       </div>
-      <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-4">
-        <ul className="divide-y divide-zinc-800">
-          {players.map((p) => (
-            <li key={p.id} className="py-3 flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <Link href={`/player/${p.id}`} className="text-zinc-100 font-semibold">
-                  {p.name ? `${p.name}` : p.id}
-                </Link>
-                <div className="text-zinc-400 text-sm">{p.name ? `(${p.id})` : ''}</div>
-              </div>
-
-              <div className="flex items-center gap-3">
-                {p.last != null ? (
-                  <>
-                    <div className="font-mono text-zinc-100">${p.last.toFixed(2)}</div>
-                    {p.delta != null && p.pct != null ? (
-                      <div className={`text-sm font-semibold inline-flex items-center px-3 py-1 rounded-full ${p.pct > 0 ? 'bg-emerald-600 text-zinc-100' : p.pct < 0 ? 'bg-red-600 text-zinc-100' : 'bg-zinc-600 text-zinc-100'}`}>
-                        {p.pct > 0 ? '▲' : p.pct < 0 ? '▼' : ''}
-                        <span className="ml-2">{p.pct !== null ? `${p.pct > 0 ? '+' : ''}${p.pct.toFixed(1)}%` : ''}</span>
-                      </div>
-                    ) : null}
-                  </>
-                ) : (
-                  <div className="text-zinc-400">no history</div>
-                )}
-              </div>
-            </li>
-          ))}
-        </ul>
+      <div className="mb-4">
+        {/* Client-side searchable players list */}
+        <PlayersSearch initialPlayers={players} />
       </div>
     </div>
   )
