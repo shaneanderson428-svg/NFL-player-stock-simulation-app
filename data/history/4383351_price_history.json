@@ -10,5 +10,14 @@
   {
     "week": 13,
     "price": 103.0
+  },
+  {
+    "week": 5,
+    "price": 112.6,
+    "open": 103.0,
+    "high": 118.23,
+    "low": 97.85,
+    "close": 112.6,
+    "reason": "STATS"
   }
 ]

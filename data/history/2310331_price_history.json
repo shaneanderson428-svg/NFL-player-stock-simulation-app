@@ -26,5 +26,14 @@
   {
     "week": 10,
     "price": 100.0
+  },
+  {
+    "week": 5,
+    "price": 93.0,
+    "open": 100.0,
+    "high": 105.0,
+    "low": 88.35,
+    "close": 93.0,
+    "reason": "DNP"
   }
 ]

@@ -37,7 +37,7 @@ def read_prices(season: int, week: int):
     return rows
 
 
-def append_history_for_player(pid: str, week: int, price: float):
+def load_history(pid: str):
     os.makedirs(history_dir, exist_ok=True)
     fout = os.path.join(history_dir, f"{pid}_price_history.json")
     data = []
@@ -56,7 +56,23 @@ def append_history_for_player(pid: str, week: int, price: float):
             except Exception:
                 pass
             data = []
-    # Ensure ordering and avoid duplicate week
+    return data
+
+
+def write_history(pid: str, data: list):
+    fout = os.path.join(history_dir, f"{pid}_price_history.json")
+    try:
+        with open(fout, 'w', encoding='utf8') as fh:
+            json.dump(data, fh, indent=2)
+        return True
+    except Exception as e:
+        print(f"ERROR: failed to write history for {pid}: {e}")
+        return False
+
+
+def append_entry(pid: str, week: int, entry: dict):
+    data = load_history(pid)
+    # Avoid duplicate week
     if data and isinstance(data, list):
         last = data[-1]
         try:
@@ -65,30 +81,28 @@ def append_history_for_player(pid: str, week: int, price: float):
                 return False
         except Exception:
             pass
-    entry = {'week': int(week), 'price': float(price)}
     data.append(entry)
-    try:
-        with open(fout, 'w', encoding='utf8') as fh:
-            json.dump(data, fh, indent=2)
-        print(f"Appended price for player {pid}: week={week} price={price} -> {fout}")
-        return True
-    except Exception as e:
-        print(f"ERROR: failed to write history for {pid}: {e}")
-        return False
+    ok = write_history(pid, data)
+    if ok:
+        print(f"Appended entry for player {pid}: week={week} close={entry.get('close')} reason={entry.get('reason')}")
+    return ok
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--season', type=int, required=True)
     ap.add_argument('--week', type=int, required=True)
+    ap.add_argument('--dnp-penalty', type=float, default=-0.07, help='Default DNP penalty as decimal (e.g. -0.07 for -7%%)')
+    ap.add_argument('--min-price', type=float, default=10.0, help='Minimum allowed price after adjustments')
+    ap.add_argument('--seed-price', type=float, default=100.0, help='Seed price for players with no history')
     args = ap.parse_args()
 
     rows = read_prices(args.season, args.week)
     if not rows:
         print(f"No prices found in data/prices/{args.season}/week_{args.week}.csv; nothing to append")
         return
-
-    appended = 0
+    # Map prices from CSV by player id
+    price_map = {}
     for r in rows:
         pid = str(r.get('playerId') or r.get('player_id') or r.get('playerID') or '').strip()
         if not pid:
@@ -98,11 +112,87 @@ def main():
         except Exception:
             continue
         week = int(r.get('week') or args.week)
-        ok = append_history_for_player(pid, week, price)
+        price_map[pid] = price
+
+    # Build the set of all known player ids: prices CSV + existing history files + optional summary CSV
+    all_pids = set(price_map.keys())
+    # existing history files
+    if os.path.exists(history_dir):
+        for f in os.listdir(history_dir):
+            if f.endswith('_price_history.json'):
+                pid = f[: -len('_price_history.json')]
+                if pid:
+                    all_pids.add(pid)
+
+    # optional player list from player_stock_summary.csv (if present)
+    summary_csv = os.path.join(os.getcwd(), 'data', 'player_stock_summary.csv')
+    if os.path.exists(summary_csv):
+        try:
+            with open(summary_csv, newline='', encoding='utf8') as fh:
+                r = csv.DictReader(fh)
+                for row in r:
+                    pid = str(row.get('espnId') or row.get('playerId') or row.get('id') or '').strip()
+                    if pid:
+                        all_pids.add(pid)
+        except Exception:
+            pass
+
+    appended = 0
+    dnp_count = 0
+    week = int(args.week)
+    for pid in sorted(all_pids):
+        # load last known close
+        hist = load_history(pid)
+        prev_close = None
+        if hist and isinstance(hist, list) and len(hist) > 0:
+            last = hist[-1]
+            try:
+                prev_close = float(last.get('price') or last.get('close'))
+            except Exception:
+                prev_close = None
+
+        if prev_close is None:
+            prev_close = float(args.seed_price)
+
+        # skip if history already contains this week
+        if hist and isinstance(hist, list) and len(hist) > 0:
+            try:
+                if int(hist[-1].get('week')) == week:
+                    # already present
+                    continue
+            except Exception:
+                pass
+
+        if pid in price_map:
+            close = float(price_map[pid])
+            reason = 'STATS'
+        else:
+            # DNP handling: apply penalty
+            close = prev_close * (1.0 + float(args.dnp_penalty))
+            if close < float(args.min_price):
+                close = float(args.min_price)
+            reason = 'DNP'
+            dnp_count += 1
+
+        open_price = float(prev_close)
+        high = max(open_price, float(close)) * 1.05
+        low = min(open_price, float(close)) * 0.95
+
+        entry = {
+            'week': week,
+            'price': float(close),
+            'open': float(open_price),
+            'high': float(high),
+            'low': float(low),
+            'close': float(close),
+            'reason': reason,
+        }
+
+        ok = append_entry(pid, week, entry)
         if ok:
             appended += 1
 
-    print(f"Appended price points for {appended} players")
+    print(f"Appended price entries for {appended} players ({dnp_count} DNP entries)")
 
 
 if __name__ == '__main__':
