@@ -48,5 +48,172 @@
     "low": 125.63749999999999,
     "close": 138.8625,
     "reason": "DNP"
+  },
+  {
+    "week": 1,
+    "price": 141.64,
+    "open": 138.8625,
+    "high": 148.72199999999998,
+    "low": 131.919375,
+    "close": 141.64,
+    "reason": "STATS",
+    "score": 1.8,
+    "expectation_gap": 0.0,
+    "momentum": 0.05,
+    "price_change_pct": 0.02
+  },
+  {
+    "week": 2,
+    "price": 131.72519999999997,
+    "open": 141.64,
+    "high": 148.72199999999998,
+    "low": 125.13893999999996,
+    "close": 131.72519999999997,
+    "reason": "DNP"
+  },
+  {
+    "week": 3,
+    "price": 120.0,
+    "open": 131.72519999999997,
+    "high": 138.31145999999998,
+    "low": 114.0,
+    "close": 120.0,
+    "reason": "STATS",
+    "score": 16.4,
+    "expectation_gap": 8.111111,
+    "momentum": -0.07,
+    "price_change_pct": 0.2
+  },
+  {
+    "week": 4,
+    "price": 96.0,
+    "open": 120.0,
+    "high": 126.0,
+    "low": 91.19999999999999,
+    "close": 96.0,
+    "reason": "STATS",
+    "score": 0.4,
+    "expectation_gap": -0.956044,
+    "momentum": -0.089013,
+    "price_change_pct": -0.2
+  },
+  {
+    "week": 5,
+    "price": 115.2,
+    "open": 96.0,
+    "high": 120.96000000000001,
+    "low": 91.19999999999999,
+    "close": 115.2,
+    "reason": "STATS",
+    "score": 22.2,
+    "expectation_gap": 2.580645,
+    "momentum": -0.2,
+    "price_change_pct": 0.2
+  },
+  {
+    "week": 6,
+    "price": 107.136,
+    "open": 115.2,
+    "high": 120.96000000000001,
+    "low": 101.77919999999999,
+    "close": 107.136,
+    "reason": "DNP"
+  },
+  {
+    "week": 7,
+    "price": 80.0,
+    "open": 107.136,
+    "high": 112.4928,
+    "low": 76.0,
+    "close": 80.0,
+    "reason": "STATS",
+    "score": 2.6,
+    "expectation_gap": -0.8,
+    "momentum": -0.07,
+    "price_change_pct": -0.2
+  },
+  {
+    "week": 8,
+    "price": 74.39999999999999,
+    "open": 80.0,
+    "high": 84.0,
+    "low": 70.67999999999999,
+    "close": 74.39999999999999,
+    "reason": "DNP"
+  },
+  {
+    "week": 9,
+    "price": 69.192,
+    "open": 74.39999999999999,
+    "high": 78.11999999999999,
+    "low": 65.73239999999998,
+    "close": 69.192,
+    "reason": "DNP"
+  },
+  {
+    "week": 10,
+    "price": 64.34855999999999,
+    "open": 69.192,
+    "high": 72.6516,
+    "low": 61.13113199999999,
+    "close": 64.34855999999999,
+    "reason": "DNP"
+  },
+  {
+    "week": 11,
+    "price": 80.0,
+    "open": 64.34855999999999,
+    "high": 84.0,
+    "low": 61.13113199999999,
+    "close": 80.0,
+    "reason": "STATS",
+    "score": 0.2,
+    "expectation_gap": -0.923077,
+    "momentum": -0.07,
+    "price_change_pct": -0.2
+  },
+  {
+    "week": 12,
+    "price": 96.0,
+    "open": 80.0,
+    "high": 100.80000000000001,
+    "low": 76.0,
+    "close": 96.0,
+    "reason": "STATS",
+    "score": 1.6,
+    "expectation_gap": 7.0,
+    "momentum": 0.243229,
+    "price_change_pct": 0.2
+  },
+  {
+    "week": 13,
+    "price": 89.28,
+    "open": 96.0,
+    "high": 100.80000000000001,
+    "low": 84.816,
+    "close": 89.28,
+    "reason": "DNP"
+  },
+  {
+    "week": 14,
+    "price": 83.0304,
+    "open": 89.28,
+    "high": 93.744,
+    "low": 78.87888,
+    "close": 83.0304,
+    "reason": "DNP"
+  },
+  {
+    "week": 15,
+    "price": 120.0,
+    "open": 83.0304,
+    "high": 126.0,
+    "low": 78.87888,
+    "close": 120.0,
+    "reason": "STATS",
+    "score": 4.4,
+    "expectation_gap": 3.888889,
+    "momentum": -0.07,
+    "price_change_pct": 0.2
   }
 ]

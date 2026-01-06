@@ -84,6 +84,16 @@ export default async function PlayersPage() {
       }
     })
   )
+  // Filter out players without valid metadata or placeholder names.
+  const validPlayers = players.filter((p) => {
+    if (!p.name) return false
+    const nm = String(p.name).trim()
+    if (nm.length === 0) return false
+    if (nm.toLowerCase() === 'placeholder') return false
+    // silently skip players missing team or position metadata
+    if (!p.team || !p.position) return false
+    return true
+  })
   // (dir already determined above)
   return (
     <div className="container mx-auto p-8">
@@ -101,7 +111,7 @@ export default async function PlayersPage() {
       </div>
       <div className="mb-4">
         {/* Client-side searchable players list */}
-        <PlayersSearch initialPlayers={players} />
+        <PlayersSearch initialPlayers={validPlayers} />
       </div>
     </div>
   )

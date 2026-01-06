@@ -67,10 +67,9 @@ export default function PlayersSearch({ initialPlayers }: { initialPlayers: Play
               <li key={p.id} className="py-3 px-2 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <Link href={`/player/${p.id}`} className="font-semibold text-zinc-100 hover:underline">
-                    {p.name ? p.name : p.id}
+                    {p.name}
                   </Link>
-                  <div className="text-zinc-400 text-sm">{p.team || '—'}</div>
-                  <div className="text-zinc-400 text-sm">{p.position || '—'}</div>
+                  <div className="text-zinc-400 text-sm">{p.team && p.position ? `(${p.team} · ${p.position})` : ''}</div>
                 </div>
 
                 <div className="flex items-center gap-3">

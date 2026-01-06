@@ -81,6 +81,23 @@ python3 scripts/clean_player_profiles.py
 
 ## Manual weekly update (MVP)
 
+## Player metadata generator
+
+- Scans weekly CSVs, price CSVs, and cleaned profile CSVs to build `data/player_meta.json` mapping playerId -> name/position/team for UI fallbacks.
+- Run after updating weekly/price CSVs (or as part of your weekly pipeline). Example: `python3 scripts/generate_player_meta.py`.
+- Why: provides reliable name/position fallbacks so the Players UI can resolve missing names from noisy CSV sources; without it some players may render as raw IDs.
+
+### One-command weekly update
+
+- You can run the full weekly pipeline (compute prices, append history, regenerate player metadata) with the npm script:
+
+	```bash
+	npm run update:week -- --season 2025 --week 2
+	```
+
+	This runs `compute_weekly_prices.py`, then `append_price_history.py`, then `generate_player_meta.py` sequentially and stops on the first failure.
+
+
 This project ships as a file-based, manually-run weekly pipeline. No background jobs or live polling are required. Follow these steps to perform the weekly update (manual, once per week):
 
 1. Ensure you have a valid RapidAPI key available in your shell environment:

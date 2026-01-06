@@ -164,8 +164,43 @@ def main():
                 pass
 
         if pid in price_map:
+            # read diagnostics from the CSV row if present
+            row = next((r for r in rows if str(r.get('playerId') or '').strip() == str(pid)), {})
             close = float(price_map[pid])
             reason = 'STATS'
+            # capture optional diagnostics (score, expectation_gap, momentum, price_change_pct)
+            score_val = None
+            try:
+                if row and row.get('score') not in (None, ''):
+                    raw = row.get('score')
+                    if raw is not None and raw != "":
+                        score_val = float(raw)
+            except Exception:
+                score_val = None
+            try:
+                exp_gap_val = None
+                if row and row.get('expectation_gap') not in (None, ''):
+                    raw = row.get('expectation_gap')
+                    if raw is not None and raw != "":
+                        exp_gap_val = float(raw)
+            except Exception:
+                exp_gap_val = None
+            try:
+                momentum_val = None
+                if row and row.get('momentum') not in (None, ''):
+                    raw = row.get('momentum')
+                    if raw is not None and raw != "":
+                        momentum_val = float(raw)
+            except Exception:
+                momentum_val = None
+            try:
+                pct_val = None
+                if row and row.get('price_change_pct') not in (None, ''):
+                    raw = row.get('price_change_pct')
+                    if raw is not None and raw != "":
+                        pct_val = float(raw)
+            except Exception:
+                pct_val = None
         else:
             # DNP handling: apply penalty
             close = prev_close * (1.0 + float(args.dnp_penalty))
@@ -187,6 +222,16 @@ def main():
             'close': float(close),
             'reason': reason,
         }
+        # Attach diagnostics into history entry when available so future runs can compute expectation gaps
+        if pid in price_map:
+            if score_val is not None:
+                entry['score'] = float(score_val)
+            if exp_gap_val is not None:
+                entry['expectation_gap'] = float(exp_gap_val)
+            if momentum_val is not None:
+                entry['momentum'] = float(momentum_val)
+            if pct_val is not None:
+                entry['price_change_pct'] = float(pct_val)
 
         ok = append_entry(pid, week, entry)
         if ok:

@@ -10,6 +10,7 @@
     "test": "vitest",
     "regen:all": "sh ./scripts/run_all.sh",
     "weekly:update-stocks": "sh ./scripts/weekly_update.sh",
+  "update:week": "bash ./scripts/update_week.sh",
     "seed-demo-history": "tsx scripts/seed_demo_history.ts || node scripts/seed_demo_history.js",
     "refresh:advanced": "node scripts/refresh_advanced.js",
     "dev:secret": "ADVANCED_SECRET=supersecret next dev"
